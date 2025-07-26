@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block base_content %}
+    <div class="homepage">
+        <section class="homepage__hero">
+            <h1 class="homepage__title">
+                Open-source platform for LLM deployments at scale.
+            </h1>
+        </section>
+    </div>
+
+    {{ section.content | safe }}
+{% endblock base_content %}
