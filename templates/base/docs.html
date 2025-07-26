@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block base_content %}
+    {% set section = get_section(path="docs/_index.md") %}
+
+    <div class="docs">
+        <nav class="docs__nav">
+            {% for subsection_path in section.subsections %}
+                {% set subsection = get_section(path=subsection_path) %}
+                {{ subsection.title }}
+                {% for page in subsection.pages %}
+                    <div class="{% if current_path == page.path %}active{% endif %}">
+                        <a href="{{page.permalink}}"
+                        class="docs__nav-link"
+                        >
+                            {{page.title}}
+                        </a>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </nav>
+        <div class="docs__content">
+            {% block docs_content %}{% endblock docs_content %}
+        </div>
+    </div>
+
+{% endblock base_content %}
