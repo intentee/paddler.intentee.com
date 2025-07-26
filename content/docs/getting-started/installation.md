@@ -1,5 +1,5 @@
 +++
-title = "Installtion"
+title = "Installation"
 weight = 2
 +++
 
