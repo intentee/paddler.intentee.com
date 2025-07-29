@@ -1,0 +1,29 @@
+.formatted-text {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--font-size-base);
+
+    h1,
+    h2,
+    h3 {
+        margin-top: 1em;
+
+        &:first-child {
+            margin-top: -0.25em;
+        }
+    }
+
+    h1 {
+        font-size: 3em;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: 2em;
+        font-weight: 600;
+    }
+
+    p + p {
+        text-indent: 2ch;
+    }
+}

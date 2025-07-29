@@ -1,7 +1,25 @@
 {% extends "base/docs.html" %}
 
 {% block docs_content %}
-    <h1>{{ page.title }}</h1>
 
-    {{ page.content | safe }}
+    <div class="docs__content">
+        <div class="formatted-text">
+            <h1 class="docs__title">
+                {{ page.title }}
+            </h1>
+            {{ page.content | safe }}
+        </div>
+    </div>
+    <nav class="page__nav">
+        {% for header in page.toc %}
+            <div class="page__item">
+                <a
+                    href="{{ header.permalink }}"
+                    class="page__link">
+                    {{ header.title }}
+                </a>
+            </div>
+        {% endfor %}
+    </nav>
+
 {% endblock docs_content %}

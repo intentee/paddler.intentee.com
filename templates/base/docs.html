@@ -7,11 +7,19 @@
         <nav class="docs__nav">
             {% for subsection_path in section.subsections %}
                 {% set subsection = get_section(path=subsection_path) %}
-                {{ subsection.title }}
+                <div class="docs__nav-section-title">
+                    {{ subsection.title }}
+                </div>
                 {% for page in subsection.pages %}
-                    <div class="{% if current_path == page.path %}active{% endif %}">
-                        <a href="{{page.permalink}}"
-                        class="docs__nav-link"
+                    <div class="docs__nav__section">
+                        <a
+                            class="
+                                docs__nav-link
+                                {% if current_path == page.path %}
+                                    docs__nav-link--active
+                                {% endif %}
+                            "
+                            href="{{page.permalink}}"
                         >
                             {{page.title}}
                         </a>
@@ -19,9 +27,7 @@
                 {% endfor %}
             {% endfor %}
         </nav>
-        <div class="docs__content">
-            {% block docs_content %}{% endblock docs_content %}
-        </div>
+        {% block docs_content %}{% endblock docs_content %}
     </div>
 
 {% endblock base_content %}
