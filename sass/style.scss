@@ -1,3 +1,6 @@
+@import "./_breakpoints";
+@import "./_fonts";
+@import "./_formatted_text";
 @import "./_reset";
 @import "./_variables";
 
@@ -5,20 +8,74 @@
 
 .docs {
     display: grid;
-    grid-template-columns: minmax(440px, auto) 1fr;
+    gap: var(--spacing-2x);
+    grid-template-areas:
+        "docs-nav content page-nav"
+    ;
+    grid-template-columns: minmax(200px, auto) 1fr minmax(200px, auto);
+    /* max-width: 800px; */
+    width: 100%;
 }
 
-.docs__nav {
+.docs__content {
+    grid-area: content;
+    justify-self: center;
+    max-width: 80ch;
+}
+
+.docs__nav,
+.page__nav {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-base);
+    grid-area: docs-nav;
     max-height: calc(100dvh - var(--height-primary-navigation-header));
-    padding: 0 var(--spacing-2x);
 }
 
-.docs__nav-link {
-    padding: 0 var(--spacing-base);
+.docs__nav-link,
+.page__link {
     text-decoration: none;
+}
+
+.docs__nav-link.docs__nav-link--active {
+    display: inline-flex;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        background-color: var(--color-highlight);
+        border-radius: 20px 30% 20px 20px;
+        content: "";
+        left: calc(-1 * var(--spacing-base));
+        position: absolute;
+        top: calc(-1 * var(--spacing-half));
+        right: calc(-1 * var(--spacing-base));
+        bottom: calc(-1 * var(--spacing-half));
+        z-index: -1;
+    }
+}
+
+.docs__nav-section-title {
+    font-weight: bold;
+}
+
+.docs__nav {
+    padding-left: var(--spacing-2x);
+}
+
+.docs__nav__section {
+    margin-left: var(--spacing-base);
+}
+
+.docs__title {
+    grid-area: title;
+}
+
+.page__nav {
+    align-self: flex-start;
+    border-left: 2px solid var(--color-border);
+    grid-area: page-nav;
+    padding: 0 var(--spacing-2x)    ;
 }
 
 // Footer
@@ -31,6 +88,15 @@
     flex-direction: column;
     height: 100%;
 }
+
+// Main
+
+.primary-main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
 
 // Navigation
 
@@ -63,6 +129,7 @@
 
 .page {
     display: grid;
+    gap: var(--spacing-2x);
     grid-template-rows: var(--height-primary-navigation-header) 1fr;
     min-height: 100dvh;
 }
