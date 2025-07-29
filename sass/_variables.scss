@@ -15,6 +15,7 @@
     --spacing-base: 16px;
     --spacing-half: calc(0.5 * var(--spacing-base));
     --spacing-2x: calc(2 * var(--spacing-base));
-    --z-index-workbench-content: 1;
-    --z-index-workbench-header: 2;
+
+    --z-index-text-decoration: 1;
+    --z-index-primary-navigation-header: 2;
 }

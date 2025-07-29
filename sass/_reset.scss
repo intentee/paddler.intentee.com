@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+code, pre  {
+    font-family: var(--font-family-monospace);
+}
+
 fieldset,
 h1,
 h2,
