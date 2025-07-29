@@ -7,6 +7,8 @@
     h2,
     h3 {
         margin-top: 1em;
+        position: relative;
+        scroll-margin-top: calc(var(--spacing-base) + var(--height-primary-navigation-header));
 
         &:first-child {
             margin-top: -0.25em;
@@ -15,12 +17,12 @@
 
     h1 {
         font-size: 3em;
-        font-weight: 600;
+        font-weight: bold;
     }
 
     h2 {
         font-size: 2em;
-        font-weight: 600;
+        font-weight: bold;
     }
 
     p code {
@@ -28,6 +30,7 @@
 
         display: inline-block;
         font-family: var(--font-family-monospace);
+        font-weight: bold;
         margin: 0 var(--margin-horizontal);
         position: relative;
         z-index: var(--z-index-text-decoration);

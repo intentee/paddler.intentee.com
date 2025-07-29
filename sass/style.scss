@@ -12,7 +12,7 @@
     grid-template-areas:
         "docs-nav content page-nav"
     ;
-    grid-template-columns: minmax(200px, auto) 1fr minmax(200px, auto);
+    grid-template-columns: minmax(200px, auto) 1fr minmax(auto, 300px);
     /* max-width: 800px; */
     width: 100%;
 }
@@ -37,6 +37,10 @@
     max-height: calc(100dvh - var(--height-primary-navigation-header));
     position: sticky;
     top: calc(var(--height-primary-navigation-header) + var(--spacing-2x));
+
+    @include mobile {
+        display: none;
+    }
 }
 
 .docs__nav-link,

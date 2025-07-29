@@ -13,7 +13,7 @@ Serving LLM `inference` utilizes continuous batching algorithms and slot-based m
 
 Paddler is designed specifically to account for the LLM-unique requirements. It uses llama.cpp as the inference engine and comes with its own llama.cpp server implementation and a built-in slot management for easy setup.
 
-## There will be a note in this paragraph
+## There will be a note in this paragraph vey long, very
 
 Serving LLM inference utilizes continuous batching algorithms and slot-based management, which makes typical load balancing techniques like round robin and least connections ineffective.
 
