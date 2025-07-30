@@ -36,11 +36,22 @@
     {% set section = get_section(path="docs/_index.md") %}
     {% for subsection_path in section.subsections %}
         {% set subsection = get_section(path=subsection_path) %}
-        <div class="docs__nav__mobile">{{ subsection.title }}</div>
+        <div class="docs__nav-section-title">{{ subsection.title }}</div>
         {% for page in subsection.pages %}
-            <a href="{{page.permalink}}" class="docs__nav__mobile-link">
-                {{page.title}}
-            </a>
+            <div class="docs__nav-section">
+                <a
+                    class="
+                        docs__nav-link
+                        {% if current_path == page.path %}
+                            docs__nav-link--active
+                        {% endif %}
+                    "
+                    href="{{page.permalink}}"
+                >
+                    {{page.title}}
+                </a>
+            </div>
+
         {% endfor %}
     {% endfor %}
 {% endblock mobile_docs_nav %}
