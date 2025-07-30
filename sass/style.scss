@@ -260,10 +260,11 @@
 }
 
 .primary-navigation__mobile__logo-group {
+    align-items: center;
     border-bottom: 1px dashed;
     display: flex;
     justify-content: space-between;
-    padding-bottom: var(--spacing-2x)
+    padding-bottom: var(--spacing-2x);
 }
 
 .primary-navigation__mobile__wrapper {
