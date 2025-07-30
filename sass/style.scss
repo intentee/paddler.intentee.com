@@ -8,12 +8,24 @@
 
 .docs {
     display: grid;
-    gap: var(--spacing-2x);
-    grid-template-areas:
-        "docs-nav content page-nav"
-    ;
-    grid-template-columns: minmax(200px, auto) 1fr minmax(auto, 300px);
     width: 100%;
+
+    @include mobile {
+        grid-template-areas:
+            "docs-nav"
+            "content"
+            "page-nav"
+        ;
+        padding: 0 var(--spacing-base);
+    }
+
+    @include tablet-and-up {
+        gap: var(--spacing-2x);
+        grid-template-areas:
+            "docs-nav content page-nav"
+        ;
+        grid-template-columns: minmax(200px, auto) 1fr minmax(auto, 300px);
+    }
 }
 
 .docs__content {
@@ -86,9 +98,24 @@
     border-left: 2px solid var(--color-border);
     grid-area: page-nav;
     padding: 0 var(--spacing-2x);
+
+    @include tablet-and-down {
+        display: none;
+    }
 }
 
 // Footer
+
+.footer {
+    align-items: center;
+    border-top: 1px dashed var(--color-border);
+    display: flex;
+    justify-content: center;
+}
+
+.footer a {
+    text-decoration: none;
+}
 
 // Homepage
 
@@ -207,7 +234,7 @@
     height: 100dvh;
     left: 0;
     overflow-y: auto;
-    padding: var(--spacing-2x);
+    padding: var(--spacing-2x) var(--spacing-base);
     pointer-events: none;
     position: fixed;
     top: 0;
@@ -278,6 +305,6 @@
 .page {
     display: grid;
     gap: var(--spacing-2x);
-    grid-template-rows: var(--height-primary-navigation-header) 1fr;
+    grid-template-rows: var(--height-primary-navigation-header) 1fr var(--height-footer);
     min-height: 100dvh;
 }

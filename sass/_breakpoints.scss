@@ -31,3 +31,9 @@
         @content;
     }
 }
+
+@mixin tablet-and-down {
+    @media (max-width: 1023px) {
+        @content;
+    }
+}
