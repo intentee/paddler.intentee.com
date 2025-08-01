@@ -21,7 +21,7 @@ The web admin panel is divided into the following sections:
 
 ### Dashboard
 
-{{ figure_image(path="illustrations/paddler-dashboard.png", alt="Paddler dashboard") }}
+{{ figure_image(path="paddler-dashboard.avif", alt="Paddler dashboard") }}
 
 This is the main page that gives you an overview of your cluster, including all of the agents you started. Specifically, you will see:
 
@@ -36,15 +36,15 @@ The dashboard is a living creature. It reflects the changes in your cluster in r
 
 Once you have a model added, you will also see the model name and its metadata next to each agent (simply click the "Metadata" button to preview it). 
 
-{{ figure_image(path="illustrations/paddler-model-metadata.png", alt="Model's metadata") }}
+{{ figure_image(path="paddler-model-metadata.avif", alt="Model's metadata") }}
 
 If the model you're using contains a chat template, you can preview the template's content by clicking the "Chat template" button inside the model metadata's dialog.
 
-{{ figure_image(path="illustrations/paddler-model-chat-template.png", alt="Model's chat template") }}
+{{ figure_image(path="paddler-model-chat-template.avif", alt="Model's chat template") }}
 
 Finally, if there are any issues with processing the requests, you will see an "Issues" button next to the affected agent. Clicking it will give you more info you can use to troubleshoot the problem.
 
-{{ figure_image(path="illustrations/paddler-issues.png", alt="Issues") }}
+{{ figure_image(path="paddler-issues.avif", alt="Issues") }}
 
 
 ### Model 
