@@ -1,26 +1,32 @@
 :root {
-    --color-body-background-o55: #ffffff55;
-    --color-body-background: #ffffff;
-    --color-body-font: #111;
-    --color-border: black;
-    --color-highlight: #ffff55;
-    --color-note-background: #ffffdd;
-    --duration-transition-hover: 100ms;
-    --font-family-body: "Noto Sans", sans-serif;
-    --font-family-monospace: "Noto Sans Mono", monospace;
-    --font-size-base: 16px;
-    --height-footer: 60px;
-    --height-primary-navigation-header: 80px;
-    --line-height-base: 1.5;
-    --max-width-workbench-content: 1024px;
-    --primary-navigation-icon-height: 30px;
-    --primary-navigation-icon-width: 30px;
-    --spacing-2x: calc(2 * var(--spacing-base));
-    --spacing-base: 16px;
-    --spacing-half: calc(0.5 * var(--spacing-base));
+  --color-body-background-o55: #ffffff55;
+  --color-body-background: #ffffff;
+  --color-body-font: #111;
+  --color-border: black;
+  --color-highlight: #ffff55;
+  --color-note-background: #ffffdd;
+  --duration-transition-hover: 100ms;
+  --font-family-body: "Inter", sans-serif;
+  --font-family-monospace: "Noto Sans Mono", monospace;
+  --font-size-base: 14px;
+  --height-footer: 60px;
+  --line-height-base: 1.5;
+  --max-width-workbench-content: 1024px;
+  --primary-navigation-icon-height: 30px;
+  --primary-navigation-icon-width: 30px;
+  --spacing-2x: calc(2 * var(--spacing-base));
+  --spacing-base: 16px;
+  --spacing-half: calc(0.5 * var(--spacing-base));
 
-    --z-index-text-decoration: 1;
-    --z-index-primary-navigation-header: 2;
-    --z-index-mobile-navigation-backdrop: 3;
-    --z-index-mobile-navigation: 4;
+  --z-index-text-decoration: 1;
+  --z-index-primary-navigation: 2;
+
+  @media (max-width: #{$desktop-breakpoint}) {
+    --height-mobile-sub-navigation: 60px;
+    --height-primary-navigation-header: 60px;
+  }
+  @media (min-width: #{$desktop-breakpoint}) {
+    --height-mobile-sub-navigation: 0;
+    --height-primary-navigation-header: 80px;
+  }
 }

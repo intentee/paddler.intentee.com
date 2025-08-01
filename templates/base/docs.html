@@ -4,28 +4,34 @@
     {% set section = get_section(path="docs/_index.md") %}
 
     <div class="docs">
+        <input checked type="checkbox" id="docs-nav-toggle">
         <nav class="docs__nav">
-            {% for subsection_path in section.subsections %}
-                {% set subsection = get_section(path=subsection_path) %}
-                <div class="docs__nav-section-title">
-                    {{ subsection.title }}
-                </div>
-                {% for page in subsection.pages %}
-                    <div class="docs__nav-section">
-                        <a
-                            class="
-                                docs__nav-link
-                                {% if current_path == page.path %}
-                                    docs__nav-link--active
-                                {% endif %}
-                            "
-                            href="{{page.permalink}}"
-                        >
-                            {{page.title}}
-                        </a>
+            <label class="docs__nav__toggle" for="docs-nav-toggle">
+                Documentation
+            </label>
+            <div class="docs__nav__content">
+                {% for subsection_path in section.subsections %}
+                    {% set subsection = get_section(path=subsection_path) %}
+                    <div class="docs__nav-section-title">
+                        {{ subsection.title }}
                     </div>
+                    {% for page in subsection.pages %}
+                        <div class="docs__nav-section">
+                            <a
+                                class="
+                                    docs__nav-link
+                                    {% if current_path == page.path %}
+                                        docs__nav-link--active
+                                    {% endif %}
+                                "
+                                href="{{page.permalink}}"
+                            >
+                                {{page.title}}
+                            </a>
+                        </div>
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
+            </div>
         </nav>
         {% block docs_content %}{% endblock docs_content %}
     </div>
