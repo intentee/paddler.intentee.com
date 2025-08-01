@@ -176,7 +176,7 @@ $desktop-breakpoint: 800px;
     grid-area: page-nav;
     padding: 0 var(--spacing-2x);
     position: sticky;
-    top: 0;
+    top: calc(var(--height-primary-navigation-header) + var(--spacing-base));
   }
 }
 
