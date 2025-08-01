@@ -1,6 +1,6 @@
 +++
-title = "Internals"
+redirect_to = "docs/internals/how-balancer-handles-requests"
 sort_by = "weight"
-redirect_to = "/docs/internals/how-balancer-handles-requests"
+title = "Internals"
 weight = 4
 +++
