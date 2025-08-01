@@ -16,13 +16,12 @@ $desktop-breakpoint: 800px;
   @media (max-width: #{$desktop-breakpoint}) {
     grid-template-areas:
       "docs-nav"
-      "content"
-      "page-nav";
+      "content";
   }
 
   @media (min-width: #{$desktop-breakpoint}) {
     grid-template-areas: "docs-nav content page-nav";
-    grid-template-columns: minmax(160px, auto) 1fr minmax(auto, 200px);
+    grid-template-columns: minmax(240px, auto) 1fr minmax(auto, 200px);
   }
 }
 
@@ -47,8 +46,6 @@ $desktop-breakpoint: 800px;
 
   @media (min-width: #{$desktop-breakpoint}) {
     gap: var(--spacing-base);
-    max-height: calc(100dvh - var(--height-primary-navigation-header));
-    position: sticky;
     top: calc(var(--height-primary-navigation-header) + var(--spacing-2x));
   }
 }
@@ -103,8 +100,11 @@ $desktop-breakpoint: 800px;
 
 .docs__nav__toggle {
   @media (max-width: #{$desktop-breakpoint}) {
+    backdrop-filter: blur(10px);
     cursor: pointer;
     padding: var(--spacing-base) var(--spacing-base);
+    position: sticky;
+    top: 0;
 
     &::after {
       content: "▲";
@@ -157,6 +157,10 @@ $desktop-breakpoint: 800px;
 
 .docs__nav-section-title {
   font-weight: bold;
+
+  &:not(:first-of-type) {
+    margin-top: var(--spacing-2x);
+  }
 }
 
 .docs__title {
@@ -164,9 +168,16 @@ $desktop-breakpoint: 800px;
 }
 
 .page__nav {
-  border-left: 2px solid var(--color-border);
-  grid-area: page-nav;
-  padding: 0 var(--spacing-2x);
+  @media (max-width: #{$desktop-breakpoint}) {
+    display: none;
+  }
+  @media (min-width: #{$desktop-breakpoint}) {
+    border-left: 2px solid var(--color-border);
+    grid-area: page-nav;
+    padding: 0 var(--spacing-2x);
+    position: sticky;
+    top: 0;
+  }
 }
 
 // Footer
