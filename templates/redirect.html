@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="refresh" content="0; url={{- section.extra.paddler_redirect|safe -}}" />
+
+        {% if page.title %}
+        <title>{{page.title}}</title>
+        {% else %}
+        <title>{{section.title}}</title>
+        {% endif %}
+
+        <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+    </head>
+    <body>
+        <div class="redirect-page">
+            <div class="redirect-page__content">
+                <h1>Redirecting</h1>
+                <p>If you are not redirected automatically, please click the link below:</p>
+                <a href="{{- section.extra.paddler_redirect|safe -}}">Go to the new page</a>
+            </div>
+        </div>
+    </body>
+</html>
