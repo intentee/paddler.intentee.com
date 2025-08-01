@@ -1,5 +1,19 @@
 {% extends "base/docs.html" %}
 
+{% macro next_page_link(permalink, title) %}
+    <a
+        class="docs__related-pages__link docs__related-pages__link--next"
+        href="{{ permalink }}"
+    >{{ title }}</a>
+{% endmacro %}
+
+{% macro previous_page_link(permalink, title) %}
+    <a
+        class="docs__related-pages__link docs__related-pages__link--prev"
+        href="{{ permalink }}"
+    >{{ title }}</a>
+{% endmacro %}
+
 {% block docs_content %}
     <div class="docs__content">
         <div class="formatted-text">
@@ -10,7 +24,7 @@
         </div>
         <div class="docs__related-pages">
             {% if page.lower %}
-                <a href="{{ page.lower.permalink }}">Previous: {{ page.lower.title }}</a>
+                {{ self::previous_page_link(permalink=page.lower.permalink, title=page.lower.title) }}
             {% else %}
                 {% if section %}
                     {% set ancestor_section = get_section(path=page.ancestors[2]) %}
@@ -29,14 +43,14 @@
                     {% if previous_section %}
                         {% for subpage in previous_section.pages %}
                             {% if loop.last %}
-                                <a href="{{ subpage.permalink }}">Previous: {{ subpage.title }}</a>
+                                {{ self::previous_page_link(permalink=subpage.permalink, title=subpage.title) }}
                             {% endif %}
                         {% endfor %}
                     {% endif %}
                 {% endif %}
             {% endif %}
             {% if page.higher %}
-                <a href="{{ page.higher.permalink }}">Next: {{ page.higher.title }}</a>
+                {{ self::next_page_link(permalink=page.higher.permalink, title=page.higher.title) }}
             {% else %}
                 {% if section %}
                     {% set ancestor_section = get_section(path=page.ancestors[2]) %}
@@ -47,7 +61,7 @@
                         {% set subsection = get_section(path=subsection) %}
                         {% if use_next_section %}
                             {% for subpage in subsection.pages %}
-                                <a href="{{ subpage.permalink }}">Next: {{ subpage.title }}</a>
+                                {{ self::next_page_link(permalink=subpage.permalink, title=subpage.title) }}
                                 {% break %}
                             {% endfor %}
                             {% break %}
@@ -66,7 +80,8 @@
             <div class="page__item">
                 <a
                     href="{{ header.permalink }}"
-                    class="page__link">
+                    class="page__link"
+                >
                     {{ header.title }}
                 </a>
             </div>
