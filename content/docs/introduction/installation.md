@@ -31,4 +31,4 @@ You can run `paddler --help` to see the available commands and options.
 
 If you want to install it globally in your system, you can usually move the binary into `/usr/local/bin`, or to a
 similar directory that is in your `PATH`. That is very system-specific though, so it is not viable to cover all the
-possible options here. Look up "how to install a binary globally on Linux/Windows/Mac".
+possible options here. Look up "how to install a binary globally on Linux/Windows/Mac/BSD/*".
