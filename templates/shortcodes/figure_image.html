@@ -1,7 +1,7 @@
 {% set image_metadata = get_image_metadata(path=path) %}
 
 {% set original_image = resize_image(path=path, height=image_metadata.height, width=image_metadata.width, op="scale") %}
-{% set resized_image = resize_image(path=path, width=300, op="fit_width") %}
+{% set resized_image = resize_image(path=path, width=800, op="fit_width") %}
 
 <figure>
     <a

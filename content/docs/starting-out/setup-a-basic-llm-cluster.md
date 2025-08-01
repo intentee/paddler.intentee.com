@@ -24,8 +24,8 @@ paddler balancer --inference-addr 127.0.0.1:8061 --management-addr 127.0.0.1:806
 ````
 
 Starting the balancer this way starts two services that are minimally required to run Paddler's balancer:
-- The inference service (used by applications that connect to it to obtain LLM inference)
-- The management service (which controls the whole Paddler setup via API). Take note of the management service's address and port - we will need them later when starting the agent.
+- The inference service (used by applications that connect to it to obtain tokens or embeddings)
+- The management service (which controls the whole Paddler setup). Take note of the management service's address and port - we will need them later when starting the agent.
 
 To complete the basic cluster setup, we need to start an agent that will connect to the balancer. Running `paddler agent --help` will show you all the available options for the agent. There aren't many of them, and only two are needed when you start the agent: the management service's address and port, and the number of slots. 
 

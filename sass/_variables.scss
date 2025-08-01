@@ -8,8 +8,6 @@
   --duration-transition-hover: 100ms;
   --font-family-body: "Inter", sans-serif;
   --font-family-monospace: "Noto Sans Mono", monospace;
-  --font-size-base: 14px;
-  --font-size-small: 12px;
   --height-footer: 60px;
   --line-height-base: 1.5;
   --max-width-workbench-content: 1024px;
@@ -31,5 +29,13 @@
   @media (min-width: #{$desktop-breakpoint}) {
     --height-mobile-sub-navigation: 0;
     --height-primary-navigation-header: 80px;
+  }
+  @media (max-width: 1440px) {
+    --font-size-base: 14px;
+    --font-size-small: 12px;
+  }
+  @media (min-width: 1440px) {
+    --font-size-base: 16px;
+    --font-size-small: 14px;
   }
 }
