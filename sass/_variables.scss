@@ -22,6 +22,7 @@
 
   --z-index-text-decoration: 1;
   --z-index-primary-navigation: 2;
+  --z-index-modal: 3;
 
   @media (max-width: #{$desktop-breakpoint}) {
     --height-mobile-sub-navigation: 60px;

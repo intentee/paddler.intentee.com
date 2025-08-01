@@ -1,0 +1,12 @@
+{% set image_metadata = get_image_metadata(path=path) %}
+
+{% set original_image = resize_image(path=path, height=image_metadata.height, width=image_metadata.width, op="scale") %}
+{% set resized_image = resize_image(path=path, width=300, op="fit_width") %}
+
+<figure>
+    <a
+        href="{{ original_image.url|safe }}"
+        target="_blank"
+    ><img alt="{{ alt }}" src="{{ resized_image.url|safe }}" /></a>
+    <figcaption>{{ alt }}</figcaption>
+</figure>

@@ -4,6 +4,30 @@
   row-gap: var(--font-size-base);
   text-wrap: pretty;
 
+  figure {
+    display: flex;
+    flex-direction: column;
+    margin: var(--spacing-base) 0;
+    padding: 0;
+    row-gap: var(--spacing-half);
+
+    > a {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    figcaption {
+      font-style: italic;
+      text-align: center;
+    }
+  }
+
   h1,
   h2,
   h3 {
@@ -31,6 +55,11 @@
   h3 {
     font-size: 1.2em;
     font-weight: bold;
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: contain;
   }
 
   pre[data-lang] {
