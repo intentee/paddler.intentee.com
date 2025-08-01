@@ -124,11 +124,11 @@ $desktop-breakpoint: 800px;
 
 .docs__nav-link,
 .page__link {
+  display: inline-flex;
   text-decoration: none;
 }
 
 .docs__nav-link.docs__nav-link--active {
-  display: inline-flex;
   position: relative;
   z-index: 1;
 
