@@ -1,6 +1,6 @@
 +++
 title = "Installation"
-weight = 2
+weight = 3
 +++
 
 There are multiple ways to install Paddler. 
