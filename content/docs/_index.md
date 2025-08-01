@@ -1,9 +1,6 @@
 +++
 page_template = "base/docs/page.html"
+redirect_to = "/docs/introduction/what-is-paddler"
 sort_by = "weight"
-template = "redirect.html"
 title = "Docs"
-
-[extra]
-paddler_redirect = "/docs/introduction/what-is-paddler"
 +++

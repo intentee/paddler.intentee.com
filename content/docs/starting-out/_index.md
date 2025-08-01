@@ -1,9 +1,7 @@
 +++
-title = "Starting out"
+redirect_to = "/docs/starting-out/setup-a-basic-llm-cluster"
 sort_by = "weight"
 template = "redirect.html"
+title = "Starting out"
 weight = 2
-
-[extra]
-paddler_redirect = "/docs/starting-out/setup-a-basic-llm-cluster"
 +++
