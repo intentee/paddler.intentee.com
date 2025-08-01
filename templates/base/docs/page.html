@@ -1,13 +1,64 @@
 {% extends "base/docs.html" %}
 
 {% block docs_content %}
-
     <div class="docs__content">
         <div class="formatted-text">
             <h1 class="docs__title">
                 {{ page.title }}
             </h1>
             {{ page.content | safe }}
+        </div>
+        <div class="docs__related-pages">
+            {% if page.lower %}
+                <a href="{{ page.lower.permalink }}">Previous: {{ page.lower.title }}</a>
+            {% else %}
+                {% if section %}
+                    {% set ancestor_section = get_section(path=page.ancestors[2]) %}
+                    {% set docs_section = get_section(path="docs/_index.md") %}
+                    {% set previous_section = false %}
+
+                    {% for subsection in docs_section.subsections %}
+                        {% set subsection = get_section(path=subsection) %}
+
+                        {% if subsection.permalink == ancestor_section.permalink %}
+                           {% break %}
+                        {% endif %}
+
+                        {% set_global previous_section = subsection %}
+                    {% endfor %}
+                    {% if previous_section %}
+                        {% for subpage in previous_section.pages %}
+                            {% if loop.last %}
+                                <a href="{{ subpage.permalink }}">Previous: {{ subpage.title }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+            {% if page.higher %}
+                <a href="{{ page.higher.permalink }}">Next: {{ page.higher.title }}</a>
+            {% else %}
+                {% if section %}
+                    {% set ancestor_section = get_section(path=page.ancestors[2]) %}
+                    {% set docs_section = get_section(path="docs/_index.md") %}
+                    {% set use_next_section = false %}
+
+                    {% for subsection in docs_section.subsections %}
+                        {% set subsection = get_section(path=subsection) %}
+                        {% if use_next_section %}
+                            {% for subpage in subsection.pages %}
+                                <a href="{{ subpage.permalink }}">Next: {{ subpage.title }}</a>
+                                {% break %}
+                            {% endfor %}
+                            {% break %}
+                        {% endif %}
+
+                        {% if subsection.permalink == ancestor_section.permalink %}
+                            {% set_global use_next_section = true %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
         </div>
     </div>
     <nav class="page__nav">

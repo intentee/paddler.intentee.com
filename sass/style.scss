@@ -163,6 +163,13 @@ $desktop-breakpoint: 800px;
   }
 }
 
+.docs__related-pages {
+  display: grid;
+  grid-gap: var(--spacing-half);
+  grid-template-columns: repeat(2, 1fr);
+  padding: var(--spacing-base) 0;
+}
+
 .docs__title {
   grid-area: title;
 }
