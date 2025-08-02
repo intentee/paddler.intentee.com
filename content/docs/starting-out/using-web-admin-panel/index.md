@@ -1,5 +1,5 @@
 +++
-title = "Using web admin panel"
+title = "Using the web admin panel"
 weight = 2
 +++
 
@@ -31,7 +31,7 @@ This is the main page that gives you an overview of your cluster, including all 
 - A list of all agents currently connected to the management service, including their names, the number of slots, and the model and its metadata.
 
 <div class="formatted-text__note">
-The dashboard is a living creature. It reflects the changes in your cluster in real-time, especially the number of requests that are being buffered at any given moment, and the current usage of slots.
+    The dashboard is a living creature. It reflects the changes in your cluster in real-time, especially the number of requests that are being buffered at any given moment, and the current usage of slots.
 </div>
 
 Once you have a model added, you will also see the model name and its metadata next to each agent (simply click the "Metadata" button to preview it). 
