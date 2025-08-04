@@ -1,6 +1,6 @@
 +++
 title = "Before you begin"
-weight = 2
+weight = 3
 +++
 
 Befoer starting, it is recommended to have a basic understanding of the following concepts:
