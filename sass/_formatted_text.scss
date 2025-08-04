@@ -81,15 +81,29 @@
       border-bottom: 2px solid var(--color-border);
       content: attr(data-lang);
       left: 0;
-      padding: var(--spacing-half);
       right: 0;
       position: sticky;
       top: 0;
+
+      @media (max-width: #{$desktop-breakpoint}) {
+        padding: var(--spacing-half);
+      }
+
+      @media (min-width: #{$desktop-breakpoint}) {
+        padding: var(--spacing-half) var(--spacing-base);
+      }
     }
 
     code {
       overflow-x: auto;
-      padding: var(--spacing-base);
+
+      @media (max-width: #{$desktop-breakpoint}) {
+        padding: var(--spacing-base) var(--spacing-half);
+      }
+
+      @media (min-width: #{$desktop-breakpoint}) {
+        padding: var(--spacing-base);
+      }
     }
   }
 

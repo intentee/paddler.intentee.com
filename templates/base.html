@@ -31,12 +31,14 @@
                 </div>
                 <div class="primary-navigation__group-wrapper">
                     <div class="primary-navigation__group">
-                        <a
-                            href="{{ get_url(path="/docs") }}"
-                            class="primary-navigation__link {% if current_path is starting_with("/docs") %}primary-navigation__link--active{% endif %}"
-                        >
-                            Docs
-                        </a>
+                        {% block primary_navigation_docs_links %}
+                            <a
+                                href="{{ get_url(path="/docs") }}"
+                                class="primary-navigation__link {% if current_path is starting_with("/docs") %}primary-navigation__link--active{% endif %}"
+                            >
+                                Docs
+                            </a>
+                        {% endblock primary_navigation_docs_links %}
                     </div>
                     <div class="primary-navigation__group">
                         <a
