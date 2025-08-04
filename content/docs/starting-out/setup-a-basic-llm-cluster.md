@@ -17,7 +17,7 @@ To start a basic cluster, you only need two things: the Paddler's balancer and a
 
 If you're curious about all of the possible options you can set up when starting the balancer, you can run the `paddler balancer --help` command to have them listed in your terminal. For now, however, we will keep things simple and start the balancer with its default configuration.
 
-To start the balancer, simply run the following command in your terminal:
+To start the balancer, run the following command in your terminal:
 
 ```bash
 paddler balancer --inference-addr 127.0.0.1:8061 --management-addr 127.0.0.1:8060

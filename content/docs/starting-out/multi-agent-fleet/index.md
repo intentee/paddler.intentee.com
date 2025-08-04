@@ -26,7 +26,7 @@ Once you run the command above, the dashboard will update instantly, showing the
 ## Creating a multi-agent fleet
 
 <div class="formatted-text__note">
-    In our example, we are starting all agents on the same device. This setup will work just fine. The ideal setup, though, is to have each agent running on its own separate server and to give it several slots to work with.
+    In our example, we are starting all agents on the same device, which will work just fine. The ideal setup, though, is to have each agent running on its own separate server and to give it several slots to work with.
 </div>
 
 Let's add two more agents to the fleet, repeating the step from above, but of course, we will use different names for each new agent.

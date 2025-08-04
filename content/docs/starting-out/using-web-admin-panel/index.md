@@ -34,7 +34,7 @@ This is the main page that gives you an overview of your cluster, including all 
     The dashboard is a living creature. It reflects the changes in your cluster in real-time, especially the number of requests that are being buffered at any given moment, and the current usage of slots.
 </div>
 
-Once you have a model added, you will also see the model name and its metadata next to each agent (simply click the "Metadata" button to preview it). 
+Once you have a model added, you will also see the model name and its metadata next to each agent (click the "Metadata" button to preview it). 
 
 {{ figure_image(path="paddler-model-metadata.avif", alt="Model's metadata") }}
 
