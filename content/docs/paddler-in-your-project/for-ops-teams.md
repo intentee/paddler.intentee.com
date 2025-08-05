@@ -2,3 +2,42 @@
 title = "For ops teams"
 weight = 1
 +++
+
+Paddler is self-contained in a single binary, which contains both `balancer` and `agent` functionalities.
+
+**TL;DR** As an overview:
+
+- The balancer exposes:
+    - Inference service (by default on port `8061`) - generates tokens, embeddings, and other inference-related tasks (to be used by the product teams)
+    - Management service (by default on port `8060`) - needs to be protected and accessed only internally; allows to swap models, manage agents, etc
+    - Optionally: web admin panel (by default on port `8062`)
+- The agents expose no APIs, need only an egress connection to the management service
+
+Let's go through each of them.
+
+## Balancer
+
+### Inference Service
+
+Inference service is used by external applications that send requests to it to obtain tokens or embeddings. This is what you need to expose for your product team so that they can use Paddler for inference in their AI-based features.
+
+### Management Service
+
+Management service is what controls the whole Paddler setup. Agents establish a connection with it to receive commands, and it also manages other aspects of Paddler, like load balancing or buffering requests through its internal API.
+
+### Web admin panel
+
+Running the web admin panel is optional, but it gives a convenient way to view and test your Paddler setup, manage the models, and observe any potential issues.
+
+Because the web admin panel shows the status of basically everything in your Paddler setup, it needs to be able to have access to the Management service, Inference service, and the Agents.
+
+## Agents
+
+Agents need to be able to reach the Management service to be able to establish a WebSocket connection with it. This is why you deploy them by providing the Management service address and port. 
+
+Ideally, you deploy each agent on its own separate server and give each agent a certain number of slots it can work with. The number of slots is the number of concurrent requests that the agent can handle. You can do some benchmarking to determine how many you need. Start with a small number, like 4 or 8.
+
+<div class="formatted-text__note">
+    <p>If there is more than one agent deployed on the same server, they can run into some issues, like not being able to acquire a download lock for a model (since all the agents will try to download a model into the same cache), etc.</p>
+    <p>Generally, Paddler can recover from such issues, but it's still better to avoid them.</p>
+</div>
