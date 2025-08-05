@@ -3,9 +3,7 @@ title = "Why Paddler?"
 weight = 2
 +++
 
-Paddler helps you self-host open source models on your own infrastructure. 
-
-This is why it matters.
+Paddler helps you self-host open-source models on your own infrastructure. 
 
 ## Cost control
 
@@ -18,7 +16,7 @@ With self-hosting, the costs are fixed and predictable. With enough scale, using
 
 Using models you own on your own infrastructure means you can eliminate third-party data processing. Your organization's and users' data never leaves your infrastructure. This keeps the data more secure and, more importantly, gives you full control over how the security around data is deployed. It helps you stay aligned with compliance requirements.
 
-## Reliability
+## Reliability and independence
 
 Using closed-source models makes you dependent on your provider's availability and performance. An obvious risk is that when their API goes down, your AI features go down with it.
 
