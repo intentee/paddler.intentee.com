@@ -1,6 +1,6 @@
 +++
 title = "Reporting metrics"
-weight = 8
+weight = 6
 +++
 
 Paddler provides convenient reporting capabilities to help you monitor your setup. You can either scrap the `/metrics` endpoint to obtain metrics in the Prometheus format, or run Paddler in a way that will let you collect StatsD metrics.
