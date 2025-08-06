@@ -1,9 +1,9 @@
 +++
 title = "Managing Paddler through API"
-weight = 5
+weight = 6
 +++
 
-API documentation is [here](@api/introduction/using-paddler-api/).
+API documentation is [here](@/api/introduction/using-paddler-api.md).
 
 You can manage your entire Paddler setup (through Management service) and connect to Paddler to generate tokens and embeddings (through Inference service) via API.
 
