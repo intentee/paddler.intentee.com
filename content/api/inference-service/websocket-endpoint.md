@@ -1,6 +1,6 @@
 +++
 title = "WebSocket endpoint"
-weight = 3
+weight = 4
 +++
 
 WebSocket for Inference service

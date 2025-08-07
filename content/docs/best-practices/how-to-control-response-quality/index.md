@@ -22,21 +22,21 @@ Many models come with the chat template built in. If that's the case, Paddler wi
 
 First, we'll navigate to the [model file's page on Hugging Face](https://huggingface.co/Qwen/Qwen3-0.6B-GGUF/blob/main/Qwen3-0.6B-Q8_0.gguf). You will see the chat template used by this model in the Metadata section:
 
-{{ figure_image(path="qwen-3-06B-chat-template-hugging-face.avif", alt="Model's chat template on Hugging Face") }}
+{{ figure_image(path="qwen-3-06b-chat-template-hugging-face.avif", alt="Model's chat template on Hugging Face") }}
 
 Next, we'll load this model in Paddler's web admin panel (in the "Model" section) using the default `Use the chat template provided by the model` option:
 
-{{ figure_image(path="qwen-3-06B-default-chat-template.avif", alt="Using model's built-in chat template in Paddler") }}
+{{ figure_image(path="qwen-3-06b-default-chat-template.avif", alt="Using model's built-in chat template in Paddler") }}
 
 Applying the model will redirect you to the panel's dashboard section. Once the model is loaded, you will see its name and the "Metadata" button. Click this button, then click "Chat template" - you'll see the chat template corresponding to the one we just previewed on the model's page on Hugging Face:
 
-{{ figure_image(path="qwen-3-06B-chat-template-paddler.avif", alt="Model's built-in chat template preview in Paddler") }}
+{{ figure_image(path="qwen-3-06b-chat-template-paddler.avif", alt="Model's built-in chat template preview in Paddler") }}
 
 Finally, we can navigate to the "Prompt" section and use Paddler's chat GUI to test the model with its built-in chat template (in the example below, we're also using our own system prompt. We'll talk about system prompts in the next paragraph).
 
 Let's ask the model some important questions it can ponder about a bit and see what kind of response it gives us:
 
-{{ figure_image(path="qwen-3-06B-default-template-prompt.avif", alt="Response with model's built-in chat template") }}
+{{ figure_image(path="qwen-3-06b-default-template-prompt.avif", alt="Response with model's built-in chat template") }}
 
 Perfect! We got a response relevant to the question we asked. 
 

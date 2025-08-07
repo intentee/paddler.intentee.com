@@ -55,6 +55,6 @@ For our example, let's use `Qwen3-0.6B-GGUF`, which is a convenient small model 
 
 We'll load the model from Hugging Face by providing the model's link `https://huggingface.co/Qwen/Qwen3-0.6B-GGUF/blob/main/Qwen3-0.6B-Q8_0.gguf` into the input, select the "Use the chat template provided by the model" option, and submit the form. 
 
-As soon as the model is downloaded, you'll notice it being shown on the dashboard:
+As soon as the model is downloaded, you'll notice it being shown on the dashboard.
 
 That's all we need to start testing. Now, let's open the dashboard in one web browser tab, and the "Prompt" page in at least two other tabs. In each of the "Prompt" tabs, we'll enter a prompt and submit it. The balancer will distribute the requests evenly between the agents, and you can see which agent is processing each request on the dashboard.
