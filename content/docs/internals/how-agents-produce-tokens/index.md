@@ -18,3 +18,5 @@ Slots batch the input tokens from the incoming requests and use the underlying l
 The Management service sends the response back to the Inference service. 
 
 Finally, the Inference service sends the output tokens back to the user.
+
+{{ figure_image(path="how-agents-produce-tokens.avif", alt="How agents produce tokens") }}
