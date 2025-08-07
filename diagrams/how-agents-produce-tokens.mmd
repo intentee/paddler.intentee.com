@@ -16,9 +16,9 @@ sequenceDiagram
     Note over Inference service: Use the connection pool from management service
     Note over Inference service: Buffer & balance requests across agents
     Inference service->>+Agent: Forward request via WebSocket
-    Note over Agent: Agent acts as mini balancer
+    Note over Agent: Act as mini balancer<br/>Load model into memory once
     Agent->>+Slot: Forward request to available slot
-    Note over Slot: Model loaded in memory once<br/>Own context & KV cache<br/>Batch input tokens & sample output
+    Note over Slot: Own context & KV cache<br/>Batch input tokens & sample output
     Slot-->>-Agent: Return output tokens
     Agent-->>Management service: Send response back
     Management service-->>Inference service: Forward response
