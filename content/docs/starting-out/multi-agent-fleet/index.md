@@ -1,6 +1,6 @@
 +++
 title = "Multi-agent fleet"
-weight = 3
+weight = 4
 +++
 
 So far, we've started Paddler locally with a single agent. Let's now learn how to start multiple agents alongside the balancer, forming a fleet.
