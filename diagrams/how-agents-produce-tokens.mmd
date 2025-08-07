@@ -1,0 +1,25 @@
+---
+config:
+  theme: redux-color
+---
+sequenceDiagram
+    participant User
+    participant Inference service
+    participant Management service
+    participant Agent
+    participant Slot
+    Agent->>+Management service: Start WebSocket connection (register)
+    Note over Management service: Build the connection pool
+    Management service-->>-Agent: WebSocket established
+    Note over User, Slot: Request Processing Phase
+    User->>+Inference service: Send prompt
+    Note over Inference service: Use the connection pool from management service
+    Note over Inference service: Buffer & balance requests across agents
+    Inference service->>+Agent: Forward request via WebSocket
+    Note over Agent: Agent acts as mini balancer
+    Agent->>+Slot: Forward request to available slot
+    Note over Slot: Model loaded in memory once<br/>Own context & KV cache<br/>Batch input tokens & sample output
+    Slot-->>-Agent: Return output tokens
+    Agent-->>Management service: Send response back
+    Management service-->>Inference service: Forward response
+    Inference service-->>-User: Return output tokens
