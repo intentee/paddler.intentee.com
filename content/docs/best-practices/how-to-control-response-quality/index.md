@@ -93,7 +93,7 @@ They are usually model-specific and are often provided by the model's authors, a
 
 Continuing our Qwen3-0.6B-GGUF example, we can see on the model's page on Hugging Face that the model authors recommend using some certain values of the inference parameters:
 
-{{ figure_image(path="qwen-3-06b-parameters-recommendations.avif", alt="Model's parameter recommendations, source: Hugging Face") }}
+{{ figure_image(path="qwen-3-06b-parameters-recommendations.avif", alt="Model's parameter recommendations, source: Qwen3-0.6B-GGUF page on Hugging Face") }}
 
 You can customize the inference parameters in Paddler, when applying the model:
 

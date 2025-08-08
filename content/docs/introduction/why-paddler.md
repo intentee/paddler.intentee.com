@@ -3,7 +3,7 @@ title = "Why Paddler?"
 weight = 2
 +++
 
-Paddler helps you self-host open-source models on your own infrastructure. 
+Paddler helps you host open-source models on your own infrastructure. 
 
 ## Cost control
 
