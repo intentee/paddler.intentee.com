@@ -1,6 +1,6 @@
 +++
 title = "Going beyond a single device"
-weight = 5
+weight = 6
 +++
 
 So far, we've started a Paddler fleet with several agents, but everything was set up locally on a single device. Let's now go through setting up a multi-agent fleet on several devices. 

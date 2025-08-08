@@ -112,3 +112,65 @@ In case of an error, the response will be:
     }
 }
 ```
+
+## Sending requests with function calling
+
+To use function calling with this endpoint, you need to define the functions in the optional `tools` parameter.
+
+An example payload with the function calling might look like this:
+
+```json
+{
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "max_tokens": 400,
+    "tools": [
+        {
+            "type": "Function",
+            "function": {
+                "name": "get_weather",
+                "description": "Get the current weather information for a specified location.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "location": {
+                            "type": "string",
+                            "description": "The city and state, e.g. San Francisco, CA"
+                        },
+                        "unit": {
+                            "type": "string",
+                            "enum": ["celsius", "fahrenheit"],
+                            "description": "The temperature unit to use. Defaults to fahrenheit."
+                        }
+                    },
+                    "required": ["location"]
+                }
+            }
+        }
+    ],
+    "conversation_history": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant that provides weather information"
+        },
+        {
+            "role": "user",
+            "content": "What's the weather like in New York City?"
+        }
+    ]
+}
+```
+
+And the possible response:
+
+```txt
+<tool_call>
+{
+    "name": "get_weather",
+    "arguments": {
+        "location": "New York City, NY",
+        "unit": "fahrenheit"
+    }
+}
+</tool_call>
+```

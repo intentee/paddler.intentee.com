@@ -64,3 +64,9 @@ Our example payload can be something like this:
 Same as before, we will test it with Bruno. This time, we get a stream of embeddings:
 
 {{ figure_image(path="testing-post-generate-embedding-batch.avif", alt="Testing the request to generate embeddings") }}
+
+## Customizing the maximum time for generating a single token or embedding
+
+You can change the maximum time of generating a single token or embedding before the generation process times out. 
+
+By default, this time is set to 5000 milliseconds. This value can be customized when running the balancer with the `--inference-item-timeout` flag (the value should be provided in milliseconds).

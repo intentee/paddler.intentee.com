@@ -1,6 +1,6 @@
 +++
 title = "Managing Paddler through API"
-weight = 7
+weight = 8
 +++
 
 API documentation is [here](@/api/introduction/using-paddler-api.md).
