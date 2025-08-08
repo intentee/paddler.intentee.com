@@ -22,7 +22,7 @@ Instead of keeping state in memory, you can use a state database file saved as J
 
 An example file looks like this:
 
-```json
+```JSON
 {
   "balancer_desired_state": {
     "chat_template_override": null,

@@ -250,6 +250,10 @@ $desktop-breakpoint: 800px;
   display: flex;
   flex-direction: row;
   gap: var(--spacing-base);
+
+  @media (max-width: #{$desktop-breakpoint}) {
+    padding: 0 var(--spacing-base);
+  }
 }
 
 .homepage__cta__button {
@@ -296,6 +300,7 @@ $desktop-breakpoint: 800px;
   align-items: center;
   display: flex;
   flex-direction: column;
+
   @media (max-width: #{$desktop-breakpoint}) {
     margin-top: var(--height-primary-navigation-header);
   }
