@@ -24,11 +24,13 @@ Example response if you're using a model from Hugging Face:
   "inference_parameters": {
     "batch_n_tokens": 512,
     "context_size": 4096,
+    "enable_embeddings": false,
     "min_p": 0.05,
     "penalty_frequency": 0,
     "penalty_last_n": -1,
     "penalty_presence": 1.5,
     "penalty_repeat": 1,
+    "pooling_type": "Last",
     "temperature": 0.6,
     "top_k": 40,
     "top_p": 0.8

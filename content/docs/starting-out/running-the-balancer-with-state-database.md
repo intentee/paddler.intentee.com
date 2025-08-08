@@ -35,6 +35,7 @@ An example file looks like this:
       "penalty_last_n": -1,
       "penalty_presence": 1.5,
       "penalty_repeat": 1.0,
+      "pooling_type": "Last",
       "temperature": 0.6,
       "top_k": 40,
       "top_p": 0.8

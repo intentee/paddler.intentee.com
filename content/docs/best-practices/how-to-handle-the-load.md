@@ -35,3 +35,9 @@ The maximum number of requests in the buffer should be set in a close relation t
 ```bash
 paddler balancer --inference-addr 127.0.0.1:8061 --management-addr 127.0.0.1:8060 --buffered-request-timeout 30000
 ```
+
+### Handling the load when generating embeddings
+
+Requests that generate embeddings are also load-balanced and buffered by Paddler. 
+
+Because these requests can take much more time to get processed than token generation, you will likely need to increase the `--max-buffered-requests` and `--buffered-request-timeout` parameters by a lot when you need to generate embeddings.

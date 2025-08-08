@@ -15,7 +15,7 @@ Make sure you have the Paddler binary on your local machine (see the [Installati
 ## Starting a basic cluster
 To start a basic cluster, you only need two things: the Paddler's balancer and a single agent.
 
-If you're curious about all of the possible options you can set up when starting the balancer, you can run the `paddler balancer --help` command to have them listed in your terminal. For now, however, we will keep things simple and start the balancer with its default configuration.
+If you're curious about all of the possible options you can configure when starting the balancer, you can run the `paddler balancer --help` command to have them listed in your terminal. For now, however, we will keep things simple and start the balancer with its default configuration.
 
 To start the balancer, run the following command in your terminal:
 
@@ -29,7 +29,7 @@ Starting the balancer this way starts two services that are minimally required t
 
 To complete the basic cluster setup, we need to start an agent that will connect to the balancer. Running `paddler agent --help` will show you all the available options for the agent. There aren't many of them, and only two are needed when you start the agent: the management service's address and port, and the number of slots. 
 
-When starting the balancer, we set up the management service port to 8060, so this is what we'll use to tell the agent where to connect. The number of slots is the number of concurrent requests we want the agent to handle. Let's start with 2. With that, we can start the agent with the following command:
+When starting the balancer, we set the management service port to 8060, so this is what we'll use to tell the agent where to connect. The number of slots is the number of concurrent requests we want the agent to handle. Let's start with 2. With that, we can start the agent with the following command:
 
 ```bash
 paddler agent --management-addr 127.0.0.1:8060 --slots 2

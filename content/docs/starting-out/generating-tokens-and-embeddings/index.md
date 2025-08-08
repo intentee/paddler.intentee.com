@@ -9,7 +9,9 @@ Let's test a few endpoints.
 
 ## Generating tokens using the "Continue from conversation history" endpoint.
 
-This is the primary endpoint to receive tokens. It takes your entire conversation history, uses the chat template to format a prompt, and sends you back the generated tokens. It's documented in full [here](@/api/inference-service/continue-from-conversation-history.md). An example payload may look like this:
+This is the primary endpoint to receive tokens. It takes your entire conversation history, uses the chat template to format a prompt, and sends you back the generated tokens. It's documented [here](@/api/inference-service/continue-from-conversation-history.md). 
+
+An example payload may look like this:
 
 ```json
 {
@@ -42,6 +44,8 @@ The response presented in Bruno (right side in the screenshot above) shows how t
 ## Generating embeddings using "Generate embedding batch"
 
 Paddler also comes with an endpoint to generate embeddings, documented [here](@/api/inference-service/generate-embedding-batch.md). 
+
+To test it, we need first to ensure we have embeddings enabled (see: [How to enable embeddings](@/docs/internals/how-to-enable-embeddings/index.md) for more information).
 
 Our example payload can be something like this:
 

@@ -1,6 +1,6 @@
 +++
 title = "Buffered requests"
-weight = 3
+weight = 2
 +++
 
 If there are no available slots in agents, Paddler will buffer the incoming requests. There are two key aspects to buffering you can customize: 
@@ -28,6 +28,13 @@ paddler balancer --inference-addr 127.0.0.1:8061 --management-addr 127.0.0.1:806
 The entire request can take more than the `--buffered-request-timeout` time - this value only applies to the time the request spends in the buffer. Once the request is dequeued from the buffer, it will be processed normally, and the time won't be limited anymore. 
 
 So, for example, once the request starts to respond with inference tokens, it means it is no longer in the buffer and can take as long as it needs to finish processing.
+
+
+## Buffering requests when generating embeddings
+
+Requests that generate embeddings are also load-balanced and buffered by Paddler. 
+
+Because these requests can take much more time to get processed than token generation, you will likely need to increase the `--max-buffered-requests` and `--buffered-request-timeout` parameters by a lot when you need to generate embeddings.
 
 ## Buffering requests and autoscaling groups
 

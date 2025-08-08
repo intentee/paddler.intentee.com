@@ -3,7 +3,7 @@ title = "Generate embedding batch"
 weight = 3
 +++
 
-This endpoint allows you to generate batches of embeddings for a given content.
+This endpoint allows you to generate batches of embeddings for a given content. To use it, you need first to ensure you have embeddings enabled (see: [How to enable embeddings](@/docs/internals/how-to-enable-embeddings/index.md) for more information).
 
 You need to give each document a unique ID because the embedding will not be returned in the same order as in the input. This is because the embeddings will be generated in parallel by the agents. To match them with your original documents, you need to match `source_document_id` field in the resulting endpoint with the `id` field of your input document.
 

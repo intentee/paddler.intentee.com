@@ -3,9 +3,11 @@ title = "Changelog"
 weight = 5
 +++
 
-## v2.0.0 (in progress)
+## v2.0.0
 
-**Important** This release no longer uses `llama-server`. Instead, we bundle the `llama.cpp` codebase directly into Paddler.
+**Important** 
+
+This release no longer uses `llama-server`. Instead, we bundle the `llama.cpp` codebase directly into Paddler.
 We only use `llama.cpp` as a library for inference and have reimplemented `llama-server` functionality within Paddler itself.
 Instead of `llama-server`, you can use `paddler agent`, and you no longer need to run `llama-server` separately, which significantly simplifies the setup.
 
@@ -23,6 +25,8 @@ Instead of `llama-server`, you can use `paddler agent`, and you no longer need t
 
 - Add `--management-cors-allowed-host` repeatable flag to be able to specify the allowed CORS hosts for the management API
 - Add `/api/v1/agents/stream` endpoint that streams the updates from the agents in real-time
+- Add new management functionalities to the web admin panel: add and update model and chat template, modify inference parameters
+- Add section to the web admin panel to test token generation through GUI
 
 ## v1.2.0
 
