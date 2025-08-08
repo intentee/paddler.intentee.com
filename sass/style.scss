@@ -258,11 +258,12 @@ $desktop-breakpoint: 800px;
   align-items: center;
   backdrop-filter: blur(10px);
   display: flex;
+  height: var(--height-primary-navigation-header);
   justify-content: space-between;
   position: fixed;
   top: 0;
-  z-index: var(--z-index-primary-navigation);
   width: 100%;
+  z-index: var(--z-index-primary-navigation);
 
   @media (min-width: #{$desktop-breakpoint}) {
     padding: 0 var(--spacing-base);
