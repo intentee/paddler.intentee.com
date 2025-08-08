@@ -8,7 +8,7 @@ The [Continue from conversation history](@/api/inference-service/continue-from-c
 
 Paddler uses the [Hermes format](https://github.com/NousResearch/Hermes-Function-Calling) for function calling and will validate your list of functions against the Hermes schema.
 
-To use function calling, add your functions in the optional 'tools' parameter in your request. It will then be added to the prompt according to the chat template used (usually to the system prompt) and processed by the model.
+To use function calling, add your functions in the optional `tools` parameter in your request. It will then be added to the prompt according to the chat template used (usually to the system prompt) and processed by the model.
 
 Let's take a look at a few examples of using function calling.
 
@@ -23,7 +23,7 @@ Let's take a look at a few examples of using function calling.
     "max_tokens": 400,
     "tools": [
         {
-            "type": "Function",
+            "type": "function",
             "function": {
                 "name": "get_weather",
                 "description": "Get the current weather information for a specified location.",
@@ -83,7 +83,7 @@ Let's take a look at a few examples of using function calling.
     "max_tokens": 4000,
     "tools": [
         {
-            "type": "Function",
+            "type": "function",
             "function": {
                 "name": "manage_zoo_animals",
                 "description": "Create, read, update, or delete zoo animal records in the system.",
