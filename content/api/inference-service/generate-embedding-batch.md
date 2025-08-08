@@ -61,7 +61,7 @@ This is how Paddler normalizes the generated embedding before it's sent back to 
         "Embedding": {
           "embedding": [
             0.007884996,
-            ...,
+            // ...,
             -0.030835055
           ],
           "normalization_method": "L2",

@@ -135,6 +135,7 @@ $desktop-breakpoint: 800px;
   &::before {
     background-color: var(--color-highlight);
     border-radius: 20px 30% 20px 20px;
+    border: 2px solid var(--color-border);
     content: "";
     left: calc(-1 * var(--spacing-base));
     position: absolute;
@@ -249,6 +250,10 @@ $desktop-breakpoint: 800px;
   display: flex;
   flex-direction: row;
   gap: var(--spacing-base);
+
+  @media (max-width: #{$desktop-breakpoint}) {
+    padding: 0 var(--spacing-base);
+  }
 }
 
 .homepage__cta__button {
@@ -265,9 +270,23 @@ $desktop-breakpoint: 800px;
 }
 
 .homepage__title {
-  font-size: 80px;
+  font-size: 130px;
   font-weight: bold;
+  letter-spacing: -5px;
   line-height: 1;
+  text-shadow: 5px 0 0 #ffff0022, 10px 0 0 #ff000022, 15px 0 0 #0000ff22;
+
+  &::first-letter {
+    font-family: serif;
+    font-size: 1.3em;
+  }
+
+  @media (max-width: #{$desktop-breakpoint}) {
+    font-size: 80px;
+  }
+  @media (min-width: #{$desktop-breakpoint}) {
+    font-size: 130px;
+  }
 }
 
 .homepage__title,
@@ -281,7 +300,13 @@ $desktop-breakpoint: 800px;
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: var(--height-primary-navigation-header);
+
+  @media (max-width: #{$desktop-breakpoint}) {
+    margin-top: var(--height-primary-navigation-header);
+  }
+  @media (min-width: #{$desktop-breakpoint}) {
+    margin-top: calc(var(--height-primary-navigation-header) + var(--spacing-2x));
+  }
 }
 
 // Navigation
@@ -323,8 +348,9 @@ $desktop-breakpoint: 800px;
 
 .primary-navigation__link {
   display: flex;
-  padding: var(--spacing-base);
+  padding: var(--spacing-half) var(--spacing-base);
   text-decoration: none;
+  border: 2px solid transparent;
 }
 
 .primary-navigation__link svg {
@@ -334,7 +360,12 @@ $desktop-breakpoint: 800px;
 
 .primary-navigation__link.primary-navigation__link--active {
   background-color: var(--color-highlight);
+  border-color: var(--color-border);
   border-radius: 20px 30% 20px 20px;
+}
+
+.primary-navigation__link.primary-navigation__link--logo {
+  font-weight: bold;
 }
 
 // Page

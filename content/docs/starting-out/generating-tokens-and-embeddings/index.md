@@ -13,7 +13,7 @@ This is the primary endpoint to receive tokens. It takes your entire conversatio
 
 An example payload may look like this:
 
-```json
+```JSON
 {
     "add_generation_prompt": true,
     "enable_thinking": true,
@@ -49,7 +49,7 @@ To test it, we need first to ensure we have embeddings enabled (see: [How to ena
 
 Our example payload can be something like this:
 
-```json
+```JSON
 {
   "input_batch": [
     {

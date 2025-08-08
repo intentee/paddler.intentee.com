@@ -71,10 +71,7 @@ Stream of tokens in the reponse body. Each token is a JSON object:
         "request_id": "123456",
         "response": {
             "GeneratedToken": {
-                "generated_token_result": {
-                    "Token": "Hello"
-                },
-                "slot": 0
+                "Token": "Hello"
             }
         }
     }
@@ -88,10 +85,7 @@ The last token that ends the stream is:
     "Response": {
         "request_id": "123456",
         "response": {
-            "GeneratedToken": {
-                "generated_token_result": "Done",
-                "slot": 0
-            }
+            "GeneratedToken": "Done",
         }
     }
 }

@@ -40,7 +40,7 @@ while (true) {
         try {
             const message = JSON.parse(line);
 
-            console.log('Received:', message.Response.response.GeneratedToken.generated_token_result.Token);
+            console.log('Received:', message.Response.response.GeneratedToken.Token);
         } catch (err) {
             console.error('Error:', err);
         }

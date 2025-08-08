@@ -28,13 +28,13 @@
   }
   @media (min-width: #{$desktop-breakpoint}) {
     --height-mobile-sub-navigation: 0;
-    --height-primary-navigation-header: 80px;
+    --height-primary-navigation-header: 70px;
   }
-  @media (max-width: 1440px) {
+  @media (max-width: 1650px) {
     --font-size-base: 14px;
     --font-size-small: 12px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1650px) {
     --font-size-base: 16px;
     --font-size-small: 14px;
   }
