@@ -126,7 +126,7 @@ An example payload with the function calling might look like this:
     "max_tokens": 400,
     "tools": [
         {
-            "type": "Function",
+            "type": "function",
             "function": {
                 "name": "get_weather",
                 "description": "Get the current weather information for a specified location.",
