@@ -2,10 +2,19 @@
 
 {% block base_content %}
     <div class="homepage">
-        <section class="homepage__hero">
-            <h1 class="homepage__title">
-                Open-source platform for LLM deployments at scale.
-            </h1>
-        </section>
+        <h1 class="homepage__title">
+            Paddler
+        </h1>
+        <h2 class="homepage__subtitle">
+            Open-source platform for LLM deployments at scale.
+        </h2>
+        <div class="homepage__cta">
+            <a href="{{ get_url(path="/docs") }}" class="homepage__cta__button homepage__cta__button--primary">
+                Get Started
+            </a>
+            <a href="{{ get_url(path="/docs/introduction/installation/") }}" class="homepage__cta__button">
+                Install
+            </a>
+        </div>
     </div>
 {% endblock base_content %}
