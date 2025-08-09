@@ -9,9 +9,10 @@ Product teams building AI-based features can use Paddler to get LLM responses. P
 
 Paddler provides the inference based on a built-in llama.cpp engine and enables it via the Inference Service. 
 
-You have two options for sending requests:
+You have three options for sending requests:
 1. Using [Continue from conversation history](@/api/inference-service/continue-from-conversation-history.md) for continued conversations. This option takes the conversation history, applies it to the chat templates, and sends it to the LLM. It's useful for multi-turn conversations where you want to maintain context. It's also important because this is the option that uses the chat template to ensure high-quality responses. It is the recommended way for most use cases.
 2. Using [Continue from raw prompt](@/api/inference-service/continue-from-raw-prompt.md). This option takes your raw prompt and sends it to the LLM without applying any chat templates. This is useful as a workaround if, for whatever reason, you cannot use the chat template.
+3. Using [Generate embedding batch](@/api/inference-service/generate-embedding-batch.md) to generate batches of embeddings for a given content.
 
 ## Why LLM response quality varies 
 
