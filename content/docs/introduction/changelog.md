@@ -7,26 +7,19 @@ weight = 5
 
 **Important** 
 
-This release no longer uses `llama-server`. Instead, we bundle the `llama.cpp` codebase directly into Paddler.
+<div class="formatted-text__note">
+    This release no longer uses `llama-server`. Instead, we bundle the `llama.cpp` codebase directly into Paddler.
+</div>
+
 We only use `llama.cpp` as a library for inference and have reimplemented `llama-server` functionality within Paddler itself.
+
 Instead of `llama-server`, you can use `paddler agent`, and you no longer need to run `llama-server` separately, which significantly simplifies the setup.
-
-### Breaking Changes
-
-- Change the agent object structure (which in turn changes the response from the API)
-- Move web dashboard to its own host (to separate it from the management API)
-- Rename the `agents` endpoint from `/agents` to `/api/v1/agents`
-- Use milliseconds instead of seconds in CLI arguments for the following flags:
-    - `--monitoring-interval` in `agents`
-    - `--buffered-request_timeout` and `--statsd-reporting-interval` in `balancer`
-- Use `minijinja` to render chat templates
 
 ### Features
 
-- Add `--management-cors-allowed-host` repeatable flag to be able to specify the allowed CORS hosts for the management API
-- Add `/api/v1/agents/stream` endpoint that streams the updates from the agents in real-time
-- Add new management functionalities to the web admin panel: add and update model and chat template, modify inference parameters
-- Add section to the web admin panel to test token generation through GUI
+- `llama.cpp` is now built-in directly into Paddler, no need to run `llama-server` separately
+- `paddler agent` command replaces `llama-server` functionality
+- Check out the [API](@/api/introduction/using-paddler-api.md) page for complete list of changes in the API
 
 ## v1.2.0
 

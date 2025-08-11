@@ -13,7 +13,7 @@ Not applying the chat template means that whatever you pass as the raw prompt wi
 
 Generally, use the other endpoint to generate completions ([Continue from conversation history](@/api/inference-service/continue-from-conversation-history.md)), because they are much safer, and guarantee any kind of quality of the response. 
 
-If you need to force your own chat template, prefer to do that through the (insert mgmt service endpoint here) instead.
+If you need to force your own chat template, prefer to do that through the [Balancer desired state endpoint](@/api/management-service/put-balancer-desired-state.md) instead.
 
 ## Endpoint
 

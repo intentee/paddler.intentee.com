@@ -48,6 +48,9 @@ Finally, if there are any issues with processing the requests, you will see an "
 
 
 ### Model 
+
+{{ figure_image(path="paddler-model.avif", alt="Model section") }}
+
 This section allows you to provide paths to the models you want to use. Paddler uses llama.cpp internally, so it supports all models in the GGUF format that llama.cpp supports. You can either provide a local path to the model file on your machine or a URI to the model on Hugging Face.
 
 You also need to tell Paddler how to obtain the chat template for the model. You can either use a model that already provides the template, or you can add your own template when applying the model. Either way, properly configured chat templates are extremaly important for the model to produce meaningful responses.
@@ -56,5 +59,7 @@ Finally, Paddler allows you to customize the inference parameters for your model
 
 
 ### Prompt
+
+{{ figure_image(path="paddler-prompt.avif", alt="Prompt section") }}
 
 This section gives you a convenient GUI to test your Paddler cluster by sending actual inference requests. Try to open the Prompt section in one browser tab, and the Dashboard in another. You can then send requests from the Prompt section and see how they are processed in real-time on the Dashboard.
