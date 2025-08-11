@@ -1,5 +1,4 @@
 :root {
-  --color-body-background-o55: #ffffff55;
   --color-body-background: #ffffff;
   --color-body-font: #111;
   --color-border: black;
@@ -19,11 +18,13 @@
   --spacing-quarter: calc(0.25 * var(--spacing-base));
 
   --z-index-text-decoration: 1;
-  --z-index-primary-navigation: 2;
+  --z-index-related-pages: 2;
+  --z-index-primary-navigation: 3;
   --z-index-modal: 3;
 
   @media (max-width: #{$desktop-breakpoint}) {
-    --height-mobile-sub-navigation: 60px;
+    --height-mobile-related-pages: 60px;
+    --height-mobile-sub-navigation: 50px;
     --height-primary-navigation-header: 60px;
   }
   @media (min-width: #{$desktop-breakpoint}) {

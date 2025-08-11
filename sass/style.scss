@@ -14,9 +14,8 @@ $desktop-breakpoint: 800px;
   width: 100%;
 
   @media (max-width: #{$desktop-breakpoint}) {
-    grid-template-areas:
-      "docs-nav"
-      "content";
+    grid-template-areas: "content";
+    height: 100%;
   }
 
   @media (min-width: #{$desktop-breakpoint}) {
@@ -31,7 +30,14 @@ $desktop-breakpoint: 800px;
   width: 100%;
 
   @media (max-width: #{$desktop-breakpoint}) {
-    padding: 0 var(--spacing-base);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: var(--spacing-2x);
+
+    .formatted-text {
+      padding: 0 var(--spacing-base);
+    }
   }
   @media (min-width: #{$desktop-breakpoint}) {
     max-width: 80ch;
@@ -58,6 +64,8 @@ $desktop-breakpoint: 800px;
 
     background-color: #111;
     color: #fafafa;
+    display: grid;
+    grid-template-rows: auto 1fr;
     max-height: calc(100dvh - var(--height-primary-navigation-header));
     overflow-y: auto;
     position: fixed;
@@ -100,11 +108,17 @@ $desktop-breakpoint: 800px;
 
 .docs__nav__toggle {
   @media (max-width: #{$desktop-breakpoint}) {
+    align-items: center;
     backdrop-filter: blur(10px);
+    column-gap: var(--spacing-half);
     cursor: pointer;
-    padding: var(--spacing-base) var(--spacing-base);
+    display: flex;
+    flex-direction: row;
+    height: var(--height-mobile-sub-navigation);
+    padding: 0 var(--spacing-base);
     position: sticky;
     top: 0;
+    z-index: var(--z-index-primary-navigation);
 
     &::after {
       content: "▲";
@@ -165,11 +179,24 @@ $desktop-breakpoint: 800px;
 }
 
 .docs__related-pages {
-  column-gap: var(--spacing-2x);
   display: grid;
   grid-template-areas: "prev next";
   grid-template-columns: repeat(2, 1fr);
-  padding: var(--spacing-2x) 0 var(--spacing-base) 0;
+
+  @media (max-width: #{$desktop-breakpoint}) {
+    background-color: var(--color-body-background);
+    border-top: 2px dashed var(--color-border);
+    bottom: 0;
+    height: var(--height-mobile-related-pages);
+    margin-top: var(--spacing-2x);
+    position: sticky;
+    width: 100dvw;
+    z-index: var(--z-index-related-pages);
+  }
+  @media (min-width: #{$desktop-breakpoint}) {
+    column-gap: var(--spacing-2x);
+    margin-top: var(--spacing-base);
+  }
 }
 
 .docs__related-pages__link {
@@ -178,6 +205,14 @@ $desktop-breakpoint: 800px;
   flex-direction: row;
   font-style: italic;
   text-decoration: none;
+
+  @media (max-width: #{$desktop-breakpoint}) {
+    align-items: center;
+    padding: 0 var(--spacing-base);
+  }
+  @media (min-width: #{$desktop-breakpoint}) {
+    padding: var(--spacing-base) 0;
+  }
 }
 
 .docs__related-pages__link.docs__related-pages__link--next,

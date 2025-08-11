@@ -4,14 +4,14 @@
     <a
         class="docs__related-pages__link docs__related-pages__link--next"
         href="{{ permalink }}"
-    >{{ title }}</a>
+    ><span class="docs__related-pages__link__text">{{ title }}</span></a>
 {% endmacro %}
 
 {% macro previous_page_link(permalink, title) %}
     <a
         class="docs__related-pages__link docs__related-pages__link--prev"
         href="{{ permalink }}"
-    >{{ title }}</a>
+    ><span class="docs__related-pages__link__text">{{ title }}</span></a>
 {% endmacro %}
 
 {% block docs_content %}
