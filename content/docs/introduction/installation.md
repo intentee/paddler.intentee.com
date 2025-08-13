@@ -23,6 +23,26 @@ To do that, follow the steps:
 2. Clone our [repository](https://github.com/intentee/paddler) and run `make release` in the root directory of the project.
 3. That will produce a `paddler` binary in the `target/release` directory.
 
+## Hardware support
+
+### Cuda 
+
+You need to compile Paddler with the `cuda` feature (`cargo build --features cuda`). 
+
+You need to have the CUDA toolkit installed on your system, and the `nvcc` compiler must be in your `PATH`.
+
+### Metal
+
+Works out of the box on Macs.
+
+### Vulkan
+
+You need to compile Paddler with the `vulkan` feature (`cargo build --features vulkan`).
+
+### Need more? 🙂
+
+Start an issue on [GitHub](https://github.com/intentee/paddler/issues).
+
 ## Using Paddler
 
 The entire Paddler functionality is available through the `paddler` command.
