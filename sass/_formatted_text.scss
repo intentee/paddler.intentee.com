@@ -163,20 +163,44 @@
       }
     }
   }
+
+  table {
+    border-collapse: collapse;
+
+    p + p {
+      margin-top: var(--spacing-half);
+    }
+
+    td, th {
+      border: 1px solid var(--color-border);
+      padding: var(--spacing-base);
+      text-align: left;
+
+      code {
+        word-break: break-word;
+      }
+    }
+
+    thead {
+      background-color: lavender;
+    }
+  }
 }
 
 .formatted-text__note {
   background-color: var(--color-note-background);
+  border-radius: 20px 30px 10px 15px;
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-base);
   row-gap: var(--spacing-base);
 
   @media (max-width: #{$desktop-breakpoint}) {
     margin: var(--spacing-base) calc(-1 * var(--spacing-half));
+    padding: var(--spacing-base) var(--spacing-half);
   }
 
   @media (min-width: #{$desktop-breakpoint}) {
     margin: var(--spacing-base) calc(-1 * var(--spacing-base));
+    padding: var(--spacing-base);
   }
 }

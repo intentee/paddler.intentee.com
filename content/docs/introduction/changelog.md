@@ -3,6 +3,15 @@ title = "Changelog"
 weight = 5
 +++
 
+## v2.1.0
+
+### Features
+
+- [OpenAI compatibility](@/docs/migrating-to-paddler/openai-compatibility.md) endpoint:
+  - Support for `max_completion_tokens` parameter in `/v1/chat/completions` endpoint
+  - Support for `messages` parameter in `/v1/chat/completions` endpoint
+  - Support for `stream` parameter in `/v1/chat/completions` endpoint
+
 ## v2.0.0
 
 **Important** 
