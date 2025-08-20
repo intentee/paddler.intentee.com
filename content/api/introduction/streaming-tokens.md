@@ -5,11 +5,11 @@ weight = 2
 
 Endpoints like [Continue from conversation history](@/api/inference-service/continue-from-conversation-history.md) or [Continue from raw prompt](@/api/inference-service/continue-from-raw-prompt.md) return tokens in a streaming fashion.
 
-They use POST requests that return chunked stream of serialized JSON object (should *not* be confused with [Server-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)).
+They use POST requests that return chunked stream of serialized JSON object (you should *not* confuse it with [Server-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)).
 
 ## Example usage
 
-This is an example of how to use them through JavaScript's `fetch` API, but the general pattern applies to most of the languages and libraries:
+This example shows how to use them through JavaScript's `fetch` API, but the general pattern applies to most of the languages and libraries:
 
 ```JavaScript
 const response = await fetch('http://127.0.0.1:8061/api/v1/continue_from_raw_prompt', {
