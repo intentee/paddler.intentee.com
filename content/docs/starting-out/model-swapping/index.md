@@ -13,7 +13,7 @@ To swap models in the web admin panel, go to the "Model" section and use the "Mo
 
 ## Swapping models through the API
 
-To swap the model through the API, you should send the [request to change the balancer's desired state](@api/management-service/put-balancer-desired-state.md) and provide the filename, repo ID, and the revision of the model. An example payload can look like this:
+To swap the model through the API, you should send the [request to change the balancer's desired state](@/api/management-service/put-balancer-desired-state.md) and provide the filename, repo ID, and the revision of the model. An example payload can look like this:
 
 ```json
 {
