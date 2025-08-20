@@ -28,7 +28,7 @@ you will receive the following:
 
 ## Prometheus format metrics
 
-Paddler exposes the `/metrics` endpoint you can scrap to obtain metrics in the Prometheus format.
+Paddler exposes the [Get metrics](@/api/management-service/get-metrics.md) endpoint you can scrape to obtain metrics in the Prometheus format.
 
 ```
 Method: GET

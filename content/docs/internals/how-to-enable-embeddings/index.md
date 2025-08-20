@@ -13,6 +13,6 @@ In the "Model" section, check the `enable_embeddings` checkbox at the bottom of 
 
 ## Enabling embeddings through API
 
-`enable_embeddings` should be set to `true` in the [PUT request to change the balancer's desired state](@api/management-service/put-balancer-desired-state.md). 
+`enable_embeddings` should be set to `true` in the [PUT request to change the balancer's desired state](@/api/management-service/put-balancer-desired-state.md). 
 
 Pooling type can also be specified in that request.
