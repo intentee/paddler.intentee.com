@@ -11,6 +11,8 @@ To swap models in the web admin panel, go to the "Model" section and use the "Mo
 
 {{ figure_image(path="swapping-model-web-admin-panel.avif", alt="Swapping models in the web admin panel") }}
 
+Next, click "Apply changes" to save the new model. The agents will automatically start using it.
+
 ## Swapping models through the API
 
 To swap the model through the API, you should send the [request to change the balancer's desired state](@/api/management-service/put-balancer-desired-state.md) and provide the filename, repo ID, and the revision of the model. An example payload can look like this:
