@@ -35,7 +35,7 @@ An example payload may look like this:
 }
 ```
 
-Let's take this payload and test it with [Bruno](https://www.usebruno.com/), a convenient tool to test http requests:
+Let's take this payload and test it with [Bruno](https://www.usebruno.com/), a convenient tool to test HTTP requests:
 
 {{ figure_image(path="testing-post-continue-from-conversation-history.avif", alt="Testing the request to generate tokens") }}
 
