@@ -20,4 +20,4 @@ You have three options for sending requests:
     Remember that the way the LLM responds to your end users' queries and commands has a direct impact on the overall user experience of your product. Paddler gives you control over that quality, allowing you to use your own chat template, add custom system prompts, and customize the inference parameters directly in Paddler. 
 </div>
 
-Depending on factors such as chat template used, provided system prompt, or inference parametrs, you can expect different response quality from the same model. We discuss this topic in detail in the [How to control response quality](@/docs/best-practices/how-to-control-response-quality/index.md) article.
+Depending on factors such as chat template used, provided system prompt, or inference parameters, you can expect different response quality from the same model. We discuss this topic in detail in the [How to control response quality](@/docs/best-practices/how-to-control-response-quality/index.md) article.

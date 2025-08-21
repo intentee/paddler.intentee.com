@@ -3,7 +3,7 @@ title = "Multi-agent fleet"
 weight = 5
 +++
 
-So far, we've started Paddler locally with a single agent. Let's now learn how to start multiple agents alongside the balancer, forming a fleet.
+Previously, we've started Paddler locally with a single agent. Let's now learn how to start multiple agents alongside the balancer, forming a fleet.
 
 ## Starting the balancer with the web admin panel enabled
 
@@ -15,7 +15,9 @@ paddler balancer --inference-addr 127.0.0.1:8061 --management-addr 127.0.0.1:806
 
 ## Starting the first agent
 
-Since no agents are registered yet, the dashboard is empty, and you can see the "No agents registered yet" information at the bottom. In a new terminal window, let's start our first agent. To run an agent, we need it to be able to reach the management service in the balancer (by providing the management service address and port; in our example, it is `127.0.0.1:8060`), and we need to define the number of slots. Naming an agent is optional, but very useful when we want to distinguish different agents in the web admin panel or API. We'll name our first agent simply "agent-1", and start it with 4 slots:
+Since no agents are registered yet, the dashboard is empty, and you can see the "No agents registered yet" information at the bottom. 
+Let's start our first agent in a new terminal window.
+To run an agent, we need it to be able to reach the management service in the balancer (by providing the management service address and port; in our example, it is `127.0.0.1:8060`), and we need to define the number of slots. Naming an agent is optional, but useful when we want to distinguish different agents in the web admin panel or API. We'll name our first agent simply "agent-1", and start it with 4 slots:
 
 ```bash
 paddler agent --management-addr 127.0.0.1:8060 --slots 4 --name agent-1
@@ -26,7 +28,7 @@ Once you run the command above, the dashboard will update instantly, showing the
 ## Creating a multi-agent fleet
 
 <div class="formatted-text__note">
-    In our example, we are starting all agents on the same device, which will work just fine. The ideal setup, though, is to have each agent running on its own separate server and to give it several slots to work with.
+    In our example, we are starting all agents on the same device, which will work just fine. The ideal setup, though, is to have each agent running on its own separate server and to give it slots to handle requests in parallel.
 </div>
 
 Let's add two more agents to the fleet, repeating the step from above, but of course, we will use different names for each new agent.
@@ -55,6 +57,6 @@ For our example, let's use `Qwen3-0.6B-GGUF`, which is a convenient small model 
 
 We'll load the model from Hugging Face by providing the model's link `https://huggingface.co/Qwen/Qwen3-0.6B-GGUF/blob/main/Qwen3-0.6B-Q8_0.gguf` into the input, select the "Use the chat template provided by the model" option, and submit the form. 
 
-As soon as the model is downloaded, you'll notice it being shown on the dashboard.
+As soon as Paddler downloads the model, you'll notice the model's name on the dashboard.
 
 That's all we need to start testing. Now, let's open the dashboard in one web browser tab, and the "Prompt" page in at least two other tabs. In each of the "Prompt" tabs, we'll enter a prompt and submit it. The balancer will distribute the requests evenly between the agents, and you can see which agent is processing each request on the dashboard.

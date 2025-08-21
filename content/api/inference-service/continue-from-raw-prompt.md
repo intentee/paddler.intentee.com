@@ -9,7 +9,7 @@ weight = 2
 
 This endpoint allows you to send a raw prompt to the LLM without applying any chat templates and receive tokens in response.
 
-Not applying the chat template means that whatever you pass as the raw prompt will be sent directly to the LLM.
+Not applying the chat template means that whatever you pass as the raw prompt, Paddler will send directly to the LLM.
 
 Generally, use the other endpoint to generate completions ([Continue from conversation history](@/api/inference-service/continue-from-conversation-history.md)), because they are much safer, and guarantee any kind of quality of the response. 
 
@@ -35,7 +35,7 @@ Path: /api/v1/continue_from_raw_prompt
 
 #### `max_tokens`
 
-Maximum number of tokens to generate in the response. This is a hard limit, use it as a failsafe to prevent the model from generating too many tokens.
+Maximum number of tokens to generate in the response. This is a hard limit; use it as a failsafe to prevent the model from generating too many tokens.
 
 #### `raw_prompt`
 
@@ -45,7 +45,7 @@ String with the raw prompt to send to the LLM.
 
 ### Success
 
-Stream of tokens in the reponse body. Each token is a JSON object:
+Stream of tokens in the response body. Each token is a JSON object:
 
 ```JSON
 {

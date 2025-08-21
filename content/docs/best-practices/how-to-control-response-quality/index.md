@@ -9,7 +9,7 @@ weight = 1
     The quality of LLM responses directly impacts your product's user experience.
 </div>
 
-The same model can give you dramatically different response quality depending on how you use it. This quality depends on several factors that you can control in or with Paddler: using the right chat template, setting the right system prompt, and adjusting inference parameters. 
+The same model can give you dramatically different response quality depending on how you use it. You can control this quality through Paddler by: using the right chat template, setting the right system prompt, and adjusting inference parameters. 
 
 Many models work best with specific parameters or their own chat templates to get optimal results. In this section, we'll dive into the details - see the difference these factors make on response quality and learn how to control them in Paddler.
 
@@ -97,6 +97,6 @@ Continuing our Qwen3-0.6B-GGUF example, we can see on the model's page on Huggin
 
 You can customize the inference parameters in Paddler, when applying the model:
 
-{{ figure_image(path="paddler-model-inference-parameters-customization.avif", alt="Customizing inference parametrs in Paddler") }}
+{{ figure_image(path="paddler-model-inference-parameters-customization.avif", alt="Customizing inference parameters in Paddler") }}
 
 Experimenting with these parameters is worth exploring to optimize performance for your specific needs.

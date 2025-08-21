@@ -7,11 +7,11 @@ The following is a more detailed look at how Paddler works, from the moment your
 
 ## Paddler components
 
-Paddler is made of two main components, the `balancer`, and the `agents`. 
+Paddler consists of two main components, the `balancer`, and the `agents`. 
 
 The `balancer` exposes the following:
 - Inference service, which has direct contact with your application. When the user sends their prompt, it is received by the Inference service, and similarly, it is the Inference service that sends the output tokens back to the user.
-- Management service,  which manages the Paddler's setup internally (has a persistent connection with the agents, sends them commands, load balances the requests, etc.).
+- Management service, which manages the Paddler's setup internally (has a persistent connection with the agents, sends them commands, load balances the requests, etc.).
 
 Balancer also exposes the Web admin panel, which you can use to preview and test your Paddler setup.
 
@@ -27,7 +27,7 @@ When you start an agent, it registers itself in the balancer by starting a WebSo
 
 When a user sends a prompt, it is sent to the Inference service in the balancer. The Inference service then uses the persistent WebSocket connection between the balancer and agents to send the request to the agent. During this step, the requests are also potentially buffered, and balanced across the available agents.
 
-### Processign the request by the agent
+### Processing the request by the agent
 
 Once the request is sent to the appropriate agent, the agent behaves as a mini balancer on its own - it sends the request to one of its available slots. 
 
@@ -39,6 +39,6 @@ Slots batch the input tokens from the incoming requests and use the underlying l
 
 ### Sending the response back to the user
 
-When the slot generates the output tokens, they get sent back to The Management service in the balancer, that further sends sends them to the Inference service. 
+When the slot generates the output tokens, they get sent back to The Management service in the balancer, that further sends them to the Inference service. 
 
 Finally, the Inference service sends the output tokens back to the user in the response.

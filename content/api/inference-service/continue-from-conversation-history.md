@@ -57,13 +57,13 @@ If you enable this mode you need to send the `thinking` part of the messages in 
 
 #### `max_tokens`
 
-Maximum number of tokens to generate in the response. This is a hard limit, use it as a failsafe to prevent the model from generating too many tokens.
+Maximum number of tokens to generate in the response. This is a hard limit; use it as a failsafe to prevent the model from generating too many tokens.
 
 ## Response
 
 ### Success
 
-Stream of tokens in the reponse body. Each token is a JSON object:
+Stream of tokens in the response body. Each token is a JSON object:
 
 ```JSON
 {

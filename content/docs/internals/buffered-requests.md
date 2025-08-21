@@ -7,7 +7,7 @@ If there are no available slots in agents, Paddler will buffer the incoming requ
 - The maximum number of requests that can be buffered `--max-buffered-requests`
 - The maximum time the requests can spend in the buffer `--buffered-request-timeout` 
 
-Both can be customized when setting up the balancer on your server.
+You can customize both when setting up the balancer on your server.
 
 ## The maximum number of buffered requests
 
@@ -27,7 +27,7 @@ paddler balancer --inference-addr 127.0.0.1:8061 --management-addr 127.0.0.1:806
 
 The entire request can take more than the `--buffered-request-timeout` time - this value only applies to the time the request spends in the buffer. Once the request is dequeued from the buffer, it will be processed normally, and the time won't be limited anymore. 
 
-So, for example, once the request starts to respond with inference tokens, it means it is no longer in the buffer and can take as long as it needs to finish processing.
+For example, once the request starts to respond with inference tokens, it means it is no longer in the buffer and can take as long as it needs to finish processing.
 
 
 ## Buffering requests when generating embeddings

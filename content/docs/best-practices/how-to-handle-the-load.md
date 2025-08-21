@@ -16,7 +16,7 @@ If all slots are busy, Paddler's balancer will start buffering the incoming requ
 There are two things about the buffer you can customize:
 
 - The maximum number of requests that can be buffered `--max-buffered-requests` (default value is 30 requests)
-- The maximum time the requests can spend in the buffe `--buffered-request-timeout` (default value is 10,000 milliseconds)
+- The maximum time the requests can spend in the buffer `--buffered-request-timeout` (default value is 10,000 milliseconds)
 
 Paddler starts with some default values, but you can customize both of these numbers when starting the balancer.
 
@@ -30,7 +30,8 @@ You can run some benchmarks by changing this number when running the balancer wi
 paddler balancer --inference-addr 127.0.0.1:8061 --management-addr 127.0.0.1:8060 --max-buffered-requests 100
 ```
 
-The maximum number of requests in the buffer should be set in a close relation to the maximum time a request can stay in the buffer before it times out and gets dropped (with the 504 error ([Gateway Timeout](https://http.cat/status/504))). You can adjust it when running the balancer with the `--buffered-request-timeout` flag (the value is provided in milliseconds):
+Set the maximum number of requests in close relation to the maximum time a request can stay in the buffer before timing out and being dropped (with the 504 error ([Gateway Timeout](https://http.cat/status/504))). 
+You can adjust it when running the balancer with the `--buffered-request-timeout` flag (the value is provided in milliseconds):
 
 ```bash
 paddler balancer --inference-addr 127.0.0.1:8061 --management-addr 127.0.0.1:8060 --buffered-request-timeout 30000

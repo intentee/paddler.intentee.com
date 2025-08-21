@@ -19,7 +19,7 @@ Let's go through each of them.
 
 ### Inference Service
 
-Inference service is used by external applications that send requests to it to obtain tokens or embeddings. This is what you need to expose for your product team so that they can use Paddler for inference in their AI-based features.
+External applications use the Inference service to obtain tokens or embeddings. Expose this service to your product team so that they can use Paddler for inference in their AI-based features.
 
 ### Management Service
 

@@ -27,7 +27,8 @@ Starting the balancer this way starts two services that are minimally required t
 - The inference service (used by applications that connect to it to obtain tokens or embeddings)
 - The management service (which controls the whole Paddler setup). Take note of the management service's address and port - we will need them later when starting the agent.
 
-To complete the basic cluster setup, we need to start an agent that will connect to the balancer. Running `paddler agent --help` will show you all the available options for the agent. There aren't many of them, and only two are needed when you start the agent: the management service's address and port, and the number of slots. 
+To complete the basic cluster setup, we need to start an agent that will connect to the balancer. Running `paddler agent --help` will show you all the available options for the agent. 
+There aren't many of them, and you only need to provide the following two when starting the agent: the management service's address and port, and the number of slots. 
 
 When starting the balancer, we set the management service port to 8060, so this is what we'll use to tell the agent where to connect. The number of slots is the number of concurrent requests we want the agent to handle. Let's start with 2. With that, we can start the agent with the following command:
 
@@ -44,7 +45,7 @@ paddler agent --management-addr 127.0.0.1:8060 --slots 2 --name my-agent
 Now you have a basic LLM cluster running on your local machine!
 
 ## Viewing your cluster
-Paddler's clusters can be managed via API or a web admin panel. The web admin panel is a convenient way to see the status of your agents, set up the models, and more. You can enable the web admin panel by starting the balancer with the `--web-admin-panel-addr` flag followed by the address and port where you want to access it. In our case, let's start the panel on port 8062:
+You can manage your Paddler cluster via API or a web admin panel. The web admin panel is a convenient way to see the status of your agents, set up the models, and more. You can enable the web admin panel by starting the balancer with the `--web-admin-panel-addr` flag followed by the address and port where you want to access it. In our case, let's start the panel on port 8062:
 
 ```bash
 paddler balancer --inference-addr 127.0.0.1:8061 --management-addr 127.0.0.1:8060 --web-admin-panel-addr 127.0.0.1:8062

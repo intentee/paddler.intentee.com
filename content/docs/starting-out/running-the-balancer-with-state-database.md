@@ -3,7 +3,8 @@ title = "Running the balancer with state database"
 weight = 7
 +++
 
-Paddler's balancer functions based on specific state. This is simply the collection of inference parameters, the model, and the content of the custom chat template (if a custom chat template is used) used by the balancer.
+Paddler's balancer functions based on specific state. 
+This is simply the collection of inference parameters, the model, and the content of the custom chat template (if a custom chat template is used) that the balancer is using.
 
 The state can be defined in the web admin panel or through an HTTP request. However, you can also start the balancer with its desired state specified at startup.
 

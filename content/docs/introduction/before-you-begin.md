@@ -3,7 +3,7 @@ title = "Before you begin"
 weight = 3
 +++
 
-Before starting, it is recommended to have a basic understanding of the following concepts:
+Before starting, we recommend to have a basic understanding of the following concepts:
 - [Git](https://git-scm.com/doc) - the version control system used by Paddler.
 - System commands - Paddler is a command-line tool, so you should be comfortable with running commands in your terminal. You should know how to install and run custom commands in your system.
 - Networking - Paddler starts networking services, so you should understand the basics of networking, such as IP addresses and ports.

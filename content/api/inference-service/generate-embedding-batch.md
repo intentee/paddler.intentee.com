@@ -5,7 +5,8 @@ weight = 3
 
 This endpoint allows you to generate batches of embeddings for a given content. To use it, you need first to ensure you have embeddings enabled (see: [How to enable embeddings](@/docs/internals/how-to-enable-embeddings/index.md) for more information).
 
-You need to give each document a unique ID because the embedding will not be returned in the same order as in the input. This is because the embeddings will be generated in parallel by the agents. To match them with your original documents, you need to match `source_document_id` field in the resulting endpoint with the `id` field of your input document.
+You need to give each document a unique ID because the embedding will not be returned in the same order as in the input. 
+This is because the agents will generate the embeddings in parallel. To match them with your original documents, you need to match `source_document_id` field in the resulting endpoint with the `id` field of your input document.
 
 Paddler will divide the input batch roughly into context-size chunks and distribute them evenly between the available agents.
 
@@ -38,7 +39,7 @@ Path: /api/v1/generate_embedding_batch
 
 An array of objects, each containing an ID and content for which the embedding should be generated.
 
-The ID is what will allow you to match the generated embedding with the original content later.
+The ID will let you later match each generated embedding with its original content.
 
 
 #### `normalization_method` 
