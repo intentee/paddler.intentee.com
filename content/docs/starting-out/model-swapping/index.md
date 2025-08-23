@@ -5,6 +5,10 @@ weight = 10
 
 Paddler allows you to dynamically swap models. You can do that either in the web admin panel or through the API.
 
+## Video version
+
+<iframe height="315" src="https://www.youtube-nocookie.com/embed/sWjTEaOg7Ig?si=9tr9I7bbTiusJf14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Swapping models in the web admin panel
 
 To swap models in the web admin panel, go to the "Model" section and use the "Model URI" field. You can either provide the link to the model's file on Hugging Face or a local file path to the model, for example:
