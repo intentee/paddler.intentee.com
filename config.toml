@@ -1,6 +1,8 @@
 # The URL the site will be built for
 base_url = "https://paddler.intentee.com"
 
+description = "Open-source LLMOps platform for hosting and scaling AI in your own infrastructure."
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 

@@ -3,16 +3,20 @@
     <head>
 
         <meta charset="utf-8">
+        <meta name="description" content="{{ page.description | default(value=config.description) }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <meta property="og:image" content="{{ get_url(path='og-image.png') }}">
-        <meta name="twitter:image" content="{{ get_url(path='og-image.png') }}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ current_url|safe }}">
 
-        {% if page.title %}
-        <title>{{page.title}}</title>
-        {% else %}
-        <title>{{section.title}}</title>
-        {% endif %}
+        {% set page_title = page.title|default(value="") %}
+        <title>
+            {{- page_title -}}
+            {%- if page_title|length > 0 %} - {% endif -%}
+            Paddler, LLMOps platform</title>
 
+        <link rel="canonical" href="{{ current_url|safe }}">
         <link
             rel="preload"
             href="https://fonts.gstatic.com/s/inter/v19/UcCm3FwrK3iLTcvnUwkT9nA2.woff2"
