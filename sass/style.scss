@@ -258,6 +258,19 @@ $desktop-breakpoint: 800px;
   }
 }
 
+// Enterprise
+
+.enterprise{
+  @media (max-width: #{$desktop-breakpoint}) {
+    margin-top: var(--spacing-2x);
+    padding: 0 var(--spacing-base);
+  }
+
+  @media (min-width: #{$desktop-breakpoint}) {
+    max-width: 80ch;
+  }
+}
+
 // Footer
 
 .footer {
@@ -362,6 +375,27 @@ $desktop-breakpoint: 800px;
 
 // Navigation
 
+@media (max-width: 370px) {
+  .page {
+    &::after {
+      background: linear-gradient(to right, transparent, var(--color-highlight));
+      content: "";
+      height: var(--height-primary-navigation-header);
+      width: 60px;
+      pointer-events: none;
+      position: fixed;
+      right: 0;
+      top: 0;
+      user-select: none;
+      z-index: var(--z-index-primary-navigation);
+    }
+  }
+
+  .primary-navigation {
+    padding-right: 60px;
+  }
+}
+
 .primary-navigation {
   align-items: center;
   backdrop-filter: blur(10px);
@@ -372,6 +406,16 @@ $desktop-breakpoint: 800px;
   top: 0;
   width: 100%;
   z-index: var(--z-index-primary-navigation);
+
+  @media (max-width: #{$desktop-breakpoint}) {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
   @media (min-width: #{$desktop-breakpoint}) {
     padding: 0 var(--spacing-base);
@@ -398,10 +442,17 @@ $desktop-breakpoint: 800px;
 }
 
 .primary-navigation__link {
-  display: flex;
-  padding: var(--spacing-half) var(--spacing-base);
-  text-decoration: none;
   border: 2px solid transparent;
+  display: flex;
+  text-decoration: none;
+  white-space: nowrap;
+
+  @media (max-width: #{$desktop-breakpoint}) {
+    padding: var(--spacing-half);
+  }
+  @media (min-width: #{$desktop-breakpoint}) {
+    padding: var(--spacing-half) var(--spacing-base);
+  }
 }
 
 .primary-navigation__link svg {

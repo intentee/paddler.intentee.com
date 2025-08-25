@@ -49,6 +49,12 @@
                         >
                             API
                         </a>
+                        <a
+                            href="{{ get_url(path="/enterprise/") }}"
+                            class="primary-navigation__link {% if current_path is starting_with("/enterprise") %}primary-navigation__link--active{% endif %}"
+                        >
+                            Enterprise
+                        </a>
                     </div>
                     <div class="primary-navigation__group">
                         <a
