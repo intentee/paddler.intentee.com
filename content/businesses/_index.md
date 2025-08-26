@@ -1,13 +1,13 @@
 +++
-template = "base/enterprise.html"
+template = "base/businesses.html"
 sort_by = "weight"
-title = "Enterprise"
+title = "Businesses"
 
 [extra]
-mobile_menu_title = "Enterprise"
+mobile_menu_title = "Businesses"
 +++
 
-# Paddler for Enterprises
+# Paddler for enterprises and startups
     
 Users and businesses need privacy, reliability, cost control, and an option to be independent of closed-source providers - all provided by open source AI.
     
