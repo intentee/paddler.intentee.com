@@ -13,7 +13,7 @@ Paddler comes with a built-in web admin panel that offers a convenient way to ma
 ## Enabling the web admin panel
 
 You can enable the web admin panel when starting the balancer by adding the `--web-admin-panel-addr` flag followed by the address and port where you want to access the panel from. 
-Let's continue our example of [setting up the basic LLM cluster locally](@/docs/starting-out/setup-a-basic-llm-cluster.md), and start the balancer with the web admin panel enabled on port 8062:
+Let's continue our example of [setting up the basic LLM cluster locally](docs/starting-out/set-up-a-basic-llm-cluster), and start the balancer with the web admin panel enabled on port 8062:
 
 ```bash
 paddler balancer --inference-addr 127.0.0.1:8061 --management-addr 127.0.0.1:8060 --web-admin-panel-addr 127.0.0.1:8062
@@ -36,12 +36,12 @@ This is the main page that gives you an overview of your cluster, including all 
 
 - The current address and port of the inference service (used by applications that connect to it to obtain tokens or embeddings)
 - The current address and port of the management service (which controls the whole Paddler setup)
-- The status of the buffer, including how many requests are currently in the buffer, the maximum number of requests the buffer can take, and the maximum time each individual request can stay in the buffer before it times out. Buffering requests is an important feature of Paddler, discussed in more detail in the [Buffering requests](@/docs/internals/buffered-requests.md) page.
+- The status of the buffer, including how many requests are currently in the buffer, the maximum number of requests the buffer can take, and the maximum time each individual request can stay in the buffer before it times out. Buffering requests is an important feature of Paddler, discussed in more detail in the [Buffering requests](docs/internals/buffered-requests) page.
 - A list of all agents currently connected to the management service, including their names, the number of slots, and the model and its metadata.
 
-<div class="formatted-text__note">
+<Note>
     The dashboard is a living creature. It reflects the changes in your cluster in real-time, especially the number of requests that the buffer currently holds, and the current usage of slots.
-</div>
+</Note>
 
 Once you have a model added, you will also see the model name and its metadata next to each agent (click the "Metadata" button to preview it). 
 

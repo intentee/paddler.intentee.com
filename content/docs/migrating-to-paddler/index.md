@@ -1,8 +1,8 @@
 +++
 layout = "LayoutDocumentationPage"
-title = "Starting out"
+title = "Migrating to Paddler"
 
 [[collection]]
-after = "docs/introduction/index"
+after = "docs/best-practices/index"
 name = "documentation_pages"
 +++

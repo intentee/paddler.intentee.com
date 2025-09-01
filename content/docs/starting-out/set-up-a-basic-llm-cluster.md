@@ -14,7 +14,7 @@ This will help you see how simple it is to get started with LLMs in a distribute
 To get started, you do not need multiple devices; we can run everything on your local machine.
 
 ## Prerequisites
-Make sure you have the Paddler binary on your local machine (see the [Installation](@/docs/introduction/installation.md) page for more details).
+Make sure you have the Paddler binary on your local machine (see the [Installation](docs/introduction/installation) page for more details).
 
 ## Starting a basic cluster
 To start a basic cluster, you only need two things: the Paddler's balancer and a single agent.

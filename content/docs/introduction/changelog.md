@@ -12,7 +12,7 @@ parent = "docs/introduction/index"
 
 ### Features
 
-- [OpenAI compatibility](@/docs/migrating-to-paddler/openai-compatibility.md) endpoint:
+- [OpenAI compatibility](docs/migrating-to-paddler/openai-compatibility) endpoint:
   - Support for `max_completion_tokens` parameter in `/v1/chat/completions` endpoint
   - Support for `messages` parameter in `/v1/chat/completions` endpoint
   - Support for `stream` parameter in `/v1/chat/completions` endpoint
@@ -33,7 +33,7 @@ Instead of `llama-server`, you can use `paddler agent`, and you no longer need t
 
 - `llama.cpp` is now built-in directly into Paddler, no need to run `llama-server` separately
 - `paddler agent` command replaces `llama-server` functionality
-- Check out the [API](@/api/introduction/using-paddler-api.md) page for complete list of changes in the API
+- Check out the [API](api/introduction/using-paddler-api) page for complete list of changes in the API
 
 ## v1.2.0
 

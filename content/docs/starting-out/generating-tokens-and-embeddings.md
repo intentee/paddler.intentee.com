@@ -1,6 +1,6 @@
 +++
 layout = "LayoutDocumentationPage"
-title = "Using the web admin panel"
+title = "Generating tokens and embeddings"
 
 [[collection]]
 after = "docs/starting-out/using-web-admin-panel"
@@ -8,13 +8,13 @@ name = "documentation_pages"
 parent = "docs/starting-out/index"
 +++
 
-Paddler exposes both REST and WebSocket API you can use to generate tokens and embeddings. You will find detailed documentation for each endpoint in the [API docs](@/api/introduction/using-paddler-api.md).
+Paddler exposes both REST and WebSocket API you can use to generate tokens and embeddings. You will find detailed documentation for each endpoint in the [API docs](api/introduction/using-paddler-api).
 
 Let's test a few endpoints.
 
 ## Generating tokens using the "Continue from conversation history" endpoint.
 
-This is the primary endpoint to receive tokens. It takes your entire conversation history, uses the chat template to format a prompt, and sends you back the generated tokens. It's documented [here](@/api/inference-service/continue-from-conversation-history.md).
+This is the primary endpoint to receive tokens. It takes your entire conversation history, uses the chat template to format a prompt, and sends you back the generated tokens. It's documented [here](api/inference-service/continue-from-conversation-history).
 
 An example payload may look like this:
 
@@ -42,15 +42,18 @@ An example payload may look like this:
 
 Let's take this payload and test it with [Bruno](https://www.usebruno.com/), a convenient tool to test HTTP requests:
 
-{{ figure_image(path="testing-post-continue-from-conversation-history.avif", alt="Testing the request to generate tokens") }}
+<Figure 
+    alt="Testing the request to generate tokens"
+    src="resources/images/generating-tokens-and-embeddings/testing-post-continue-from-conversation-history.avif"
+/>
 
 The response presented in Bruno (right side in the screenshot above) shows how tokens in the response are returned as a stream.
 
 ## Generating embeddings using "Generate embedding batch"
 
-Paddler also comes with an endpoint to generate embeddings, documented [here](@/api/inference-service/generate-embedding-batch.md).
+Paddler also comes with an endpoint to generate embeddings, documented [here](api/inference-service/generate-embedding-batch).
 
-To test it, we need first to ensure we have embeddings enabled (see: [How to enable embeddings](@/docs/internals/how-to-enable-embeddings/index.md) for more information).
+To test it, we need first to ensure we have embeddings enabled (see: [How to enable embeddings](docs/internals/how-to-enable-embeddings) for more information).
 
 Our example payload can be something like this:
 
@@ -68,7 +71,10 @@ Our example payload can be something like this:
 
 Same as before, we will test it with Bruno. This time, we get a stream of embeddings:
 
-{{ figure_image(path="testing-post-generate-embedding-batch.avif", alt="Testing the request to generate embeddings") }}
+<Figure 
+    alt="Testing the request to generate embeddings"
+    src="resources/images/generating-tokens-and-embeddings/testing-post-generate-embedding-batch.avif"
+/>
 
 ## Customizing the maximum time for generating a single token or embedding
 

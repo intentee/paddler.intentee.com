@@ -1,3 +1,19 @@
+fn figure_out_collection(context) {
+  for collection in context.front_matter.collections {
+    if "documentation_pages" == collection.name {
+      return "documentation_pages";
+    }
+  }
+
+  for collection in context.front_matter.collections {
+    if "api_pages" == collection.name {
+      return "api_pages";
+    }
+  }
+
+  "*not_found*"
+}
+
 fn render_menu(context, node, level, nested) {
   switch level {
     0 => component {
@@ -21,7 +37,6 @@ fn render_menu(context, node, level, nested) {
 
 fn template(context, props, content) {
   context.assets.add("resources/css/layout-documentation-page.css");
-  // context.speculation.next(context.collection("documentation_pages").hierarchy.next_after(context.basename));
 
   component {
     <LayoutMinimal>
@@ -33,7 +48,7 @@ fn template(context, props, content) {
           </label>
           <div class="docs__nav__content">
             {render_hierarchy(
-              context.collection("documentation_pages").hierarchy,
+              context.collection(figure_out_collection(context)).hierarchy,
               render_menu.curry(context)
             )}
           </div>

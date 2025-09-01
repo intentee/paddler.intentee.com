@@ -1,13 +1,17 @@
 +++
+layout = "LayoutDocumentationPage"
 title = "How to control response quality"
-weight = 1
+
+[[collection]]
+name = "documentation_pages"
+parent = "docs/best-practices/index"
 +++
 
 ## Why LLM response quality varies (and how to control it)
 
-<div class="formatted-text__note">
+<Note>
     The quality of LLM responses directly impacts your product's user experience.
-</div>
+</Note>
 
 The same model can give you dramatically different response quality depending on how you use it. You can control this quality through Paddler by: using the right chat template, setting the right system prompt, and adjusting inference parameters. 
 
@@ -22,21 +26,33 @@ Many models come with the chat template built in. If that's the case, Paddler wi
 
 First, we'll navigate to the [model file's page on Hugging Face](https://huggingface.co/Qwen/Qwen3-0.6B-GGUF/blob/main/Qwen3-0.6B-Q8_0.gguf). You will see the chat template used by this model in the Metadata section:
 
-{{ figure_image(path="qwen-3-06b-chat-template-hugging-face.avif", alt="Model's chat template on Hugging Face") }}
+<Figure 
+    alt="Model's chat template on Hugging Face"
+    src="resources/images/how-to-control-response-quality/qwen-3-06b-chat-template-hugging-face.avif"
+/>
 
 Next, we'll load this model in Paddler's web admin panel (in the "Model" section) using the default `Use the chat template provided by the model` option:
 
-{{ figure_image(path="qwen-3-06b-default-chat-template.avif", alt="Using model's built-in chat template in Paddler") }}
+<Figure 
+    alt="Using model's built-in chat template in Paddler"
+    src="resources/images/how-to-control-response-quality/qwen-3-06b-default-chat-template.avif"
+/>
 
 Applying the model will redirect you to the panel's dashboard section. Once the model is loaded, you will see its name and the "Metadata" button. Click this button, then click "Chat template" - you'll see the chat template corresponding to the one we just previewed on the model's page on Hugging Face:
 
-{{ figure_image(path="qwen-3-06b-chat-template-paddler.avif", alt="Model's built-in chat template preview in Paddler") }}
+<Figure 
+    alt="Model's built-in chat template preview in Paddler"
+    src="resources/images/how-to-control-response-quality/qwen-3-06b-chat-template-paddler.avif"
+/>
 
 Finally, we can navigate to the "Prompt" section and use Paddler's chat GUI to test the model with its built-in chat template (in the example below, we're also using our own system prompt. We'll talk about system prompts in the next paragraph).
 
 Let's ask the model some important questions it can ponder about a bit and see what kind of response it gives us:
 
-{{ figure_image(path="qwen-3-06b-default-template-prompt.avif", alt="Response with model's built-in chat template") }}
+<Figure 
+    alt="Response with model's built-in chat template"
+    src="resources/images/how-to-control-response-quality/qwen-3-06b-default-template-prompt.avif"
+/>
 
 Perfect! We got a response relevant to the question we asked. 
 
@@ -52,17 +68,23 @@ Then click "Edit chat template" and put an incorrect Jinja2 format (for example,
 
 Now let's try to use the model by asking it the same question we asked before. You'll first notice no response at all, followed by an error message informing us about the timeout.
 
-<div class="formatted-text__note">
+<Note>
     Remember that Paddler's dashboard reports issues and gives you as much info as possible to help you debug them.
-</div>
+</Note>
 
 The issue is also noticeable on the dashboard:
 
-{{ figure_image(path="incorrect-template-issue-dashboard.avif", alt="Paddler's dashboard notifying about the issue") }}
+<Figure 
+    alt="Paddler's dashboard notifying about the issue"
+    src="resources/images/how-to-control-response-quality/incorrect-template-issue-dashboard.avif"
+/>
 
 When you click the "Issues" button, you'll see more details about what went wrong and how to fix it. In this case, you'll notice that the incorrect chat template didn't compile:
 
-{{ figure_image(path="incorrect-template-issue-details.avif", alt="Issue details") }}
+<Figure 
+    alt="Issue details"
+    src="resources/images/how-to-control-response-quality/incorrect-template-issue-details.avif"
+/>
 
 Finally, let's try a template that is technically correct but of poor quality (missing role identification, model's specific tokens, etc.):
 
@@ -77,7 +99,10 @@ Response:
 
 and use the same question again. This time, the model will respond, but the response will be far from what we expect:
 
-{{ figure_image(path="qwen-3-06b-poor-quality-template-prompt.avif", alt="Response with a poor quality chat template") }}
+<Figure 
+    alt="Response with a poor quality chat template"
+    src="resources/images/how-to-control-response-quality/qwen-3-06b-poor-quality-template-prompt.avif"
+/>
 
 ## System prompts
 
@@ -93,10 +118,16 @@ They are usually model-specific and are often provided by the model's authors, a
 
 Continuing our Qwen3-0.6B-GGUF example, we can see on the model's page on Hugging Face that the model authors recommend using some certain values of the inference parameters:
 
-{{ figure_image(path="qwen-3-06b-parameters-recommendations.avif", alt="Model's parameter recommendations, source: Qwen3-0.6B-GGUF page on Hugging Face") }}
+<Figure 
+    alt="Model's parameter recommendations, source: Qwen3-0.6B-GGUF page on Hugging Face"
+    src="resources/images/how-to-control-response-quality/qwen-3-06b-parameters-recommendations.avif"
+/>
 
 You can customize the inference parameters in Paddler, when applying the model:
 
-{{ figure_image(path="paddler-model-inference-parameters-customization.avif", alt="Customizing inference parameters in Paddler") }}
+<Figure 
+    alt="Customizing inference parameters in Paddler"
+    src="resources/images/how-to-control-response-quality/paddler-model-inference-parameters-customization.avif"
+/>
 
 Experimenting with these parameters is worth exploring to optimize performance for your specific needs.
