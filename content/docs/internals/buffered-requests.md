@@ -9,6 +9,10 @@ If there are no available slots in agents, Paddler will buffer the incoming requ
 
 You can customize both when setting up the balancer on your server.
 
+## Video version
+
+<iframe height="315" src="https://www.youtube.com/embed/aJqPd5qSQ9c?si=D1yzk7L6cSIKWNbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## The maximum number of buffered requests
 
 If the maximum number of buffered requests is reached, the balancer will start rejecting new requests with the 503 error ([Service Unavailable](https://http.cat/status/503)). The default value is 30, but you can change it by passing the `--max-buffered-requests` flag when starting the balancer. For example, to set the maximum number of buffered requests to 100, run:
