@@ -1,11 +1,6 @@
 +++
-layout = "LayoutDocumentationPage"
 title = "Before you begin"
-
-[[collection]]
-after = "docs/introduction/why-paddler"
-name = "documentation_pages"
-parent = "docs/introduction/index"
+weight = 3
 +++
 
 Before starting, we recommend to have a basic understanding of the following concepts:

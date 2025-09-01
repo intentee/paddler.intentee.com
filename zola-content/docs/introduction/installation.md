@@ -1,11 +1,6 @@
 +++
-layout = "LayoutDocumentationPage"
 title = "Installation"
-
-[[collection]]
-after = "docs/introduction/before-you-begin"
-name = "documentation_pages"
-parent = "docs/introduction/index"
+weight = 4
 +++
 
 There are multiple ways to install Paddler. 

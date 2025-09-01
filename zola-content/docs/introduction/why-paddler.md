@@ -1,11 +1,6 @@
 +++
-layout = "LayoutDocumentationPage"
 title = "Why Paddler?"
-
-[[collection]]
-after = "docs/introduction/what-is-paddler"
-name = "documentation_pages"
-parent = "docs/introduction/index"
+weight = 2
 +++
 
 Paddler helps you host open-source models on your own infrastructure. 

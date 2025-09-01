@@ -1,11 +1,6 @@
 +++
-layout = "LayoutDocumentationPage"
 title = "Changelog"
-
-[[collection]]
-after = "docs/introduction/installation"
-name = "documentation_pages"
-parent = "docs/introduction/index"
+weight = 5
 +++
 
 ## v2.1.0
@@ -21,9 +16,9 @@ parent = "docs/introduction/index"
 
 **Important** 
 
-<Note>
+<div class="formatted-text__note">
     This release no longer uses `llama-server`. Instead, we bundle the `llama.cpp` codebase directly into Paddler.
-</Note>
+</div>
 
 We only use `llama.cpp` as a library for inference and have reimplemented `llama-server` functionality within Paddler itself.
 

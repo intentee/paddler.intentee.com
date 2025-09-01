@@ -1,10 +1,6 @@
 +++
-layout = "LayoutDocumentationPage"
 title = "What is Paddler?"
-
-[[collection]]
-name = "documentation_pages"
-parent = "docs/introduction/index"
+weight = 1
 +++
 
 Paddler allows you to deploy and scale open source LLMs (Large Language Models) in your own infrastructure.
