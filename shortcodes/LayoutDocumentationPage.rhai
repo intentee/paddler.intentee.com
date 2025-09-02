@@ -38,17 +38,22 @@ fn template(context, props, content) {
   context.assets.add("resources/css/fragment-formatted-text.css");
   context.assets.add("resources/css/layout-documentation-page.css");
 
+  let collection = figure_out_collection(context);
+  let menu_hierarchy = context.collection(collection).hierarchy;
+
   component {
     <LayoutMinimal>
       <div class="docs">
         <input checked type="checkbox" id="docs-nav-toggle">
         <nav class="docs__nav">
-          <label class="docs__nav__toggle" for="docs-nav-toggle">
-            Mobile docs navigation placeholder
-          </label>
+          <label class="docs__nav__toggle" for="docs-nav-toggle">{switch collection {
+            "api_pages" => "API",
+            "documentation_pages" => "Documentation",
+            _ => error("Unexpected collection"),
+          }}</label>
           <div class="docs__nav__content">
             {render_hierarchy(
-              context.collection(figure_out_collection(context)).hierarchy,
+              menu_hierarchy,
               render_menu.curry(context)
             )}
           </div>
@@ -60,19 +65,51 @@ fn template(context, props, content) {
             </h1>
             {content}
           </div>
-          <div class="docs__related-pages">
-            Page navigation placeholder
-          </div>
+          <div class="docs__related-pages">{
+            let prev = menu_hierarchy.before(context.reference.basename);
+
+            if prev != () {
+              component {
+                <a
+                  class="docs__related-pages__link docs__related-pages__link--prev"
+                  href={prev.canonical_link}
+                >
+                  <span class="docs__related-pages__link__text">{prev.front_matter.title}</span>
+                </a>
+              }
+            }
+          }{
+            let next = menu_hierarchy.after(context.reference.basename);
+
+            if next != () {
+              component {
+                <a
+                  class="docs__related-pages__link docs__related-pages__link--next"
+                  href={next.canonical_link}
+                >
+                  <span class="docs__related-pages__link__text">{next.front_matter.title}</span>
+                </a>
+              }
+            }
+          }</div>
         </div>
-        <nav class="page__nav">
-          <div class="page__item">
-            <a
-              href="#"
-              class="page__link"
-            >
-            </a>
-          </div>
-        </nav>
+        <nav class="page__nav">{
+          let rendered = [];
+
+          for heading in context.table_of_contents.headings {
+            if heading.depth == 2 {
+              rendered.push(component {
+                <div class="page__item">
+                  <a class="page__link" href={`#${heading.id}`}>
+                    {heading.content}
+                  </a>
+                </div>
+              });
+            }
+          }
+
+          rendered
+        }</nav>
       </div>
     </LayoutMinimal>
   }
