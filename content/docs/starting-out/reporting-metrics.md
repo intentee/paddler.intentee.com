@@ -1,6 +1,6 @@
 +++
 layout = "LayoutDocumentationPage"
-title = "Reporting Metrics"
+title = "Reporting metrics"
 
 [[collection]]
 after = "docs/starting-out/managing-paddler-through-api"

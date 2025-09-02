@@ -1,5 +1,6 @@
 +++
 layout = "LayoutDocumentationPage"
+render = false
 title = "Paddler in your project"
 
 [[collection]]

@@ -8,16 +8,20 @@ name = "api_pages"
 parent = "api/management-service/index"
 +++
 
-This endpoint allows you to apply the desired state of the balancer, including data such as inference parameters, selected model, or whether you want to override the chat template with your own.
+This endpoint gives you the desired state you want the balancer to be in. It includes data such as inference parameters, selected model, or whether you want to override the chat template with your own.
+
+The desired state is not necessarily the state applied to the balancer and agents. You can use the [get agents](api/management-service/get-agents) endpoint to monitor the model currently used by the agents.
 
 ## Endpoint
 
 ```
-Method: PUT
+Method: GET
 Path: /api/v1/balancer_desired_state
 ```
 
-## Payload
+## Response
+
+Example response if you're using a model from Hugging Face:
 
 ```JSON
 {
@@ -46,7 +50,3 @@ Path: /api/v1/balancer_desired_state
   "use_chat_template_override": false
 }
 ```
-
-## Response
-
-Responds with `204 No Content` if the request was successful.

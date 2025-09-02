@@ -1,6 +1,6 @@
 +++
 layout = "LayoutDocumentationPage"
-title = "Open AI Compatibility"
+title = "OpenAI compatibility"
 
 [[collection]]
 name = "documentation_pages"
@@ -84,6 +84,6 @@ Luckily, they do not update their API very often, but still, this is something t
 
 ## Contributing
 
-In Paddler 2.1 we provided some libraries and tools in the code to make it easier to contribute to the compatibility
+In Paddler 2.1, we provided some libraries and tools in the code to make it easier to contribute to the compatibility
 efforts. If you want to start helping us, you can check out the
 [GitHub issues tagged with the "compatibility" label](https://github.com/intentee/paddler/issues?q=is%3Aissue%20state%3Aopen%20label%3Acompatibility%20label%3Aopenai).

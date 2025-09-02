@@ -42,6 +42,7 @@ Agents need to be able to reach the Management service to be able to establish a
 Ideally, you deploy each agent on its own separate server and give each agent a certain number of slots it can work with. The number of slots is the number of concurrent requests that the agent can handle. You can do some benchmarking to determine how many you need. Start with a small number, like 4 or 8.
 
 <Note>
-    <p>If there is more than one agent deployed on the same server, they can run into some issues, like not being able to acquire a download lock for a model (since all the agents will try to download a model into the same cache), etc.</p>
-    <p>Generally, Paddler can recover from such issues, but it's still better to avoid them.</p>
+    If there is more than one agent deployed on the same server, they can run into some issues, like not being able to acquire a download lock for a model (since all the agents will try to download a model into the same cache), etc.
+
+    Generally, Paddler can recover from such issues, but it's still better to avoid them.
 </Note>

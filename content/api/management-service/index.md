@@ -1,5 +1,6 @@
 +++
 layout = "LayoutDocumentationPage"
+render = false
 title = "Management service"
 
 [[collection]]

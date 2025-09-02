@@ -1,0 +1,5 @@
+.page-businesses {
+  max-width: 80ch;
+  padding: var(--spacing-base);
+  width: 100%;
+}

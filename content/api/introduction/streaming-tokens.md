@@ -16,7 +16,7 @@ They use POST requests that return chunked stream of serialized JSON object (you
 
 This example shows how to use them through JavaScript's `fetch` API, but the general pattern applies to most of the languages and libraries:
 
-```JavaScript
+```js
 const response = await fetch('http://127.0.0.1:8061/api/v1/continue_from_raw_prompt', {
     method: 'POST',
     headers: {

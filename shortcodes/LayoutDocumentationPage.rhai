@@ -1,17 +1,13 @@
 fn figure_out_collection(context) {
-  for collection in context.front_matter.collections {
-    if "documentation_pages" == collection.name {
-      return "documentation_pages";
-    }
+  switch [
+    context.front_matter.collections.has("api_pages"),
+    context.front_matter.collections.has("documentation_pages")
+  ] {
+    [true, true] => error("Document is both in docs pages and api pages"),
+    [true, false] => "api_pages",
+    [false, true] => "documentation_pages",
+    [false, false] => error("Unable to determine document primary collection"),
   }
-
-  for collection in context.front_matter.collections {
-    if "api_pages" == collection.name {
-      return "api_pages";
-    }
-  }
-
-  "*not_found*"
 }
 
 fn render_menu(context, node, level, nested) {
@@ -25,7 +21,10 @@ fn render_menu(context, node, level, nested) {
     _ => component {
       <div class="docs__nav-section">
         <a
-          class="docs__nav-link"
+          class={clsx(#{
+            "docs__nav-link": true,
+            "docs__nav-link--active": context.is_current_page(node.reference.basename),
+          })}
           href={context.link_to(node.reference.basename)}
         >
           {node.reference.front_matter.title}
@@ -36,6 +35,7 @@ fn render_menu(context, node, level, nested) {
 }
 
 fn template(context, props, content) {
+  context.assets.add("resources/css/fragment-formatted-text.css");
   context.assets.add("resources/css/layout-documentation-page.css");
 
   component {

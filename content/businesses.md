@@ -1,13 +1,7 @@
 +++
-template = "base/businesses.html"
-sort_by = "weight"
-title = "Businesses"
-
-[extra]
-mobile_menu_title = "Businesses"
+layout = "PageBusinesses"
+title = "Paddler for enterprises and startups"
 +++
-
-# Paddler for enterprises and startups
     
 Users and businesses need privacy, reliability, cost control, and an option to be independent of closed-source providers - all provided by open source AI.
     
@@ -17,7 +11,7 @@ Paddler is an open source LLMOps platform for:
 - DevOps / LLMOps teams that need to deploy and run models at scale
 - Organizations that handle sensitive data with high compliance requirements
 - And everyone who wants to have predictable AI costs
-    
+
 
 If you're interested in using Paddler at your company and need to learn more:
 - Reach out to us at <a href="mailto:paddler@intentee.com">paddler@intentee.com</a>

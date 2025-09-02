@@ -29,7 +29,7 @@ The web admin panel consists of the following sections:
 
 <Figure 
     alt="Paddler dashboard"
-    src="resources/images/using-web-admin-panel/paddler-dashboard.avif"
+    src="resources/media/using-web-admin-panel/paddler-dashboard.avif"
 />
 
 This is the main page that gives you an overview of your cluster, including all of the agents you started. Specifically, you will see:
@@ -47,21 +47,21 @@ Once you have a model added, you will also see the model name and its metadata n
 
 <Figure 
     alt="Model's metadata"
-    src="resources/images/using-web-admin-panel/paddler-model-metadata.avif"
+    src="resources/media/using-web-admin-panel/paddler-model-metadata.avif"
 />
 
 If the model you're using contains a chat template, you can preview the template's content by clicking the "Chat template" button inside the model metadata dialog.
 
 <Figure 
     alt="Model's chat template"
-    src="resources/images/using-web-admin-panel/paddler-model-chat-template.avif"
+    src="resources/media/using-web-admin-panel/paddler-model-chat-template.avif"
 />
 
 Finally, if there are any issues with processing the requests, you see an "Issues" button next to the affected agent. Clicking it gives you more info you can use to troubleshoot the problem.
 
 <Figure 
     alt="Issues"
-    src="resources/images/using-web-admin-panel/paddler-issues.avif"
+    src="resources/media/using-web-admin-panel/paddler-issues.avif"
 />
 
 
@@ -69,7 +69,7 @@ Finally, if there are any issues with processing the requests, you see an "Issue
 
 <Figure 
     alt="Model section"
-    src="resources/images/using-web-admin-panel/paddler-model.avif"
+    src="resources/media/using-web-admin-panel/paddler-model.avif"
 />
 
 This section allows you to provide paths to the models you want to use. 
@@ -87,7 +87,7 @@ Finally, Paddler allows you to customize the inference parameters for your model
 
 <Figure 
     alt="Prompt section"
-    src="resources/images/using-web-admin-panel/paddler-prompt.avif"
+    src="resources/media/using-web-admin-panel/paddler-prompt.avif"
 />
 
 This section gives you a convenient GUI to test your Paddler cluster by sending actual inference requests. Open the Prompt section in one browser tab and the Dashboard in another. Send requests from the Prompt section, then watch the Dashboard process them in real-time.

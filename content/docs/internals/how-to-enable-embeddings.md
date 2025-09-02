@@ -16,7 +16,7 @@ In the "Model" section, check the `enable_embeddings` checkbox at the bottom of 
 
 <Figure 
     alt="Testing the request to generate tokens"
-    src="resources/images/how-to-enable-embeddings/enable-embeddings-web.avif"
+    src="resources/media/how-to-enable-embeddings/enable-embeddings-web.avif"
 />
 
 ## Enabling embeddings through API

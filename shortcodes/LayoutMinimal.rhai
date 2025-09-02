@@ -9,6 +9,9 @@ fn template(context, props, content) {
     <!DOCTYPE html>
     <html lang="en">
       <head>
+        <link rel="canonical" href={context.reference.canonical_link}>
+        <link rel="icon" href={context.assets.file("resources/media/favicon.svg")}>
+
         <meta charset="UTF-8">
         {if !context.front_matter.description.is_empty() {
           component {
@@ -16,6 +19,11 @@ fn template(context, props, content) {
           }
         }}
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta property="og:image" content={context.assets.file("resources/media/og-image.png")}>
+        <meta property="og:type" content="website">
+        <meta property="og:url" content={context.reference.canonical_link}>
+
         <title>{
           let base_title = "Paddler";
 
@@ -38,26 +46,35 @@ fn template(context, props, content) {
             <div class="primary-navigation__group-wrapper">
               <div class="primary-navigation__group">
                 <a
-                  href={context.link_to("index")}
-                  class="primary-navigation__link"
+                  href={context.link_to("#docs-initial-page")}
+                  class={clsx(#{
+                    "primary-navigation__link": true,
+                    "primary-navigation__link--active": context.front_matter.collections.has("documentation_pages"),
+                  })}
                 >
                   Docs
                 </a>
               </div>
               <div class="primary-navigation__group">
                 <a
-                  href={context.link_to("index")}
-                  class="primary-navigation__link"
+                  href={context.link_to("api/introduction/using-paddler-api")}
+                  class={clsx(#{
+                    "primary-navigation__link": true,
+                    "primary-navigation__link--active": context.front_matter.collections.has("api_pages"),
+                  })}
                 >
-                    API
+                  API
                 </a>
               </div>
               <div class="primary-navigation__group">
                 <a
-                  href={context.link_to("index")}
-                  class="primary-navigation__link"
+                  href={context.link_to("businesses")}
+                  class={clsx(#{
+                    "primary-navigation__link": true,
+                    "primary-navigation__link--active": context.is_current_page("businesses"),
+                  })}
                 >
-                    Businesses
+                  Businesses
                 </a>
               </div>
               <div class="primary-navigation__group">
@@ -66,7 +83,7 @@ fn template(context, props, content) {
                   class="primary-navigation__link"
                   target="_blank"
                 >
-                  <img alt="GitHub" src={context.assets.file("resources/images/logo-github.svg")}>
+                  <img alt="GitHub" src={context.assets.file("resources/media/logo-github.svg")}>
                 </a>
               </div>
             </div>
@@ -84,28 +101,28 @@ fn template(context, props, content) {
                 href="https://bsky.app/profile/intentee.bsky.social"
                 target="_blank"
               >
-                <img alt="Bluesky" src={context.assets.file("resources/images/logo-bluesky.svg")}>
+                <img alt="Bluesky" src={context.assets.file("resources/media/logo-bluesky.svg")}>
               </a>
               <a
                 class="footer__links__link"
                 href="https://discord.gg/92x3Z8a4gj"
                 target="_blank"
               >
-                <img alt="Discord" src={context.assets.file("resources/images/logo-discord.svg")}>
+                <img alt="Discord" src={context.assets.file("resources/media/logo-discord.svg")}>
               </a>
               <a
                 class="footer__links__link"
                 href="https://www.linkedin.com/company/intentee"
                 target="_blank"
               >
-                <img alt="LinkedIn" src={context.assets.file("resources/images/logo-linkedin.svg")}>
+                <img alt="LinkedIn" src={context.assets.file("resources/media/logo-linkedin.svg")}>
               </a>
               <a
                 class="footer__links__link"
                 href="https://x.com/intentee"
                 target="_blank"
               >
-                <img alt="X" src={context.assets.file("resources/images/logo-x.svg")}>
+                <img alt="X" src={context.assets.file("resources/media/logo-x.svg")}>
               </a>
             </div>
           </footer>

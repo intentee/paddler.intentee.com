@@ -44,7 +44,7 @@ Let's take this payload and test it with [Bruno](https://www.usebruno.com/), a c
 
 <Figure 
     alt="Testing the request to generate tokens"
-    src="resources/images/generating-tokens-and-embeddings/testing-post-continue-from-conversation-history.avif"
+    src="resources/media/generating-tokens-and-embeddings/testing-post-continue-from-conversation-history.avif"
 />
 
 The response presented in Bruno (right side in the screenshot above) shows how tokens in the response are returned as a stream.
@@ -73,7 +73,7 @@ Same as before, we will test it with Bruno. This time, we get a stream of embedd
 
 <Figure 
     alt="Testing the request to generate embeddings"
-    src="resources/images/generating-tokens-and-embeddings/testing-post-generate-embedding-batch.avif"
+    src="resources/media/generating-tokens-and-embeddings/testing-post-generate-embedding-batch.avif"
 />
 
 ## Customizing the maximum time for generating a single token or embedding

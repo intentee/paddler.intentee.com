@@ -44,7 +44,7 @@ export function jobEsbuild({ development }) {
 
     const entryPoints = await glob([
       "resources/css/{component,fragment,global,layout,page}-*.css",
-      "resources/images/**/*.{avif,gif,jpg,jpeg,png,svg,webp}",
+      "resources/media/**/*.{avif,gif,jpg,jpeg,png,svg,webp}",
       "resources/ts/{controller,global,worker}{_,-}*.{ts,tsx}",
     ]);
 

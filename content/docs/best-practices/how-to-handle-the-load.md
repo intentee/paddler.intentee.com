@@ -1,6 +1,11 @@
 +++
+layout = "LayoutDocumentationPage"
 title = "How to handle the load"
-weight = 2
+
+[[collection]]
+after = "docs/best-practices/how-to-control-response-quality"
+name = "documentation_pages"
+parent = "docs/best-practices/index"
 +++
 
 ## Setting the appropriate number of slots

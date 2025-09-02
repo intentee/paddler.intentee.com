@@ -23,7 +23,7 @@ Balancer also exposes the Web admin panel, which you can use to preview and test
 
 <Figure 
     alt="How Paddler works"
-    src="resources/images/how-paddler-works/how-paddler-works.avif"
+    src="resources/media/how-paddler-works/how-paddler-works.avif"
 />
 
 ### Registering agents

@@ -28,21 +28,21 @@ First, we'll navigate to the [model file's page on Hugging Face](https://hugging
 
 <Figure 
     alt="Model's chat template on Hugging Face"
-    src="resources/images/how-to-control-response-quality/qwen-3-06b-chat-template-hugging-face.avif"
+    src="resources/media/how-to-control-response-quality/qwen-3-06b-chat-template-hugging-face.avif"
 />
 
 Next, we'll load this model in Paddler's web admin panel (in the "Model" section) using the default `Use the chat template provided by the model` option:
 
 <Figure 
     alt="Using model's built-in chat template in Paddler"
-    src="resources/images/how-to-control-response-quality/qwen-3-06b-default-chat-template.avif"
+    src="resources/media/how-to-control-response-quality/qwen-3-06b-default-chat-template.avif"
 />
 
 Applying the model will redirect you to the panel's dashboard section. Once the model is loaded, you will see its name and the "Metadata" button. Click this button, then click "Chat template" - you'll see the chat template corresponding to the one we just previewed on the model's page on Hugging Face:
 
 <Figure 
     alt="Model's built-in chat template preview in Paddler"
-    src="resources/images/how-to-control-response-quality/qwen-3-06b-chat-template-paddler.avif"
+    src="resources/media/how-to-control-response-quality/qwen-3-06b-chat-template-paddler.avif"
 />
 
 Finally, we can navigate to the "Prompt" section and use Paddler's chat GUI to test the model with its built-in chat template (in the example below, we're also using our own system prompt. We'll talk about system prompts in the next paragraph).
@@ -51,7 +51,7 @@ Let's ask the model some important questions it can ponder about a bit and see w
 
 <Figure 
     alt="Response with model's built-in chat template"
-    src="resources/images/how-to-control-response-quality/qwen-3-06b-default-template-prompt.avif"
+    src="resources/media/how-to-control-response-quality/qwen-3-06b-default-template-prompt.avif"
 />
 
 Perfect! We got a response relevant to the question we asked. 
@@ -76,14 +76,14 @@ The issue is also noticeable on the dashboard:
 
 <Figure 
     alt="Paddler's dashboard notifying about the issue"
-    src="resources/images/how-to-control-response-quality/incorrect-template-issue-dashboard.avif"
+    src="resources/media/how-to-control-response-quality/incorrect-template-issue-dashboard.avif"
 />
 
 When you click the "Issues" button, you'll see more details about what went wrong and how to fix it. In this case, you'll notice that the incorrect chat template didn't compile:
 
 <Figure 
     alt="Issue details"
-    src="resources/images/how-to-control-response-quality/incorrect-template-issue-details.avif"
+    src="resources/media/how-to-control-response-quality/incorrect-template-issue-details.avif"
 />
 
 Finally, let's try a template that is technically correct but of poor quality (missing role identification, model's specific tokens, etc.):
@@ -101,7 +101,7 @@ and use the same question again. This time, the model will respond, but the resp
 
 <Figure 
     alt="Response with a poor quality chat template"
-    src="resources/images/how-to-control-response-quality/qwen-3-06b-poor-quality-template-prompt.avif"
+    src="resources/media/how-to-control-response-quality/qwen-3-06b-poor-quality-template-prompt.avif"
 />
 
 ## System prompts
@@ -120,14 +120,14 @@ Continuing our Qwen3-0.6B-GGUF example, we can see on the model's page on Huggin
 
 <Figure 
     alt="Model's parameter recommendations, source: Qwen3-0.6B-GGUF page on Hugging Face"
-    src="resources/images/how-to-control-response-quality/qwen-3-06b-parameters-recommendations.avif"
+    src="resources/media/how-to-control-response-quality/qwen-3-06b-parameters-recommendations.avif"
 />
 
 You can customize the inference parameters in Paddler, when applying the model:
 
 <Figure 
     alt="Customizing inference parameters in Paddler"
-    src="resources/images/how-to-control-response-quality/paddler-model-inference-parameters-customization.avif"
+    src="resources/media/how-to-control-response-quality/paddler-model-inference-parameters-customization.avif"
 />
 
 Experimenting with these parameters is worth exploring to optimize performance for your specific needs.

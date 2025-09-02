@@ -28,7 +28,7 @@ To swap models in the web admin panel, go to the "Model" section and use the "Mo
 
 <Figure 
     alt="Swapping models in the web admin panel"
-    src="resources/images/model-swapping/swapping-model-web-admin-panel.avif"
+    src="resources/media/model-swapping/swapping-model-web-admin-panel.avif"
 />
 
 Next, click "Apply changes" to save the new model. The agents will automatically start using it.
