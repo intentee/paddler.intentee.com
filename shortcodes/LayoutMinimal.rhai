@@ -49,7 +49,7 @@ fn template(context, props, content) {
                   href={context.link_to("#docs-initial-page")}
                   class={clsx(#{
                     "primary-navigation__link": true,
-                    "primary-navigation__link--active": context.front_matter.collections.has("documentation_pages"),
+                    "primary-navigation__link--active": context.belongs_to("documentation_pages"),
                   })}
                 >
                   Docs
@@ -60,7 +60,7 @@ fn template(context, props, content) {
                   href={context.link_to("api/introduction/using-paddler-api")}
                   class={clsx(#{
                     "primary-navigation__link": true,
-                    "primary-navigation__link--active": context.front_matter.collections.has("api_pages"),
+                    "primary-navigation__link--active": context.belongs_to("api_pages"),
                   })}
                 >
                   API

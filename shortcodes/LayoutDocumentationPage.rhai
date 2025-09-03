@@ -1,15 +1,3 @@
-fn figure_out_collection(context) {
-  switch [
-    context.front_matter.collections.has("api_pages"),
-    context.front_matter.collections.has("documentation_pages")
-  ] {
-    [true, true] => error("Document is both in docs pages and api pages"),
-    [true, false] => "api_pages",
-    [false, true] => "documentation_pages",
-    [false, false] => error("Unable to determine document primary collection"),
-  }
-}
-
 fn render_menu(context, node, level, nested) {
   switch level {
     0 => component {
@@ -38,15 +26,14 @@ fn template(context, props, content) {
   context.assets.add("resources/css/fragment-formatted-text.css");
   context.assets.add("resources/css/layout-documentation-page.css");
 
-  let collection = figure_out_collection(context);
-  let menu_hierarchy = context.collection(collection).hierarchy;
+  let menu_hierarchy = context.primary_collection.hierarchy;
 
   component {
     <LayoutMinimal>
       <div class="docs">
         <input checked type="checkbox" id="docs-nav-toggle">
         <nav class="docs__nav">
-          <label class="docs__nav__toggle" for="docs-nav-toggle">{switch collection {
+          <label class="docs__nav__toggle" for="docs-nav-toggle">{switch context.primary_collection.name {
             "api_pages" => "API",
             "documentation_pages" => "Documentation",
             _ => error("Unexpected collection"),
