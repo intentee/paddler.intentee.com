@@ -1,4 +1,5 @@
 .DS_Store
+/esbuild-meta.json
 /node_modules
 /tsconfig.tsbuildinfo
 /public
