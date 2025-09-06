@@ -5,12 +5,11 @@ import { jarmuz } from "jarmuz";
 jarmuz({
   once: false,
   pipeline: ["poet-watch", "tcm", "tsc", "esbuild-development"],
-  watch: ["poet.toml", "resources", "src"],
+  watch: ["resources", "src"],
 }).decide(function ({ matches, schedule }) {
+  schedule("poet-watch");
+
   switch (true) {
-    case matches("poet.toml"):
-      schedule("poet-watch");
-      break;
     case matches("resources/**/*.{ts,tsx}"):
       schedule("tsc");
       break;
