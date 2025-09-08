@@ -1,4 +1,4 @@
-name: Deploy Zola to GitHub Pages
+name: Deploy Paddler to GitHub Pages
 
 on:
   workflow_dispatch:
@@ -25,13 +25,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Install Zola
+      - name: Install Poet
         uses: taiki-e/install-action@v2
         with:
-          tool: zola@0.21.0
+          tool: poet@0.2.0
 
-      - name: Build with Zola
-        run: zola build
+      - name: Build with Poet
+        run: make public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
