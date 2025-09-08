@@ -71,7 +71,7 @@ fn template(context, props, content) {
             </div>
             <a
               class="page-navigation__link"
-              href="https://github.com/intentee/poet"
+              href="https://github.com/intentee/paddler"
               target="_blank"
             >
               <img alt="GitHub" src={context.assets.file("resources/media/logo-github.svg")}>
