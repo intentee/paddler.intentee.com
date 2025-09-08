@@ -13,15 +13,15 @@ fn template(context, props, content) {
         <link rel="icon" href={context.assets.file("resources/media/favicon.svg")}>
 
         <meta charset="UTF-8">
-        <meta name="turbo-refresh-method" content="morph">
-        <meta name="turbo-refresh-scroll" content="preserve">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        {if !context.front_matter.description.is_empty() {
-          component {
-            <meta name="description" content={context.front_matter.description}>
-          }
+        <meta name="description" content={if context.front_matter.description.is_empty() {
+          "Open-source LLMOps platform for hosting and scaling AI in your own infrastructure."
+        } else {
+          context.front_matter.description
         }}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:image" content={context.assets.file("resources/media/og-image.png")}>
+        <meta property="og:type" content="website">
+        <meta property="og:url" content={context.reference.canonical_link}>
 
         <title>{
           let base_title = "Paddler";
