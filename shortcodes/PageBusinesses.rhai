@@ -1,5 +1,4 @@
 fn template(context, props, content) {
-  context.assets.add("resources/css/fragment-formatted-text.css");
   context.assets.add("resources/css/page-businesses.css");
 
   component {

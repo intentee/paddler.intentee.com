@@ -1,5 +1,6 @@
 .page-businesses {
+  justify-content: center;
   max-width: 80ch;
-  padding: var(--spacing-base);
+  padding: var(--spacing-2x) var(--spacing-base);
   width: 100%;
 }
