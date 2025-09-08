@@ -24,7 +24,7 @@ fn template(context, props, content) {
         }}
 
         <title>{
-          let base_title = "Poet";
+          let base_title = "Paddler";
 
           if context.front_matter.title.is_empty() {
             base_title
