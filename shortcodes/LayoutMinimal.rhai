@@ -17,7 +17,7 @@ fn template(context, props, content) {
           "Open-source LLMOps platform for hosting and scaling AI in your own infrastructure."
         } else {
           context.front_matter.description
-        }}
+        }}>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:image" content={context.assets.file("resources/media/og-image.png")}>
         <meta property="og:type" content="website">
