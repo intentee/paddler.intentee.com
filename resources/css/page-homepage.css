@@ -81,7 +81,7 @@
   row-gap: var(--spacing-base);
 
   @media (min-width: 900px) {
-    padding: var(--spacing-2x) 0;
+    padding: var(--spacing-base) 0;
   }
 }
 
