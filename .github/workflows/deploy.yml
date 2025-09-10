@@ -26,7 +26,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Install Poet
-        uses: taiki-e/install-action@v2
+        uses: taiki-e/cache-cargo-install-action@v2
         with:
           tool: poet@0.2.0
 
