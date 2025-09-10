@@ -5,7 +5,7 @@ fn template(context, props, content) {
     <LayoutMinimal>
       <div class="homepage">
         <div class="homepage__product-name">
-          Paddler by Intentee
+          Developed by <a href="https://intentee.com">Intentee</a>
         </div>
         <h1 class="homepage__title">
           Keep AI on your own servers
