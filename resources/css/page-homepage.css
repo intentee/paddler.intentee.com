@@ -1,6 +1,10 @@
 .page-navigation {
   border-bottom: none;
   box-shadow: none;
+
+  @media (min-width: 900px) {
+    background-color: var(--color-highlight);
+  }
 }
 
 .homepage {
@@ -129,9 +133,22 @@
     font-size: var(--font-size-h2);
     font-weight: 500;
     grid-area: product-name;
-    padding: var(--spacing-2x);
+    padding: calc(100px + var(--spacing-2x)) var(--spacing-2x) var(--spacing-2x)
+      var(--spacing-2x);
     position: sticky;
     top: var(--height-page-navigation);
+
+    &::before {
+      content: "";
+      background-color: black;
+      background-image: url("../media/icon-network-intel-node.svg");
+      background-repeat: space;
+      height: 100px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   }
 }
 
