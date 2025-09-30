@@ -1,4 +1,5 @@
 +++
+description = "Get redirected to OpenAI compatibility documentation and supported endpoints reference"
 layout = "LayoutDocumentationPage"
 title = "OpenAI"
 

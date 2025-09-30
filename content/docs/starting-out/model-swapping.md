@@ -1,4 +1,5 @@
 +++
+description = "Swap models dynamically using API or the web admin panel without the need to restart the balancer or the agents."
 layout = "LayoutDocumentationPage"
 title = "Model swapping"
 

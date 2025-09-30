@@ -1,4 +1,5 @@
 +++
+description = "GET /metrics - Get reporting metrics in the Prometheus format."
 layout = "LayoutDocumentationPage"
 title = "Get metrics"
 

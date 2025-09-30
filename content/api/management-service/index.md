@@ -1,4 +1,5 @@
 +++
+description = "List of Management Service endpoints."
 layout = "LayoutDocumentationPage"
 render = false
 title = "Management service"

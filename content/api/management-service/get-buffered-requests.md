@@ -1,4 +1,5 @@
 +++
+description = "GET /api/v1/buffered_requests - Get the number of requests currently being buffered."
 layout = "LayoutDocumentationPage"
 title = "Get buffered requests"
 

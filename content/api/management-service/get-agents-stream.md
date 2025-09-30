@@ -1,4 +1,5 @@
 +++
+description = "GET /api/v1/agents/stream - Get the list of all currently registered agents in a form of a stream of server sent events (SSE)."
 layout = "LayoutDocumentationPage"
 title = "Get agents stream"
 

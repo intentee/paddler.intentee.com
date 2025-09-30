@@ -1,4 +1,5 @@
 +++
+description = "POST /api/v1/generate_embedding_batch - Generate batches of embeddings for a given content."
 layout = "LayoutDocumentationPage"
 title = "Generate embedding batch"
 

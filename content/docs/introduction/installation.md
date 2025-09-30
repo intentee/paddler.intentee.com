@@ -1,4 +1,5 @@
 +++
+description = "Install Paddler by obtaining its binary from GitHub releases or by building it from source, including hardware acceleration support for CUDA, Metal, and Vulkan."
 layout = "LayoutDocumentationPage"
 title = "Installation"
 

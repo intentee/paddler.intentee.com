@@ -1,4 +1,5 @@
 +++
+description = "Reach out to us to learn how Paddler can help your business with reliable, private, and cost-effective self-hosted AI"
 layout = "PageBusinesses"
 title = "Paddler for enterprises and startups"
 +++

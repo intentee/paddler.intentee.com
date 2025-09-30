@@ -1,4 +1,5 @@
 +++
+description = "Start Paddler's balancer and a single agent to create a basic LLM cluster on a local machine."
 layout = "LayoutDocumentationPage"
 title = "Set up a basic LLM cluster"
 

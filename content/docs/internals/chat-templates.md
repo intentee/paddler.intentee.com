@@ -1,4 +1,5 @@
 +++
+description = "Add a custom chat template through the web admin panel or the API, or use the chat template provided by the model."
 layout = "LayoutDocumentationPage"
 title = "Chat templates"
 

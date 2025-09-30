@@ -1,4 +1,5 @@
 +++
+description = "Start Paddler's balancer with a web admin panel. Navigate to the panel in a web browser and use it to monitor your Paddler setup, change models, apply custom chat templates, customize inference parameters, and test the inference through a chat UI."
 layout = "LayoutDocumentationPage"
 title = "Using the web admin panel"
 

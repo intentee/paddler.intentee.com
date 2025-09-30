@@ -1,4 +1,5 @@
 +++
+description = "To generate embeddings, enable them in the web admin panel or through the API."
 layout = "LayoutDocumentationPage"
 title = "How to enable embeddings"
 

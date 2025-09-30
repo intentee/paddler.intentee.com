@@ -1,4 +1,5 @@
 +++
+description = "Include functions in the optional tools parameter in your API requests to the Continue from conversation history endpoint and use function calling in your applications."
 layout = "LayoutDocumentationPage"
 title = "Using function calling"
 

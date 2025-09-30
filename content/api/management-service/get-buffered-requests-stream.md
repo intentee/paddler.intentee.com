@@ -1,4 +1,5 @@
 +++
+description = "GET /api/v1/buffered_requests/stream - Get the number of requests currently being buffered in a form of a stream of server sent events (SSE)."
 layout = "LayoutDocumentationPage"
 title = "Get buffered requests stream"
 

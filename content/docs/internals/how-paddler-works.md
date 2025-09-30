@@ -1,4 +1,5 @@
 +++
+description = "Discover in detail how Paddler works internally by following the flow from the moment your user sends a prompt to the moment they receive a completion."
 layout = "LayoutDocumentationPage"
 title = "How Paddler works"
 

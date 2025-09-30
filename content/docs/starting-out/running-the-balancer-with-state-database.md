@@ -1,4 +1,5 @@
 +++
+description = "Persist balancer configuration across restarts using a file-based state database instead of the default in-memory storage."
 layout = "LayoutDocumentationPage"
 title = "Running the balancer with state database"
 

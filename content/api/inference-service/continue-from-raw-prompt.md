@@ -1,4 +1,5 @@
 +++
+description = "POST /api/v1/continue_from_raw_prompt - Generate token stream by sending raw prompts without applying any chat templates. Failsafe endpoint for edge cases."
 layout = "LayoutDocumentationPage"
 title = "Continue from raw prompt"
 

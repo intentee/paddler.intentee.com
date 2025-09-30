@@ -1,4 +1,5 @@
 +++
+description = "Run the balancer with CORS rules to allow clients to access the inference service and the management service."
 layout = "LayoutDocumentationPage"
 title = "CORS configuration"
 

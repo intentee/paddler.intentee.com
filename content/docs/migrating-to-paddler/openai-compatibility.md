@@ -1,4 +1,5 @@
 +++
+description = "Run Paddler with OpenAI-style API compatibility service for an easier migration from OpenAI to self-hosted models."
 layout = "LayoutDocumentationPage"
 title = "OpenAI compatibility"
 

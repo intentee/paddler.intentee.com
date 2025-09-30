@@ -1,4 +1,5 @@
 +++
+description = "As a DevOps/LLMOps engineer, understand Paddler's deployment architecture: balancer services (inference, management, web admin panel) and the agents, and how to deploy them together."
 layout = "LayoutDocumentationPage"
 title = "For ops teams"
 

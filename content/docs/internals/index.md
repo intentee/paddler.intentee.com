@@ -1,4 +1,5 @@
 +++
+description = "Understand how Paddler works internally."
 layout = "LayoutDocumentationPage"
 render = false
 title = "Internals"

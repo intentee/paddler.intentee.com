@@ -1,4 +1,5 @@
 +++
+description = "GET /api/v1/agent/{agent_id}/chat_template_override - Get chat template override content."
 layout = "LayoutDocumentationPage"
 title = "Get chat template override"
 

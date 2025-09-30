@@ -1,4 +1,5 @@
 +++
+description = "GET /api/v1/agent/{agent_id}/model_metadata - Get the metadata of the model currently used by the agent."
 layout = "LayoutDocumentationPage"
 title = "Get model metadata"
 

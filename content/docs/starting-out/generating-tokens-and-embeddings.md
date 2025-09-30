@@ -1,4 +1,5 @@
 +++
+description = "Use different endpoints to generate tokens and embeddings through API and take a look at some example payloads. Adjust the maximum time for generating a single token or embedding."
 layout = "LayoutDocumentationPage"
 title = "Generating tokens and embeddings"
 

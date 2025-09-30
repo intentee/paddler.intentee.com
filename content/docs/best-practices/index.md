@@ -1,4 +1,5 @@
 +++
+description = "Discover best practices for using LLMs in your product, from ensuring response quality to handling traffic correctly for optimal user experience."
 layout = "LayoutDocumentationPage"
 render = false
 title = "Best practices"

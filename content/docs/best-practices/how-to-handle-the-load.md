@@ -1,4 +1,5 @@
 +++
+description = "Take advantage of Paddler features that let you handle the traffic correctly: set up the optimal number of slots, customize the maximum number of requests that can be buffered, and adjust the maximum time each request can stay in the buffer before it times out."
 layout = "LayoutDocumentationPage"
 title = "How to handle the load"
 

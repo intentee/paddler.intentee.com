@@ -1,4 +1,5 @@
 +++
+description = "Access Paddler's API documentation to manage Paddler and generate tokens and embeddings via API."
 layout = "LayoutDocumentationPage"
 title = "Managing Paddler through API"
 

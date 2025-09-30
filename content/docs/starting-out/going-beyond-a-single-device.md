@@ -1,4 +1,5 @@
 +++
+description = "Set up a multi-agent fleet across multiple devices."
 layout = "LayoutDocumentationPage"
 title = "Going beyond a single device"
 

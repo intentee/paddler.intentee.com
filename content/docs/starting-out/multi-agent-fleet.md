@@ -1,4 +1,5 @@
 +++
+description = "Start multiple agents alongside Paddler's balancer to form a fleet. Name the agents, adjust their number of slots, and use the web admin panel to observe how requests are distributed among the slots."
 layout = "LayoutDocumentationPage"
 title = "Multi-agent fleet"
 

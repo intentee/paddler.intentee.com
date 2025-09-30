@@ -1,4 +1,5 @@
 +++
+description = "GET /api/v1/balancer_desired_state - Get the desired state you want the balancer to be in."
 layout = "LayoutDocumentationPage"
 title = "Get balancer desired state"
 

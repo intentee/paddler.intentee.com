@@ -1,4 +1,5 @@
 +++
+description = "GET /api/v1/agents - Get the list of all currently registered agents."
 layout = "LayoutDocumentationPage"
 title = "Get agents"
 

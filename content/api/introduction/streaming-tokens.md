@@ -1,4 +1,5 @@
 +++
+description = "An introduction to Paddler's endpoints that return tokens in a streaming fashion with code examples."
 layout = "LayoutDocumentationPage"
 title = "Streaming tokens"
 

@@ -1,4 +1,5 @@
 +++
+description = "As a product team member, send request to the inference service to generate tokens and embeddings in the LLM-based features in your application."
 layout = "LayoutDocumentationPage"
 title = "For product teams"
 

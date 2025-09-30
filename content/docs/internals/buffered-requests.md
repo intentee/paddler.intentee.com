@@ -1,4 +1,5 @@
 +++
+description = "Customize the core parameters of Paddler's request buffer: the maximum number of requests the buffer can process at a given moment and the maximum time each request can stay in the buffer. Use the request buffer feature with autoscaling groups to dynamically spin up new instances when needed or scale from zero hosts to save infrastructure costs."
 layout = "LayoutDocumentationPage"
 title = "Buffered requests"
 

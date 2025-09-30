@@ -1,4 +1,5 @@
 +++
+description = "WebSocket /api/v1/inference_socket - Handle persistent connections with JSON-RPC-like protocol supporting ContinueFromConversationHistory and ContinueFromRawPrompt methods."
 layout = "LayoutDocumentationPage"
 title = "WebSocket endpoint"
 

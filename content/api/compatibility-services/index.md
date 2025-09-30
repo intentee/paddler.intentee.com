@@ -1,4 +1,5 @@
 +++
+description = "List of Compatibility Services endpoints."
 layout = "LayoutDocumentationPage"
 render = false
 title = "Compatibility Services"

@@ -1,4 +1,5 @@
 +++
+description = "PUT /api/v1/balancer_desired_state - Apply the desired state you want the balancer to be in."
 layout = "LayoutDocumentationPage"
 title = "Put balancer desired state"
 

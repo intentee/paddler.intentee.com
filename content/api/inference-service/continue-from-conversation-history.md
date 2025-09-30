@@ -1,4 +1,5 @@
 +++
+description = "POST /api/v1/continue_from_conversation_history - Generate token stream from conversation history using chat template. Supports function calling and thinking mode."
 layout = "LayoutDocumentationPage"
 title = "Continue from conversation history"
 
@@ -57,7 +58,7 @@ Array of all the previous conversation messages.
 
 If you are using a model that supports thinking (like DeepSeek, or Qwen), this will enable the thinking mode.
 
-If you enable this mode you need to send the `thinking` part of the messages in the `conversation_history` array (the part between `<think>` and `</think>`) alongside the rest of the messages.
+If you enable this mode you need to send the `thinking` part of the messages in the `conversation_history` array (the part between `&lt;think&gt;` and `&lt;/think&gt;`) alongside the rest of the messages.
 
 #### `max_tokens`
 

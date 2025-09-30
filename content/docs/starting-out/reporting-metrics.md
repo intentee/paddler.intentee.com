@@ -1,4 +1,5 @@
 +++
+description = "Monitor the number of slots currently processing requests, total available slots, and buffered requests by scraping the Prometheus endpoint or pushing metrics to your StatsD server."
 layout = "LayoutDocumentationPage"
 title = "Reporting metrics"
 

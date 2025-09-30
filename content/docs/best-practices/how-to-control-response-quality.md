@@ -1,4 +1,5 @@
 +++
+description = "Achieve the best response quality from your models by using Paddler to set the right chat template, system prompts, and adjust inference parameters."
 layout = "LayoutDocumentationPage"
 title = "How to control response quality"
 

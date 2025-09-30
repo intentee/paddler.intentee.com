@@ -1,4 +1,5 @@
 +++
+description = "Familiarize yourself with the basic concepts recommended for starting to use Paddler, including Git, system commands, and networking concepts."
 layout = "LayoutDocumentationPage"
 title = "Before you begin"
 

@@ -1,4 +1,5 @@
 +++
+description = "Discover the value of self-hosting LLMs with Paddler, including how to control and predict costs, ensure data privacy, and be independent from changes in closed-source models."
 layout = "LayoutDocumentationPage"
 title = "Why Paddler?"
 

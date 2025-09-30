@@ -1,4 +1,5 @@
 +++
+description = "Keep track of all the changes in Paddler, including new features, improvements, and bug fixes."
 layout = "LayoutDocumentationPage"
 title = "Changelog"
 

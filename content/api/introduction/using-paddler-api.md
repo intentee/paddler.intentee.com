@@ -1,5 +1,6 @@
 +++
 id = "api-initial-page"
+description = "Paddler API overview: two services using separate addresses - Inference (REST/WebSocket) for tokens/embeddings, Management (REST) for system control."
 layout = "LayoutDocumentationPage"
 title = "Using Paddler API"
 
