@@ -11,6 +11,18 @@ parent = "docs/starting-out/index"
 
 Paddler comes with a built-in web admin panel that offers a convenient way to manage your Paddler cluster and understand its status. It gives an overview of all of your agents and other services running in the cluster, allows you to select the model and manage the inference parameters, and provides a chat interface to easily test your setup.
 
+## Video version
+
+<iframe 
+    height="315" 
+    src="https://www.youtube.com/embed/Gh_J6LjdG8E?si=-lzJ5CqBE7b4zOYi" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen
+></iframe>
+
 ## Enabling the web admin panel
 
 You can enable the web admin panel when starting the balancer by adding the `--web-admin-panel-addr` flag followed by the address and port where you want to access the panel from. 
