@@ -14,8 +14,7 @@ fn template(context, props, content) {
           <div class="homepage__details__section">
             <h2>What is it?</h2>
             <p>
-              Paddler is an open-source LLMOps platform that lets teams run
-              inference and deploy LLMs on their own infrastructure.
+              Paddler is an open-source LLM load balancer and serving platform that lets teams run inference and deploy LLMs on their own infrastructure.
             </p>
           </div>
           <div class="homepage__details__section">
