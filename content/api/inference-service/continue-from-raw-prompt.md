@@ -73,7 +73,7 @@ The last token that ends the stream is:
     "Response": {
         "request_id": "123456",
         "response": {
-            "GeneratedToken": "Done",
+            "GeneratedToken": "Done"
         }
     }
 }
