@@ -21,7 +21,7 @@ You can download the latest release from our [GitHub releases](https://github.co
 
 ### Option 2: Build from source
 
-If your system is not supported by the pre-built binaries (or you just want to build it yourself), you can build Paddler from source.
+If your system is not supported by the pre-built binaries (or you just want to build it yourself), you can build Paddler from source. Paddler current MSRV is *1.88.0*.
 
 To do that, follow the steps:
 

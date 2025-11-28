@@ -75,7 +75,7 @@ You only need to wrap the request in the envelope and pass it to the WebSocket e
                 "max_tokens": 400,
                 "conversation_history": [
                     // ...
-                ],
+                ]
             }
         }
     }
@@ -99,7 +99,7 @@ Same as above, but you can follow input/output specification of the
                 "add_generation_prompt": true,
                 "enable_thinking": true,
                 "max_tokens": 400,
-                "raw_prompt": "Hello, how are you?",
+                "raw_prompt": "Hello, how are you?"
             }
         }
     }
@@ -113,7 +113,7 @@ You can know that the request is done when you receive the `"Done"` token in the
     "Response": {
         "request_id": "123456",
         "response": {
-            "GeneratedToken": "Done",
+            "GeneratedToken": "Done"
         }
     }
 }
