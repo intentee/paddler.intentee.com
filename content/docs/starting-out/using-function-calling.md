@@ -4,7 +4,7 @@ layout = "LayoutDocumentationPage"
 title = "Using function calling"
 
 [[collection]]
-after = "docs/starting-out/generating-tokens-and-embeddings"
+after = "docs/starting-out/inference-parameters"
 name = "documentation_pages"
 parent = "docs/starting-out/index"
 +++
