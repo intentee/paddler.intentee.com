@@ -13,96 +13,45 @@ Paddler allows you to customize inference parameters that control how the model 
 
 ## Available parameters
 
-<table>
-    <thead>
-        <tr>
-            <th>Parameter</th>
-            <th>Default value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                `batch_n_tokens`
-            </td>
-            <td>
-                512
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `context_size`
-            </td>
-            <td>
-                4096
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `min_p`
-            </td>
-            <td>
-                0,05
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `penalty_frequency`
-            </td>
-            <td>
-                0
-            </td>
-        </tr>        
-        <tr>
-            <td>
-                `penalty_last_n`
-            </td>
-            <td>
-                -1
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `penalty_presence`
-            </td>
-            <td>
-                1,5
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `penalty_repeat`
-            </td>
-            <td>
-                1
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `temperature`
-            </td>
-            <td>
-                0,6
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `top_k`
-            </td>
-            <td>
-                40
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `top_p`
-            </td>
-            <td>
-                0,8
-            </td>
-        </tr>        
-    </tbody>
-</table>
+### `batch_n_tokens`
+
+The number of tokens processed in parallel during prompt evaluation. Higher = more memory usage, lower = less inference speed. Adjust if you're running into memory limits or want to optimize throughput on capable hardware
+
+### `context_size`
+
+Maximum tokens in the context window. Higher = longer chat history, lower = less memory usage. Increase for longer conversations, decrease if you're memory-constrained.
+
+### `min_p`
+
+Minimum token probability to consider for selection. Increase if the model produces nonsensical tokens. Decrease if responses feel too constrained.
+
+### `penalty_frequency`
+
+Penalizes tokens proportionally to how often they appeared. Increase if the model repeats the same words too often.
+
+### `penalty_last_n`
+
+How many recent tokens to consider when applying repetition penalties. Use -1 for entire context, 0 to disable penalties entirely.
+
+### `penalty_presence`
+
+Penalizes tokens that appeared at all, regardless of frequency. Increase if you want the model to explore new topics instead of dwelling on what it already mentioned.
+
+### `penalty_repeat`
+
+Penalizes repeated tokens. Increase if the model repeats itself. Set to 1 to disable.
+
+### `temperature`
+
+Controls output randomness. Decrease for more predictable, focused responses. Increase for more creative, varied output.
+
+### `top_k`
+
+Limits selection to the K most likely tokens. Decrease for more predictable output. Increase to give the model more token choices.
+
+### `top_p`
+
+Limits selection to tokens whose cumulative probability reaches this threshold. Decrease for more focused responses. Increase to give the model more token choices.
 
 ## Setting parameters in the web admin panel
 
@@ -150,7 +99,8 @@ To set inference parameters through the API, adjust them in the [PUT request to 
 
 The default parameters provide a reasonable starting point, but experimenting with different values is worth the effort. The optimal settings depend on your specific model and use case.
 
-Additionally, notice that the specific values are often provided by the models' authors. For example, the Qwen3-0.6B-GGUF model's card on Hugging Face includes a section with recommended inference parameters. When loading a new model, it is worth checking the model card for any such recommendations.
+
+Additionally, notice that the models' authors often provide the specific values. For example, the Qwen3-0.6B-GGUF model's card on Hugging Face includes a section with recommended inference parameters. When loading a new model, it is worth checking the model card for any such recommendations.
 
 <Figure 
     alt="Model's parameter recommendations, source: Qwen3-0.6B-GGUF page on Hugging Face"
