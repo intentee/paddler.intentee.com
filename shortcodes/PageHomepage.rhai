@@ -13,6 +13,9 @@ fn template(context, props, content) {
             <p>
               Paddler is an open-source LLM load balancer and serving platform that lets teams run inference and deploy LLMs on their own infrastructure.
             </p>
+            <p>
+              <a href="https://fosdem.org/2026/schedule/event/PD8WGF-from_infrastructure_to_production_a_year_of_self-hosted_llms/">Paddler FOSEDM 2026 talk</a> - From Infrastructure to Production: A Year of Self-Hosted LLMs.
+            </p>
           </div>
           <div class="homepage__details__section">
             <h2>Who made this?</h2>
