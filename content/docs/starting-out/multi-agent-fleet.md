@@ -4,7 +4,7 @@ layout = "LayoutDocumentationPage"
 title = "Multi-agent fleet"
 
 [[collection]]
-after = "docs/starting-out/using-function-calling"
+after = "docs/starting-out/using-multimodal-models"
 name = "documentation_pages"
 parent = "docs/starting-out/index"
 +++

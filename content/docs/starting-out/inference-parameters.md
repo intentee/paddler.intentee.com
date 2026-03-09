@@ -21,6 +21,10 @@ The number of tokens processed in parallel during prompt evaluation. Higher = mo
 
 Maximum tokens in the context window. Higher = longer chat history, lower = less memory usage. Increase for longer conversations, decrease if you're memory-constrained.
 
+### `embedding_n_seq_max`
+
+Maximum number of simultaneous sequences per embedding batch. Increase for more embedding throughput on capable hardware. Only relevant when `enable_embeddings` is enabled.
+
 ### `min_p`
 
 Minimum token probability to consider for selection. Increase if the model produces nonsensical tokens. Decrease if responses feel too constrained.
@@ -73,12 +77,14 @@ To set inference parameters through the API, adjust them in the [PUT request to 
   "inference_parameters": {
     "batch_n_tokens": 512,
     "context_size": 4096,
+    "embedding_n_seq_max": 16,
     "enable_embeddings": false,
+    "image_resize_to_fit": 1024,
     "min_p": 0.05,
-    "penalty_frequency": 0,
+    "penalty_frequency": 0.0,
     "penalty_last_n": -1,
     "penalty_presence": 1.5,
-    "penalty_repeat": 1,
+    "penalty_repeat": 1.0,
     "pooling_type": "Last",
     "temperature": 0.6,
     "top_k": 40,
@@ -91,6 +97,7 @@ To set inference parameters through the API, adjust them in the [PUT request to 
       "revision": "main"
     }
   },
+  "multimodal_projection": "None",
   "use_chat_template_override": false
 }
 ```

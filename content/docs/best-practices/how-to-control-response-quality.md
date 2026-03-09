@@ -131,4 +131,4 @@ You can customize the inference parameters in Paddler, when applying the model:
     src="resources/media/how-to-control-response-quality/paddler-model-inference-parameters-customization.avif"
 />
 
-Experimenting with these parameters is worth exploring to optimize performance for your specific needs.
+Experimenting with these parameters is worth exploring to optimize performance for your specific needs. You can find more information about each parameter and how to adjust them in the [Inference parameters](docs/starting-out/inference-parameters) article.

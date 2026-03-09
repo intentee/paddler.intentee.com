@@ -173,3 +173,34 @@ And the possible response:
 }
 </tool_call>
 ```
+
+## Sending requests with images
+
+To include images, pass the message `content` as an array of text and image entries instead of a single string. Images must be base64-encoded data URIs.
+
+```JSON
+{
+  "add_generation_prompt": true,
+  "enable_thinking": true,
+  "max_tokens": 400,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": "data:image/<format>;base64,<base64-encoded-image>"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Describe this image."
+        }
+      ]
+    }
+  ]
+}
+```
+
+For more details on setting up a vision-language model and supported image formats, see [Using multimodal models](docs/starting-out/using-multimodal-models)

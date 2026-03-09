@@ -29,22 +29,31 @@ Example response if you're using a model from Hugging Face:
   "chat_template_override": null,
   "inference_parameters": {
     "batch_n_tokens": 512,
-    "context_size": 4096,
+    "context_size": 8192,
+    "embedding_n_seq_max": 16,
     "enable_embeddings": false,
+    "image_resize_to_fit": 1024,
     "min_p": 0.05,
-    "penalty_frequency": 0,
+    "penalty_frequency": 0.0,
     "penalty_last_n": -1,
-    "penalty_presence": 1.5,
-    "penalty_repeat": 1,
+    "penalty_presence": 0.8,
+    "penalty_repeat": 1.1,
     "pooling_type": "Last",
-    "temperature": 0.6,
-    "top_k": 40,
+    "temperature": 0.8,
+    "top_k": 80,
     "top_p": 0.8
   },
   "model": {
     "HuggingFace": {
-      "filename": "Qwen3-0.6B-Q8_0.gguf",
-      "repo_id": "Qwen/Qwen3-0.6B-GGUF",
+      "filename": "Qwen3.5-0.8B-Q4_K_M.gguf",
+      "repo_id": "unsloth/Qwen3.5-0.8B-GGUF",
+      "revision": "main"
+    }
+  },
+  "multimodal_projection": {
+    "HuggingFace": {
+      "filename": "mmproj-F16.gguf",
+      "repo_id": "unsloth/Qwen3.5-0.8B-GGUF",
       "revision": "main"
     }
   },
