@@ -20,6 +20,8 @@ Path: /api/v1/agent/{agent_id}/model_metadata
 
 ## Response
 
+An example response:
+
 ```JSON
 {
   "metadata": {

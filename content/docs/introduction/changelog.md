@@ -9,6 +9,12 @@ name = "documentation_pages"
 parent = "docs/introduction/index"
 +++
 
+## v3.0.0
+
+### Features
+
+- Multimodal support: include images in conversations using vision-language models in the web admin panel and API.
+
 ## v2.1.0
 
 ### Features
