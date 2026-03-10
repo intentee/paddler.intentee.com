@@ -13,7 +13,7 @@ Paddler allows you to dynamically swap models. You can do that either in the web
 
 ## Swapping models in the web admin panel
 
-To swap models in the web admin panel, go to the "Model" section and use the "Basee Model URI" field (and, optionally, also the "Multimodal Projection URI" if you're using the mulitmodal functionality). You can either provide the link to the model's file on Hugging Face or a local file path to the model, for example:
+To swap models in the web admin panel, go to the "Model" section and use the "Base Model URI" field (and, optionally, also the "Multimodal Projection URI" if you're using the multimodal functionality). You can either provide the link to the model's file on Hugging Face or a local file path to the model, for example:
 
 <Figure 
     alt="Swapping models in the web admin panel"
