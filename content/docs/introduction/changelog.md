@@ -15,6 +15,11 @@ parent = "docs/introduction/index"
 
 - Multimodal support: include images in conversations using vision-language models in the web admin panel and API.
 
+### Breaking changes
+
+- Balancer desired state now requires a `multimodal_projection` field (use `"None"` to disable)
+- `inference_parameters` now requires `image_resize_to_fit` field
+
 ## v2.1.0
 
 ### Features
