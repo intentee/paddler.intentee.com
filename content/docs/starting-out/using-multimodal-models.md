@@ -23,6 +23,11 @@ To use multimodal capabilities, you need a model that supports vision and its co
 
 In the "Model" section, you will see the "Multimodal Projection URI" field below the main (so-called "base") model URI field. Provide the projection file relevant to the base model in the same way as the base model: either as a link to Hugging Face or a local file path. 
 
+<Figure 
+    alt="Providing the Multimodal Projection URI in the Web Admin Panel"
+    src="resources/media/using-multimodal-models/mmproj-input.avif"
+/>
+
 Model authors usually name the projection files similarly to "mmproj-*.gguf" and place them under the base model files.
 
 Click "Apply changes" to load the model. Once it is ready, the agents will start processing images.
@@ -133,7 +138,7 @@ Paddler supports the following image formats:
 
 ### Image resizing
 
-You can use the `image_resize_to_fit` field to limit the maximum image dimension in pixels. Images larger than this value are scaled down while preserving the aspect ratio. Images smaller than this value are left unchanged. The default is 1024.
+Models are typically trained on specific resolutions, and encoding large images can significantly slow down inference. For this reason, Paddler provides the `image_resize_to_fit` field to limit the maximum image dimension in pixels. Paddler scales down larger images internally before encoding them for the model, preserving the aspect ratio. Images smaller than this value are left unchanged. The default is 1024.
 
 ## Troubleshooting
 

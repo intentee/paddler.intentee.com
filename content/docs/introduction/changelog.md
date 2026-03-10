@@ -13,12 +13,22 @@ parent = "docs/introduction/index"
 
 ### Features
 
-- Multimodal support: include images in conversations using vision-language models in the web admin panel and API.
+- [Multimodal support](docs/starting-out/using-multimodal-models): include images in conversations using vision-language models in the web admin panel and API
 
 ### Breaking changes
 
 - Balancer desired state now requires a `multimodal_projection` field (use `"None"` to disable)
 - `inference_parameters` now requires `image_resize_to_fit` field
+
+## v2.2.0
+
+### Features
+
+- Configurable `embedding_n_seq_max` parameter for controlling embedding batch throughput 
+
+### Breaking changes
+
+- `embedding_n_seq_max` is now a required field in `inference_parameters`       
 
 ## v2.1.0
 
