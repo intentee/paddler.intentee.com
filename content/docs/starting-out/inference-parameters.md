@@ -25,6 +25,10 @@ Maximum tokens in the context window. Higher = longer chat history, lower = less
 
 Maximum number of simultaneous sequences per embedding batch. Increase for more embedding throughput on capable hardware. Only relevant when `enable_embeddings` is enabled.
 
+### `image_resize_to_fit`
+
+Maximum image dimension in pixels for multimodal inference. Paddler scales down larger images internally before encoding them for the model, preserving the aspect ratio. Decrease to reduce memory usage and speed up processing. Only relevant when using vision-language models.
+
 ### `min_p`
 
 Minimum token probability to consider for selection. Increase if the model produces nonsensical tokens. Decrease if responses feel too constrained.
