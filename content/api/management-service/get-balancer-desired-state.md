@@ -29,18 +29,18 @@ Example response if you're using a model from Hugging Face:
   "chat_template_override": null,
   "inference_parameters": {
     "batch_n_tokens": 512,
-    "context_size": 8192,
+    "context_size": 4096,
     "embedding_n_seq_max": 16,
     "enable_embeddings": false,
     "image_resize_to_fit": 1024,
     "min_p": 0.05,
     "penalty_frequency": 0.0,
     "penalty_last_n": -1,
-    "penalty_presence": 0.8,
-    "penalty_repeat": 1.1,
+    "penalty_presence": 1.5,
+    "penalty_repeat": 1.0,
     "pooling_type": "Last",
-    "temperature": 0.8,
-    "top_k": 80,
+    "temperature": 0.6,
+    "top_k": 40,
     "top_p": 0.8
   },
   "model": {

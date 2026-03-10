@@ -22,7 +22,6 @@ Path: /api/v1/balancer_desired_state
 
 ```JSON
 {
-{
   "chat_template_override": null,
   "inference_parameters": {
     "batch_n_tokens": 512,
