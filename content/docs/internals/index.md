@@ -5,6 +5,6 @@ render = false
 title = "Internals"
 
 [[collection]]
-after = "docs/migrating-to-paddler/index"
+after = "docs/desktop-app/index"
 name = "documentation_pages"
 +++
