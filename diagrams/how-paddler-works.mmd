@@ -8,6 +8,7 @@ sequenceDiagram
     participant Management service
     participant Agent
     participant Slot
+    Note over Agent: Load model & llama.cpp context once at startup
     Agent->>+Management service: Start WebSocket connection (register)
     Note over Management service: Build the connection pool
     Management service-->>-Agent: WebSocket established
@@ -16,10 +17,9 @@ sequenceDiagram
     Note over Inference service: Use the connection pool from management service
     Note over Inference service: Buffer & balance requests across agents
     Inference service->>+Agent: Forward request via WebSocket
-    Note over Agent: Act as mini balancer<br/>Load model into memory once
-    Agent->>+Slot: Forward request to available slot
-    Note over Slot: Own context & KV cache<br/>Batch input tokens & sample output
-    Slot-->>-Agent: Return output tokens
-    Agent-->>Management service: Send response back
+    Agent->>+Slot: Acquire slot for request
+    Note over Agent, Slot: Scheduler runs all slots together<br/>via continuous batching, using sequence IDs<br/>to keep their tokens separate
+    Slot-->>-Agent: Output tokens
+    Agent-->>-Management service: Forward output tokens
     Management service-->>Inference service: Forward response
     Inference service-->>-User: Return output tokens

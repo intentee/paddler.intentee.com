@@ -25,3 +25,9 @@ In the "Model" section, check the `enable_embeddings` checkbox at the bottom of 
 `enable_embeddings` should be set to `true` in the [PUT request to change the balancer's desired state](api/management-service/put-balancer-desired-state). 
 
 Pooling type can also be specified in that request.
+
+## Mixing embedding and generation requests
+
+An agent processes either token generation requests or embedding requests at a time, but not both. If an embedding request reaches an agent currently generating tokens, it is rejected.
+
+In a multi-agent fleet, the balancer routes embedding requests to an idle agent. With a single agent serving mixed (tokens and embeddings) traffic, you may expect occasional rejections when an embedding request overlaps with active generation; adding more agents resolves this.

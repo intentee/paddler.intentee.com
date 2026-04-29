@@ -40,7 +40,7 @@ Because the web admin panel shows the status of basically everything in your Pad
 
 Agents need to be able to reach the Management service to be able to establish a WebSocket connection with it. This is why you deploy them by providing the Management service address and port. 
 
-Ideally, you deploy each agent on its own separate server and give each agent a certain number of slots it can work with. The number of slots is the number of concurrent requests that the agent can handle. You can do some benchmarking to determine how many you need. Start with a small number, like 4 or 8.
+Ideally, you deploy each agent on its own separate server and give each agent a certain number of slots it can work with. The number of slots is the number of concurrent requests that the agent can handle, all served from one shared model context via continuous batching. You can do some benchmarking to determine how many you need. Start with a small number, like 4 or 8.
 
 <Note>
     If there is more than one agent deployed on the same server, they can run into some issues, like not being able to acquire a download lock for a model (since all the agents will try to download a model into the same cache), etc.

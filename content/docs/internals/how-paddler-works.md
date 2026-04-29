@@ -37,16 +37,16 @@ When a user sends a prompt, it is sent to the Inference service in the balancer.
 
 ### Processing the request by the agent
 
-Once the request is sent to the appropriate agent, the agent behaves as a mini balancer on its own - it sends the request to one of its available slots. 
+Once the request reaches the agent, the agent assigns it to one of its available slots. A slot represents one concurrent request the agent can handle. You can set how many slots an agent has with the `--slots` flag.
 
-### Token processing and generation by the slot
+### Token processing and generation by the agent
 
-The way slots work is that they use a model that is loaded in memory only once, and they operate on their own context and KV cache. 
+The agent loads the model and its llama.cpp context once, and all slots share them. A scheduler inside the agent uses continuous batching to process all active slots together in a single forward pass, stepping each slot, whether it is still ingesting its prompt or already generating output tokens.
 
-Slots batch the input tokens from the incoming requests and use the underlying llama.cpp engine to sample the output tokens, and then send them back to the Management service in the balancer. 
+Each slot is identified by a unique sequence ID — a unique number identifying the request inside the shared context. The agent uses the sequence ID to keep every request's tokens separate, even when many requests are processed together. As soon as a request finishes, its slot is freed for the next one.
 
 ### Sending the response back to the user
 
-When the slot generates the output tokens, they get sent back to The Management service in the balancer, that further sends them to the Inference service. 
+When the agent generates the output tokens, they get sent back to the Management service in the balancer, that further sends them to the Inference service.
 
 Finally, the Inference service sends the output tokens back to the user in the response.
