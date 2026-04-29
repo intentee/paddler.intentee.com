@@ -33,10 +33,11 @@ To swap the model through the API, you should send the [request to change the ba
     "inference_parameters": {
       "batch_n_tokens": 512,
       "context_size": 4096,
-      "embedding_n_seq_max": 16,
       "enable_embeddings": false,
       "image_resize_to_fit": 1024,
+      "k_cache_dtype": "Q8_0",
       "min_p": 0.05,
+      "n_gpu_layers": 0,
       "penalty_frequency": 0.0,
       "penalty_last_n": -1,
       "penalty_presence": 1.5,
@@ -44,7 +45,8 @@ To swap the model through the API, you should send the [request to change the ba
       "pooling_type": "Last",
       "temperature": 0.6,
       "top_k": 40,
-      "top_p": 0.8
+      "top_p": 0.8,
+      "v_cache_dtype": "Q8_0"
     },
     "model": {
       "HuggingFace": {

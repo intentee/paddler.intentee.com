@@ -21,17 +21,21 @@ The number of tokens processed in parallel during prompt evaluation. Higher = mo
 
 Maximum tokens in the context window. Higher = longer chat history, lower = less memory usage. Increase for longer conversations, decrease if you're memory-constrained.
 
-### `embedding_n_seq_max`
-
-Maximum number of simultaneous sequences per embedding batch. Increase for more embedding throughput on capable hardware. Only relevant when `enable_embeddings` is enabled.
-
 ### `image_resize_to_fit`
 
 Maximum image dimension in pixels for multimodal inference. Paddler scales down larger images internally before encoding them for the model, preserving the aspect ratio. Decrease to reduce memory usage and speed up processing. Only relevant when using vision-language models.
 
+### `k_cache_dtype`
+
+Data type used to store the keys part of the KV cache. Lower precision (e.g. `Q4_0`) reduces memory usage, higher precision (e.g. `F16`) preserves accuracy. 
+
 ### `min_p`
 
 Minimum token probability to consider for selection. Increase if the model produces nonsensical tokens. Decrease if responses feel too constrained.
+
+### `n_gpu_layers`
+
+Number of model layers to offload to the GPU. `0` means CPU-only. Set to a value at or above the model's layer count for full GPU offload.
 
 ### `penalty_frequency`
 
@@ -61,6 +65,10 @@ Limits selection to the K most likely tokens. Decrease for more predictable outp
 
 Limits selection to tokens whose cumulative probability reaches this threshold. Decrease for more focused responses. Increase to give the model more token choices.
 
+### `v_cache_dtype`
+
+Data type used to store the values part of the KV cache. Same options and tradeoffs as `k_cache_dtype`.
+
 ## Setting parameters in the web admin panel
 
 You can customize inference parameters in [the "Model" section of the web admin panel](docs/starting-out/using-web-admin-panel).
@@ -81,10 +89,11 @@ To set inference parameters through the API, adjust them in the [PUT request to 
   "inference_parameters": {
     "batch_n_tokens": 512,
     "context_size": 4096,
-    "embedding_n_seq_max": 16,
     "enable_embeddings": false,
     "image_resize_to_fit": 1024,
+    "k_cache_dtype": "Q8_0",
     "min_p": 0.05,
+    "n_gpu_layers": 0,
     "penalty_frequency": 0.0,
     "penalty_last_n": -1,
     "penalty_presence": 1.5,
@@ -92,7 +101,8 @@ To set inference parameters through the API, adjust them in the [PUT request to 
     "pooling_type": "Last",
     "temperature": 0.6,
     "top_k": 40,
-    "top_p": 0.8
+    "top_p": 0.8,
+    "v_cache_dtype": "Q8_0"
   },
   "model": {
     "HuggingFace": {
