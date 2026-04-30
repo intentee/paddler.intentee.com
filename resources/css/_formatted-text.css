@@ -159,6 +159,10 @@
     }
   }
 
+  p:empty {
+    display: none;
+  }
+
   table {
     border-collapse: collapse;
 
