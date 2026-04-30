@@ -54,11 +54,20 @@ Whether to append the opened `assistant` prompt to the conversation history.
 
 Array of all the previous conversation messages.
 
+
 #### `enable_thinking`
 
 If you are using a model that supports thinking (like DeepSeek, or Qwen), this will enable the thinking mode.
 
 If you enable this mode you need to send the `thinking` part of the messages in the `conversation_history` array (the part between `&lt;think&gt;` and `&lt;/think&gt;`) alongside the rest of the messages.
+
+
+#### `grammar`
+
+Optional grammar that constrains the model output. When set, the model can only generate tokens that keep the output valid against the grammar. Two formats are supported: `gbnf` and `json_schema`. See [Using grammars](docs/starting-out/using-grammars) for details.
+
+Cannot be used together with `enable_thinking: true`.
+
 
 #### `max_tokens`
 
@@ -173,6 +182,53 @@ And the possible response:
 }
 </tool_call>
 ```
+
+## Sending requests with a grammar
+
+To constrain the response, pass a grammar in the optional `grammar` parameter. Set `enable_thinking` to `false` as grammars and thinking mode cannot be used together.
+
+### GBNF payload
+
+```json
+{
+    "add_generation_prompt": true,
+    "enable_thinking": false,
+    "max_tokens": 20,
+    "grammar": {
+        "type": "gbnf",
+        "grammar": "root ::= [0-9] [0-9] [0-9] [0-9] \"-\" [0-9] [0-9] \"-\" [0-9] [0-9]",
+        "root": "root"
+    },
+    "conversation_history": [
+        {
+            "role": "user",
+            "content": "When did the Apollo 11 mission land on the Moon? Answer with the date only."
+        }
+    ]
+}
+```
+
+### JSON Schema payload
+
+```json
+{
+    "add_generation_prompt": true,
+    "enable_thinking": false,
+    "max_tokens": 200,
+    "grammar": {
+        "type": "json_schema",
+        "schema": "{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"age\":{\"type\":\"integer\"},\"occupation\":{\"type\":\"string\",\"enum\":[\"engineer\",\"teacher\",\"doctor\",\"artist\"]},\"employed\":{\"type\":\"boolean\"},\"hobbies\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"required\":[\"name\",\"age\",\"occupation\",\"employed\",\"hobbies\"]}"
+    },
+    "conversation_history": [
+        {
+            "role": "user",
+            "content": "Extract a structured record from: 'John is a 35-year-old engineer who is currently employed and enjoys hiking and chess.'"
+        }
+    ]
+}
+```
+
+See [Using grammars](docs/starting-out/using-grammars) for the full description of both formats and the error cases.
 
 ## Sending requests with images
 

@@ -4,7 +4,7 @@ layout = "LayoutDocumentationPage"
 title = "Using multimodal models"
 
 [[collection]]
-after = "docs/starting-out/using-function-calling"
+after = "docs/starting-out/using-grammars"
 name = "documentation_pages"
 parent = "docs/starting-out/index"
 +++
