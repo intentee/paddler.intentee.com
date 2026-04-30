@@ -9,6 +9,20 @@ name = "documentation_pages"
 parent = "docs/introduction/index"
 +++
 
+## v3.1.2
+
+### Features
+
+- Continuous batching in the inference engine
+- [Paddler desktop application](docs/desktop-app/using-the-desktop-app): manage balancer and agents from a native GUI 
+- [Grammars](docs/starting-out/using-grammars): constrain model output with grammars; GBNF and JSON Schema supported
+
+### Breaking changes
+
+- `inference_parameters` no longer accepts `embedding_n_seq_max` (removed)
+- `inference_parameters` now requires `k_cache_dtype`, `n_gpu_layers`,  and `v_cache_dtype` fields 
+
+
 ## v3.0.0
 
 ### Features

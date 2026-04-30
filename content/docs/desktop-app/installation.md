@@ -60,5 +60,5 @@ If unsure, check your glibc version with `ldd --version`.
 If your system isn't supported by the pre-built binaries, or you'd prefer to build the desktop app yourself, you can build the binary from source. To do so:
 
 1. Have [Rust](https://www.rust-lang.org/) and [Node](https://nodejs.org/en) installed on your system.
-2. Clone our [repository](https://github.com/intentee/paddler) and run `make release.gui` in the root directory of the project.
+2. Clone our [repository](https://github.com/intentee/paddler) and run `target/release/paddler_gui` in the root directory of the project.
 3. The resulting binary will be at `target/release/paddler_gui`.

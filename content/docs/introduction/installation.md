@@ -9,7 +9,7 @@ name = "documentation_pages"
 parent = "docs/introduction/index"
 +++
 
-There are multiple ways to install Paddler. 
+There are multiple ways to install Paddler.
 
 The goal is to somehow obtain the `paddler` binary and make it available in your system.
 
@@ -23,29 +23,50 @@ You can download the latest release from our [GitHub releases](https://github.co
 
 If your system is not supported by the pre-built binaries (or you just want to build it yourself), you can build Paddler from source. Paddler current MSRV is *1.88.0*.
 
-To do that, follow the steps:
+To do that:
 
 1. Have [Rust](https://www.rust-lang.org/) and [Node](https://nodejs.org/en) installed on your system.
-2. Clone our [repository](https://github.com/intentee/paddler) and run `make release` in the root directory of the project.
-3. That will produce a `paddler` binary in the `target/release` directory.
+2. Clone our [repository](https://github.com/intentee/paddler).
+3. From the root directory of the project, run the build command for your hardware.
 
-## Hardware support
+<table>
+    <thead>
+        <tr>
+            <th>Hardware</th>
+            <th>Build command</th>
+            <th>Binary path</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>CPU</td>
+            <td><code>make</code></td>
+            <td><code>target/release/paddler</code></td>
+        </tr>
+        <tr>
+            <td>Cuda</td>
+            <td><code>make target/cuda/release/paddler</code></td>
+            <td><code>target/cuda/release/paddler</code></td>
+        </tr>
+        <tr>
+            <td>Metal</td>
+            <td><code>make target/metal/release/paddler</code></td>
+            <td><code>target/metal/release/paddler</code></td>
+        </tr>
+        <tr>
+            <td>Vulkan</td>
+            <td><code>make target/vulkan/release/paddler</code></td>
+            <td><code>target/vulkan/release/paddler</code></td>
+        </tr>
+    </tbody>
+</table>
 
-### Cuda 
+<Note>
+    To build with Cuda, you also need to have the CUDA toolkit installed on your system, and the `nvcc` compiler must be in your `PATH`.
+</Note>
 
-You need to compile Paddler with the `cuda` feature (`cargo build --features cuda`). 
 
-You need to have the CUDA toolkit installed on your system, and the `nvcc` compiler must be in your `PATH`.
-
-### Metal
-
-Works out of the box on Macs.
-
-### Vulkan
-
-You need to compile Paddler with the `vulkan` feature (`cargo build --features vulkan`).
-
-### Need more? 🙂
+#### Need more? 🙂
 
 Start an issue on [GitHub](https://github.com/intentee/paddler/issues).
 
