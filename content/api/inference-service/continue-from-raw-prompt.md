@@ -39,6 +39,10 @@ Path: /api/v1/continue_from_raw_prompt
 
 ### Parameters
 
+#### `grammar`
+
+Optional grammar that constrains the response. Accepts a `gbnf` or `json_schema` constraint. See [Using grammars](docs/starting-out/using-grammars) for details on both formats and the error cases.
+
 #### `max_tokens`
 
 Maximum number of tokens to generate in the response. This is a hard limit; use it as a failsafe to prevent the model from generating too many tokens.
@@ -94,3 +98,21 @@ In case of an error, the response will be:
     }
 }
 ```
+
+## Sending requests with a grammar
+
+To constrain the response, pass a grammar in the optional `grammar` parameter:
+
+```json
+{
+    "max_tokens": 20,
+    "raw_prompt": "When did the Apollo 11 mission land on the Moon? Answer with the date only.",
+    "grammar": {
+        "type": "gbnf",
+        "grammar": "root ::= [0-9] [0-9] [0-9] [0-9] \"-\" [0-9] [0-9] \"-\" [0-9] [0-9]",
+        "root": "root"
+    }
+}
+```
+
+See [Using grammars](docs/starting-out/using-grammars) for both supported formats and the error cases.
