@@ -9,7 +9,7 @@ name = "documentation_pages"
 parent = "docs/desktop-app/index"
 +++
 
-Similarly to [core Paddler installation](docs/introduction/installation), Paddler's desktop app can be installed by obtaining its binary and making it available in your system.
+Paddler's desktop app can be installed by obtaining its binary and making it available in your system.
 
 ## Downloading from the release pages
 

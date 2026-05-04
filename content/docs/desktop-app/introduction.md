@@ -8,7 +8,8 @@ name = "documentation_pages"
 parent = "docs/desktop-app/index"
 +++
 
-Paddler comes with a desktop application that wraps its core features in a graphical interface. You can use it to run Paddler's balancer as a cluster, or connect to an existing cluster with your computer as an agent. 
+Paddler comes in two versions: a command-line interface for infrastructure use, and a desktop application for more casual use cases, like using multiple laptops and PCs in a local AI cluster or setting up an office-wide company second brain, without using a console.
+
 
 <Figure 
     alt="The home screen of Paddler's desktop application"
@@ -18,7 +19,6 @@ Paddler comes with a desktop application that wraps its core features in a graph
 ## Example use cases
 
 A common use case for Paddler's desktop application is having one person run a cluster on their machine while others join it as agents from their own machines. This way, a group of people in a network can share the computational power of their devices to run a local open-source LLM cluster.
-
 
 For example, in an office, one person can act as the cluster manager while their teammates connect to the cluster as agents from their own computers. The same setup can work for students at a university, a group of friends working on a project, or any other team that wants to run their own LLM cluster using the devices they already have.
 

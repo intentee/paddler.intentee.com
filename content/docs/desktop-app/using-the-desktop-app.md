@@ -35,7 +35,7 @@ First, you need to define the **Cluster address** - the IP address and port that
 
 Next, you need to define the **Inference address**. This is where Paddler's inference service can operate to generate tokens. You do not need to shate it with anyone, and similarly to the cluster address, the desktop app should detect your IP address and suggest 8061 as a port. If it's available, you can leave the suggested value as is.
 
-Optionally, you can also run the cluster with the **web admin panel** enabled. It will offer you a more advanced GUI to monitor and manage Paddler's cluster that you can run from a browser (for example, you can use the web admin panel to provide your own models - you can learn more about the web admin panel and its features [here](docs/starting-out/using-web-admin-panel)).
+Optionally, you can also run the cluster with the **Web admin panel** enabled. It will offer you a more advanced GUI to monitor and manage Paddler's cluster that you can run from a browser (for example, you can use the web admin panel to provide your own models - you can learn more about the web admin panel and its features [here](docs/starting-out/using-web-admin-panel)).
 
 If you want the web admin panel enabled, provide the IP address and port from where you want to make it available (as a placeholder value, the desktop app detects your IP address and suggests 8062 as the port).
 
