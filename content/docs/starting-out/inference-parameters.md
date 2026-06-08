@@ -13,13 +13,13 @@ Paddler allows you to customize inference parameters that control how the model 
 
 ## Available parameters
 
-### `batch_n_tokens`
-
-The number of tokens processed in parallel during prompt evaluation. Higher = more memory usage, lower = less inference speed. Adjust if you're running into memory limits or want to optimize throughput on capable hardware
-
 ### `context_size`
 
 Maximum tokens in the context window. Higher = longer chat history, lower = less memory usage. Increase for longer conversations, decrease if you're memory-constrained.
+
+### `embedding_batch_size`
+
+The maximum number of documents Paddler sends to an agent in one embedding request when it distributes a batch across the agents. Higher = larger requests and more memory per request; lower = smaller requests and lower memory use. Only relevant when generating embeddings.
 
 ### `image_resize_to_fit`
 
@@ -32,6 +32,10 @@ Data type used to store the keys part of the KV cache. Lower precision (e.g. `Q4
 ### `min_p`
 
 Minimum token probability to consider for selection. Increase if the model produces nonsensical tokens. Decrease if responses feel too constrained.
+
+### `n_batch`
+
+The number of tokens processed in parallel during prompt evaluation. Higher = more memory usage, lower = less inference speed. Adjust if you're running into memory limits or want to optimize throughput on capable hardware.
 
 ### `n_gpu_layers`
 
@@ -87,27 +91,28 @@ To set inference parameters through the API, adjust them in the [PUT request to 
 {
   "chat_template_override": null,
   "inference_parameters": {
-    "batch_n_tokens": 512,
-    "context_size": 4096,
+    "context_size": 8192,
+    "embedding_batch_size": 256,
     "enable_embeddings": false,
     "image_resize_to_fit": 1024,
     "k_cache_dtype": "Q8_0",
     "min_p": 0.05,
+    "n_batch": 2048,
     "n_gpu_layers": 0,
     "penalty_frequency": 0.0,
     "penalty_last_n": -1,
-    "penalty_presence": 1.5,
-    "penalty_repeat": 1.0,
+    "penalty_presence": 0.8,
+    "penalty_repeat": 1.1,
     "pooling_type": "Last",
-    "temperature": 0.6,
-    "top_k": 40,
+    "temperature": 0.8,
+    "top_k": 80,
     "top_p": 0.8,
     "v_cache_dtype": "Q8_0"
   },
   "model": {
     "HuggingFace": {
-      "filename": "Qwen3-0.6B-Q8_0.gguf",
-      "repo_id": "Qwen/Qwen3-0.6B-GGUF",
+      "filename": "Qwen3.5-0.8B-Q4_K_M.gguf",
+      "repo_id": "unsloth/Qwen3.5-0.8B-GGUF",
       "revision": "main"
     }
   },
@@ -120,10 +125,9 @@ To set inference parameters through the API, adjust them in the [PUT request to 
 
 The default parameters provide a reasonable starting point, but experimenting with different values is worth the effort. The optimal settings depend on your specific model and use case.
 
-
-Additionally, notice that the models' authors often provide the specific values. For example, the Qwen3-0.6B-GGUF model's card on Hugging Face includes a section with recommended inference parameters. When loading a new model, it is worth checking the model card for any such recommendations.
+Additionally, notice that the models' authors often provide the specific values. For example, the unsloth/Qwen3.5-0.8B-GGUF model's card on Hugging Face includes a section with recommended inference parameters. When loading a new model, it is worth checking the model card for any such recommendations.
 
 <Figure 
-    alt="Model's parameter recommendations, source: Qwen3-0.6B-GGUF page on Hugging Face"
-    src="resources/media/how-to-control-response-quality/qwen-3-06b-parameters-recommendations.avif"
+    alt="Model's parameter recommendations, source: unsloth/Qwen3.5-0.8B-GGUF page on Hugging Face"
+    src="resources/media/how-to-control-response-quality/qwen-3_5-0_8b-parameters-recommendations.avif"
 />
