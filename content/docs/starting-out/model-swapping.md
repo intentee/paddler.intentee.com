@@ -28,37 +28,41 @@ To swap the model through the API, you should send the [request to change the ba
 
 ```json
 {
-  "balancer_desired_state": {
-    "chat_template_override": null,
-    "inference_parameters": {
-      "batch_n_tokens": 512,
-      "context_size": 4096,
-      "enable_embeddings": false,
-      "image_resize_to_fit": 1024,
-      "k_cache_dtype": "Q8_0",
-      "min_p": 0.05,
-      "n_gpu_layers": 0,
-      "penalty_frequency": 0.0,
-      "penalty_last_n": -1,
-      "penalty_presence": 1.5,
-      "penalty_repeat": 1.0,
-      "pooling_type": "Last",
-      "temperature": 0.6,
-      "top_k": 40,
-      "top_p": 0.8,
-      "v_cache_dtype": "Q8_0"
-    },
-    "model": {
-      "HuggingFace": {
-        "filename": "Qwen3-0.6B-Q8_0.gguf",
-        "repo_id": "Qwen/Qwen3-0.6B-GGUF",
-        "revision": "main"
-      }
-    },
-    "multimodal_projection": "None",
-    "use_chat_template_override": false
+  "chat_template_override": null,
+  "inference_parameters": {
+    "context_size": 8192,
+    "embedding_batch_size": 256,
+    "enable_embeddings": false,
+    "image_resize_to_fit": 1024,
+    "k_cache_dtype": "Q8_0",
+    "min_p": 0.05,
+    "n_batch": 2048,
+    "n_gpu_layers": 0,
+    "penalty_frequency": 0.0,
+    "penalty_last_n": -1,
+    "penalty_presence": 0.8,
+    "penalty_repeat": 1.1,
+    "pooling_type": "Last",
+    "temperature": 0.8,
+    "top_k": 80,
+    "top_p": 0.8,
+    "v_cache_dtype": "Q8_0"
   },
-  "version": "1"
+  "model": {
+    "HuggingFace": {
+      "filename": "Qwen3.5-0.8B-Q4_K_M.gguf",
+      "repo_id": "unsloth/Qwen3.5-0.8B-GGUF",
+      "revision": "main"
+    }
+  },
+  "multimodal_projection": {
+    "HuggingFace": {
+      "filename": "mmproj-F16.gguf",
+      "repo_id": "unsloth/Qwen3.5-0.8B-GGUF",
+      "revision": "main"
+    }
+  },
+  "use_chat_template_override": false
 }
 ```
 
