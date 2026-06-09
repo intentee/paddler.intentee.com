@@ -35,7 +35,7 @@ forth between the OpenAI-style API and Paddler's internal API, so you do not nee
 setup.
 
 For example, if you used `--compat-openai-addr 127.0.0.1:8070`, you can find their completions endpoint at:
-`http://127.0.0.1:8070/v1/chat/completions`, etc.
+`http://127.0.0.1:8070/v1/chat/completions` and the responses endpoint at `http://127.0.0.1:8070/v1/responses`.
 
 ## Current status
 
@@ -55,7 +55,7 @@ Luckily, they do not update their API very often, but still, this is something t
         <tr>
             <td>
                 <a 
-                    href="https://platform.openai.com/docs/api-reference/chat/create"
+                    href="https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create"
                     target="_blank"
                 ><code>/v1/chat/completions</code></a>
             </td>
@@ -64,9 +64,30 @@ Luckily, they do not update their API very often, but still, this is something t
                     <li><code>max_completion_tokens</code></li>
                     <li><code>messages</code></li>
                     <li><code>stream</code></li>
+                    <li><code>stream options</code></li>
+                    <li><code>tools</code></li>
                 </ul>
             </td>
         </tr>
+        <tr>
+            <td>
+                <a 
+                    href="https://developers.openai.com/api/reference/resources/responses/methods/create"
+                    target="_blank"
+                ><code>/v1/responses</code></a>
+            </td>
+            <td>
+                <ul>
+                    <li><code>input</code></li>
+                    <li><code>instructions</code></li>
+                    <li><code>max_output_tokens</code></li>
+                    <li><code>reasoning</code></li>
+                    <li><code>stream</code></li>
+                    <li><code>text</code></li>
+                    <li><code>tools</code></li>
+                </ul>
+            </td>
+        </tr>        
         <tr>
             <td colspan="2">
                 <p>
