@@ -62,6 +62,7 @@ This is how Paddler normalizes the generated embedding before it's sent back to 
 ```JSON
 {
   "Response": {
+    "generated_by": "agent-1",
     "request_id": "123456",
     "response": {
       "Embedding": {
@@ -86,6 +87,7 @@ The last token that ends the stream is:
 ```JSON
 {
   "Response": {
+    "generated_by": null,
     "request_id": "123456",
     "response": {
       "Embedding": "Done"

@@ -81,4 +81,4 @@ Same as before, we will test it with Bruno. This time, we get a stream of embedd
 
 You can change the maximum time of generating a single token or embedding before the generation process times out.
 
-By default, this time is set to 5000 milliseconds. This value can be customized when running the balancer with the `--inference-item-timeout` flag (the value should be provided in milliseconds).
+By default, this time is set to 30000 milliseconds (30 seconds). This value can be customized when running the balancer with the `--inference-item-timeout` flag (the value should be provided in milliseconds).

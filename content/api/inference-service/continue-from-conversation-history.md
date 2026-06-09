@@ -77,29 +77,46 @@ Maximum number of tokens to generate in the response. This is a hard limit; use 
 
 ### Success
 
-Stream of tokens in the response body. Each token is a JSON object:
+The response body is a stream of JSON objects, one per generated token. The inner key under `GeneratedToken` tells you what kind of token it is: `ContentToken` for the visible answer, `ReasoningToken` for thinking output (when `enable_thinking` is on), `ToolCallToken` for function-call output, or `UndeterminableToken` for generated text the classifier couldn't assign to one of those categories.
 
 ```JSON
 {
     "Response": {
+        "generated_by": "agent-1",
         "request_id": "123456",
         "response": {
             "GeneratedToken": {
-                "Token": "Hello"
+                "ContentToken": "Hello"
             }
         }
     }
 }
 ```
 
-The last token that ends the stream is:
+`generated_by` is the name of the agent that produced the token (its `--name`), or `null` if the agent has no name.
+
+The stream ends with a single `Done` message that carries the token usage for the request:
 
 ```JSON
 {
     "Response": {
+        "generated_by": "agent-1",
         "request_id": "123456",
         "response": {
-            "GeneratedToken": "Done",
+            "GeneratedToken": {
+                "Done": {
+                    "usage": {
+                        "prompt_tokens": 12,
+                        "cached_prompt_tokens": 0,
+                        "input_image_tokens": 0,
+                        "input_audio_tokens": 0,
+                        "content_tokens": 34,
+                        "reasoning_tokens": 0,
+                        "tool_call_tokens": 0,
+                        "undeterminable_tokens": 0
+                    }
+                }
+            }
         }
     }
 }

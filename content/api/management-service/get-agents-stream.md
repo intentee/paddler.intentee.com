@@ -31,6 +31,7 @@ Each event is a JSON object, like this one:
       "desired_slots_total": 4,
       "download_current": 0,
       "download_filename": null,
+      "download_indeterminate": true,
       "download_total": 0,
       "id": "123456",
       "issues": [],

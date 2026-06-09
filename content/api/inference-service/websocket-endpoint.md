@@ -49,6 +49,7 @@ The response envelope looks like this:
 ```JSON
 {
     "Response": {
+        "generated_by": "agent-1",
         "request_id": "123456",
         "response": {
             // response data
@@ -96,8 +97,6 @@ Same as above, but you can follow input/output specification of the
         "id": "123456",
         "request": {
             "ContinueFromRawPrompt": {
-                "add_generation_prompt": true,
-                "enable_thinking": true,
                 "max_tokens": 400,
                 "raw_prompt": "Hello, how are you?"
             }
@@ -106,14 +105,28 @@ Same as above, but you can follow input/output specification of the
 }
 ```
 
-You can know that the request is done when you receive the `"Done"` token in the response stream:
+You can know that the request is done when you receive the `Done` message, which carries the token usage:
 
 ```JSON
 {
     "Response": {
+        "generated_by": "agent-1",
         "request_id": "123456",
         "response": {
-            "GeneratedToken": "Done"
+            "GeneratedToken": {
+                "Done": {
+                    "usage": {
+                        "prompt_tokens": 12,
+                        "cached_prompt_tokens": 0,
+                        "input_image_tokens": 0,
+                        "input_audio_tokens": 0,
+                        "content_tokens": 34,
+                        "reasoning_tokens": 0,
+                        "tool_call_tokens": 0,
+                        "undeterminable_tokens": 0
+                    }
+                }
+            }
         }
     }
 }
