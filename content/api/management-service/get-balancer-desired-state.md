@@ -4,7 +4,7 @@ layout = "LayoutDocumentationPage"
 title = "Get balancer desired state"
 
 [[collection]]
-after = "api/management-service/get-agents-stream"
+after = "api/management-service/get-balancer-applicable-state"
 name = "api_pages"
 parent = "api/management-service/index"
 +++
