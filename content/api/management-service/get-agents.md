@@ -26,6 +26,7 @@ Path: /api/v1/agents
       "desired_slots_total": 4,
       "download_current": 0,
       "download_filename": null,
+      "download_indeterminate": true,
       "download_total": 0,
       "id": "123456",
       "issues": [],
@@ -51,11 +52,14 @@ If there are any issues with the agent, they will be listed in the `issues` arra
         "desired_slots_total": 4,
         "download_current": 0,
         "download_filename": null,
+        "download_indeterminate": true,
         "download_total": 0,
         "id": "123456",
         "issues": [
           {
-            "HuggingFaceModelDoesNotExist": "Qwen/Qwen3-0.6B-GGUF/incorrect-link/.gguf"
+            "HuggingFaceModelDoesNotExist": {
+              "model_path": "Qwen/Qwen3-0.6B-GGUF/incorrect-link/.gguf"
+            }
           }
         ],
         "model_path":"path/to/your/model.gguf",
