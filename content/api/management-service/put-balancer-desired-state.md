@@ -54,6 +54,24 @@ Path: /api/v1/balancer_desired_state
 }
 ```
 
+### Model sources
+
+The `model` (and `multimodal_projection`) field selects where the model comes from. The example above uses Hugging Face; the other accepted forms are:
+
+```json
+"model": { "Url": { "url": "https://example.com/models/my-model.gguf" } }
+```
+
+```json
+"model": { "LocalToAgent": "/path/to/your/model.gguf" }
+```
+
+```json
+"model": "None"
+```
+
+A `Url` model is downloaded over `http(s)` — a direct link to the `.gguf` file that the agent can reach (including a server on your local network); a `LocalToAgent` path is read from the agent's own filesystem; `"None"` leaves no model loaded.
+
 ## Response
 
 Responds with `204 No Content` if the request was successful.
