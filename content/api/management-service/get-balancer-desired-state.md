@@ -63,3 +63,5 @@ Example response if you're using a model from Hugging Face:
   "use_chat_template_override": false
 }
 ```
+
+The `model` field can also be `{ "Url": { "url": "..." } }`, `{ "LocalToAgent": "/path/to/model.gguf" }`, or `"None"` — see [Put balancer desired state](api/management-service/put-balancer-desired-state) for details.

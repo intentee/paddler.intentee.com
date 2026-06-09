@@ -13,7 +13,11 @@ Paddler allows you to dynamically swap models. You can do that either in the web
 
 ## Swapping models in the web admin panel
 
-To swap models in the web admin panel, go to the "Model" section and use the "Base Model URI" field (and, optionally, also the "Multimodal Projection URI" if you're using the multimodal functionality). You can either provide the link to the model's file on Hugging Face or a local file path to the model, for example:
+To swap models in the web admin panel, go to the "Model" section and use the "Base Model URI" field (and, optionally, also the "Multimodal Projection URI" if you're using the multimodal functionality). You can point to a model in three ways:
+
+- a **Hugging Face** file URL, for example `https://huggingface.co/Qwen/Qwen3-0.6B-GGUF/blob/main/Qwen3-0.6B-Q8_0.gguf`;
+- a **direct download URL**, for example `https://example.com/models/my-model.gguf`;
+- a **local file on the agent**, for example `agent:///path/to/your/model.gguf`.
 
 <Figure 
     alt="Swapping models in the web admin panel"
@@ -64,6 +68,32 @@ To swap the model through the API, you should send the [request to change the ba
   },
   "use_chat_template_override": false
 }
+```
+
+The example above uses a Hugging Face model, but the `model` field accepts other sources too. Substitute its value (the same forms work for `multimodal_projection`) with one of:
+
+A **direct download URL**:
+
+```json
+"model": {
+  "Url": {
+    "url": "https://example.com/models/my-model.gguf"
+  }
+}
+```
+
+A **file already on the agent's machine** (the path is on the agent's own filesystem, so every agent that should serve it needs the file at that path):
+
+```json
+"model": {
+  "LocalToAgent": "/path/to/your/model.gguf"
+}
+```
+
+**No model** (unset it):
+
+```json
+"model": "None"
 ```
 
 Similarly to swapping models through the web admin panel, sending this request with the new model will make the agents use it automatically.
