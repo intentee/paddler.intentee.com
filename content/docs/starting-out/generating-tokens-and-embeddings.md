@@ -85,4 +85,4 @@ By default, this time is set to 30000 milliseconds (30 seconds). This value can 
 
 ## Token classification and usage
 
-As Paddler generates a response, it classifies each token it produces by kind (content, reasoning, tool call, or undeterminable) and counts the tokens per kind. See [Token classification and usage count](docs/starting-out/token-usage) for the details.
+As Paddler generates a response, it classifies each token it produces by kind (content, reasoning, tool call, or undeterminable) and counts the tokens per kind. See [Token classification and usage count](docs/starting-out/token-classification-and-usage-count) for the details.

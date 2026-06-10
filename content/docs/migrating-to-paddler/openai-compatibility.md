@@ -106,7 +106,7 @@ Luckily, they do not update their API very often, but still, this is something t
 
 ## Token usage
 
-Both compatibility endpoints report token usage in OpenAI's own format. The numbers come from Paddler's per-kind token counting (see [Token classification and usage count](docs/starting-out/token-usage)); the compatibility service simply renames the fields to match OpenAI.
+Both compatibility endpoints report token usage in OpenAI's own format. The numbers come from Paddler's per-kind token counting (see [Token classification and usage count](docs/starting-out/token-classification-and-usage-count)); the compatibility service simply renames the fields to match OpenAI.
 
 For `/v1/chat/completions`, the response carries a `usage` object:
 
