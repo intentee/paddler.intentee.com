@@ -1,5 +1,5 @@
 +++
-description = "Swap models dynamically using API or the web admin panel without the need to restart the balancer or the agents."
+description = "Swap models dynamically using the API or the web admin panel, without restarting the balancer or the agents."
 layout = "LayoutDocumentationPage"
 title = "Model swapping"
 
@@ -9,91 +9,21 @@ name = "documentation_pages"
 parent = "docs/starting-out/index"
 +++
 
-Paddler allows you to dynamically swap models. You can do that either in the web admin panel or through the API.
+One of Paddler's most useful features is that you can change the model your cluster serves at any time, dynamically, without restarting the balancer or the agents.
 
-## Swapping models in the web admin panel
+You swap the model exactly the way you set it in the first place: you update the balancer's desired state and point it at a different model. See [Loading models and models cache](docs/starting-out/loading-models-and-models-cache) for the available model sources (Hugging Face, a direct URL, or a local file) and the full request format.
 
-To swap models in the web admin panel, go to the "Model" section and use the "Base Model URI" field (and, optionally, also the "Multimodal Projection URI" if you're using the multimodal functionality). You can point to a model in three ways:
+The moment you apply the change, the balancer hands the new desired state to every connected agent, and each agent loads the new model and starts serving it. You do not need to restart anything or touch the agents directly.
 
-- a **Hugging Face** file URL, for example `https://huggingface.co/Qwen/Qwen3-0.6B-GGUF/blob/main/Qwen3-0.6B-Q8_0.gguf`;
-- a **direct download URL**, for example `https://example.com/models/my-model.gguf`;
-- a **local file on the agent**, for example `agent:///path/to/your/model.gguf`.
+## Through the web admin panel
+
+In the "Model" section, change the "Base Model URI" (and the "Multimodal Projection URI", if you use multimodal models) to the new model, then click "Apply changes". The agents switch automatically.
 
 <Figure 
     alt="Swapping models in the web admin panel"
     src="resources/media/model-swapping/swapping-model-web-admin-panel.avif"
 />
 
-Next, click "Apply changes" to save the new model. The agents will automatically start using it.
+## Through the API
 
-## Swapping models through the API
-
-To swap the model through the API, you should send the [request to change the balancer's desired state](api/management-service/put-balancer-desired-state) and provide the filename, repo ID, and the revision of the model. An example payload can look like this:
-
-```json
-{
-  "chat_template_override": null,
-  "inference_parameters": {
-    "context_size": 8192,
-    "embedding_batch_size": 256,
-    "enable_embeddings": false,
-    "image_resize_to_fit": 1024,
-    "k_cache_dtype": "Q8_0",
-    "min_p": 0.05,
-    "n_batch": 2048,
-    "n_gpu_layers": 0,
-    "penalty_frequency": 0.0,
-    "penalty_last_n": -1,
-    "penalty_presence": 0.8,
-    "penalty_repeat": 1.1,
-    "pooling_type": "Last",
-    "temperature": 0.8,
-    "top_k": 80,
-    "top_p": 0.8,
-    "v_cache_dtype": "Q8_0"
-  },
-  "model": {
-    "HuggingFace": {
-      "filename": "Qwen3.5-0.8B-Q4_K_M.gguf",
-      "repo_id": "unsloth/Qwen3.5-0.8B-GGUF",
-      "revision": "main"
-    }
-  },
-  "multimodal_projection": {
-    "HuggingFace": {
-      "filename": "mmproj-F16.gguf",
-      "repo_id": "unsloth/Qwen3.5-0.8B-GGUF",
-      "revision": "main"
-    }
-  },
-  "use_chat_template_override": false
-}
-```
-
-The example above uses a Hugging Face model, but the `model` field accepts other sources too. Substitute its value (the same forms work for `multimodal_projection`) with one of:
-
-A **direct download URL**:
-
-```json
-"model": {
-  "Url": {
-    "url": "https://example.com/models/my-model.gguf"
-  }
-}
-```
-
-A **file already on the agent's machine** (the path is on the agent's own filesystem, so every agent that should serve it needs the file at that path):
-
-```json
-"model": {
-  "LocalToAgent": "/path/to/your/model.gguf"
-}
-```
-
-**No model** (unset it):
-
-```json
-"model": "None"
-```
-
-Similarly to swapping models through the web admin panel, sending this request with the new model will make the agents use it automatically.
+Send a [PUT request to change the balancer's desired state](api/management-service/put-balancer-desired-state) with the new `model`, the same request you use to load a model initially. As soon as the balancer stores the new state, the agents switch to the new model.

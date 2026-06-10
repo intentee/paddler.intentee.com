@@ -75,6 +75,7 @@ Finally, if there are any issues with processing the requests, you see an "Issue
 
 This section allows you to provide paths to the models you want to use. 
 Paddler uses llama.cpp internally, so it supports all models in the GGUF format that llama.cpp supports. 
+
 You can point to a model in three ways: a Hugging Face file URL, a direct download (`http(s)`) URL, or a local file on the agent's machine, for example `agent:///path/to/your/model.gguf`. 
 If your model supports vision, you can also provide a multimodal projection file to enable [adding images in conversations](docs/starting-out/using-multimodal-models).
 
