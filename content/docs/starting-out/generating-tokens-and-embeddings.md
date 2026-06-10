@@ -4,7 +4,7 @@ layout = "LayoutDocumentationPage"
 title = "Generating tokens and embeddings"
 
 [[collection]]
-after = "docs/starting-out/using-web-admin-panel"
+after = "docs/starting-out/loading-models-and-models-cache"
 name = "documentation_pages"
 parent = "docs/starting-out/index"
 +++
