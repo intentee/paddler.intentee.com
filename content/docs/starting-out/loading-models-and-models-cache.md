@@ -9,7 +9,7 @@ name = "documentation_pages"
 parent = "docs/starting-out/index"
 +++
 
-Before an agent can serve requests, it needs a model. You do not set the model on the agent itself. Instead, you tell the balancer which model you want (this is part of its desired state), and the balancer passes that to every connected agent, which then loads the model.
+Before an agent can serve requests, it needs a model. You do not set the model on the agent itself. Instead, you tell the balancer which model you want (this is part of the balancer's *desired state*), and the balancer passes that to every connected agent, which then loads the model.
 
 You can set the model through the API, or through the optional [web admin panel](docs/starting-out/using-web-admin-panel). Once a model is loaded, you can change it at any time without restarting anything (see [Model swapping](docs/starting-out/model-swapping)).
 

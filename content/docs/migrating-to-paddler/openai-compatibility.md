@@ -104,6 +104,47 @@ Luckily, they do not update their API very often, but still, this is something t
     </tbody>
 </table>
 
+## Token usage
+
+Both compatibility endpoints report token usage in OpenAI's own format. The numbers come from Paddler's per-kind token counting (see [Token classification and usage count](docs/starting-out/token-usage)); the compatibility service simply renames the fields to match OpenAI.
+
+For `/v1/chat/completions`, the response carries a `usage` object:
+
+```JSON
+"usage": {
+  "prompt_tokens": 318,
+  "completion_tokens": 47,
+  "total_tokens": 365,
+  "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+    "reasoning_tokens": 45
+  }
+}
+```
+
+In non-streaming requests it is always present. In streaming requests it is sent as a final chunk only if you ask for it, using `stream_options`:
+
+```JSON
+"stream_options": { "include_usage": true }
+```
+
+For `/v1/responses`, the completed response carries a `usage` object with the Responses API field names:
+
+```JSON
+"usage": {
+  "input_tokens": 318,
+  "input_tokens_details": { "cached_tokens": 0 },
+  "output_tokens": 47,
+  "output_tokens_details": { "reasoning_tokens": 45 },
+  "total_tokens": 365
+}
+```
+
+In both shapes, `completion_tokens` / `output_tokens` count every kind of generated token (content, reasoning, tool-call, and undeterminable), and `reasoning_tokens` is the thinking portion of that. The `cached_tokens` and `audio_tokens` fields are always `0` for now.
+
 ## Contributing
 
 In Paddler 2.1, we provided some libraries and tools in the code to make it easier to contribute to the compatibility
