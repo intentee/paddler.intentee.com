@@ -125,9 +125,9 @@ To set inference parameters through the API, adjust them in the [PUT request to 
 
 The default parameters provide a reasonable starting point, but experimenting with different values is worth the effort. The optimal settings depend on your specific model and use case.
 
-Additionally, notice that the models' authors often provide the specific values. For example, the unsloth/Qwen3.5-0.8B-GGUF model's card on Hugging Face includes a section with recommended inference parameters. When loading a new model, it is worth checking the model card for any such recommendations.
+Additionally, notice that the models' authors often provide the specific values. For example, the unsloth/Qwen3.6-35B-A3B-GGUF model's card on Hugging Face includes a section with recommended inference parameters. When loading a new model, it is worth checking the model card for any such recommendations.
 
 <Figure 
-    alt="Model's parameter recommendations, source: unsloth/Qwen3.5-0.8B-GGUF page on Hugging Face"
-    src="resources/media/how-to-control-response-quality/qwen-3_5-0_8b-parameters-recommendations.avif"
+    alt="Model's parameter recommendations, source: unsloth/Qwen3.6-35B-A3B-GGUF page on Hugging Face"
+    src="resources/media/how-to-control-response-quality/qwen-3_6-35b-parameters-recommendations.avif"
 />
