@@ -25,12 +25,14 @@ const response = await fetch('http://127.0.0.1:8061/api/v1/continue_from_raw_pro
     },
     body: JSON.stringify({
         max_tokens: 100,
-        raw_prompt: "Tell me a story about"
+        raw_prompt: "Tell me a story about a cat"
     })
 });
 
 const reader = response.body.getReader();
 const decoder = new TextDecoder();
+
+const tokenKinds = ['ContentToken', 'ReasoningToken', 'ToolCallToken', 'UndeterminableToken'];
 
 while (true) {
     const { done, value } = await reader.read();
@@ -45,8 +47,12 @@ while (true) {
     for (const line of lines) {
         try {
             const message = JSON.parse(line);
+            const generatedToken = message.Response.response.GeneratedToken;
+            const tokenKind = tokenKinds.find(kind => kind in generatedToken);
 
-            console.log('Received:', message.Response.response.GeneratedToken.Token);
+            if (tokenKind) {
+                console.log('Received:', generatedToken[tokenKind]);
+            }
         } catch (err) {
             console.error('Error:', err);
         }

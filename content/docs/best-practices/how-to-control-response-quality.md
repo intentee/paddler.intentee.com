@@ -24,27 +24,27 @@ A chat template is the specific way a model expects to receive conversations. It
 
 Different models expect different chat template structures; you can learn more about the possible formats in this [Hugging Face article on chat templates](https://huggingface.co/learn/llm-course/en/chapter11/2).
 
-Many models come with the chat template built in. If that's the case, Paddler will let you use this template. Let's see how it works in practice with the Qwen/Qwen3-0.6B-GGUF model as an example.
+Many models come with the chat template built in. If that's the case, Paddler will let you use this template. Let's see how it works in practice with the unsloth/Qwen3.6-35B-A3B-GGUF model as an example.
 
-First, we'll navigate to the [model file's page on Hugging Face](https://huggingface.co/unsloth/Qwen3.5-0.8B-GGUF/blob/main/Qwen3.5-0.8B-Q4_K_M.gguf). You will see the chat template used by this model in the Metadata section:
+First, we'll navigate to the [model file's page on Hugging Face](https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF). You will see the chat template used by this model on the model card page:
 
 <Figure 
     alt="Model's chat template on Hugging Face"
-    src="resources/media/how-to-control-response-quality/qwen-3_5-0_8b-chat-template-hugging-face.avif"
+    src="resources/media/how-to-control-response-quality/qwen-3_6-35b-chat-template-hugging-face.avif"
 />
 
 Next, we'll load this model in Paddler's web admin panel (in the "Model" section) using the default `Use the chat template provided by the model` option:
 
 <Figure 
     alt="Using model's built-in chat template in Paddler"
-    src="resources/media/how-to-control-response-quality/qwen-3_5-0_8b-default-chat-template.avif"
+    src="resources/media/how-to-control-response-quality/qwen-3_6-35b-default-chat-template.avif"
 />
 
 Applying the model will redirect you to the panel's dashboard section. Once the model is loaded, you will see its name and the "Metadata" button. Click this button, then click "Chat template" - you'll see the chat template corresponding to the one we just previewed on the model's page on Hugging Face:
 
 <Figure 
     alt="Model's built-in chat template preview in Paddler"
-    src="resources/media/how-to-control-response-quality/qwen-3_5-0_8b-chat-template-paddler.avif"
+    src="resources/media/how-to-control-response-quality/qwen-3_6-35b-chat-template-paddler.avif"
 />
 
 Finally, we can navigate to the "Prompt" section and use Paddler's chat GUI to test the model with its built-in chat template (in the example below, we're also using our own system prompt. We'll talk about system prompts in the next paragraph).
@@ -53,7 +53,7 @@ Let's ask the model some important questions it can ponder about a bit and see w
 
 <Figure 
     alt="Response with model's built-in chat template"
-    src="resources/media/how-to-control-response-quality/qwen-3_5-0_8b-default-template-prompt.avif"
+    src="resources/media/how-to-control-response-quality/model-default-template-prompt.avif"
 />
 
 Perfect! We got a response relevant to the question we asked. 
@@ -103,7 +103,7 @@ and use the same question again. This time, the model will respond, but the resp
 
 <Figure 
     alt="Response with a poor quality chat template"
-    src="resources/media/how-to-control-response-quality/qwen-3_5-0_8b-poor-quality-template-prompt.avif"
+    src="resources/media/how-to-control-response-quality/model-poor-quality-template-prompt.avif"
 />
 
 ## System prompts
@@ -118,11 +118,11 @@ The inference parameters control how the model behaves during inference. They ca
 
 They are usually model-specific and are often provided by the model's authors, although Paddler provides some reasonable defaults.
 
-Continuing our unsloth/Qwen3.5-0.8B-GGUF example, we can see on the model's page on Hugging Face that the model authors recommend using some certain values of the inference parameters:
+Continuing our unsloth/Qwen3.6-35B-A3B-GGUF example, we can see on the model's page on Hugging Face that the model authors recommend using some certain values of the inference parameters:
 
 <Figure 
-    alt="Model's parameter recommendations, source: unsloth/Qwen3.5-0.8B-GGUF page on Hugging Face"
-    src="resources/media/how-to-control-response-quality/qwen-3_5-0_8b-parameters-recommendations.avif"
+    alt="Model's parameter recommendations, source: unsloth/Qwen3.6-35B-A3B-GGUF page on Hugging Face"
+    src="resources/media/how-to-control-response-quality/qwen-3_6-35b-parameters-recommendations.avif"
 />
 
 You can customize the inference parameters in Paddler, when applying the model:

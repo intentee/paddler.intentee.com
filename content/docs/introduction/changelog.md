@@ -9,6 +9,22 @@ name = "documentation_pages"
 parent = "docs/introduction/index"
 +++
 
+## v4.0.0
+
+### Features
+
+- [Load models from a direct URL](docs/starting-out/loading-models-and-models-cache): point an agent at a `.gguf` URL and Paddler downloads and caches it on the agent
+- [OpenAI Responses API](docs/migrating-to-paddler/openai-compatibility): new `/v1/responses` endpoint, alongside `/v1/chat/completions`
+- [Token usage and classification](docs/starting-out/token-classification-and-usage-count): responses report per-kind token counts, and generated tokens are classified as content, reasoning, tool call, or undeterminable
+- [Structured tool-call parsing](docs/starting-out/using-function-calling): set `parse_tool_calls` to get parsed tool calls 
+
+### Breaking changes
+
+- `inference_parameters`: `batch_n_tokens` renamed to `n_batch`
+- `inference_parameters` now requires `embedding_batch_size`
+- Streamed tokens now arrive under kind-specific keys (`ContentToken`, `ReasoningToken`, `ToolCallToken`, `UndeterminableToken`) instead of `Token`, and the stream ends with a `Done` event carrying token usage
+- Minimum supported Rust version is now 1.95.0
+
 ## v3.1.2
 
 ### Features
