@@ -83,6 +83,19 @@ You can change the maximum time of generating a single token or embedding before
 
 By default, this time is set to 30000 milliseconds (30 seconds). This value can be customized when running the balancer with the `--inference-item-timeout` flag (the value should be provided in milliseconds).
 
+## Generating tokens when embeddings are enabled
+
+While a cluster has embeddings generation enabled, it cannot generate inference tokens at the same time.
+
+If you send a token generation request to the inference service's token-generation endpoints or to the OpenAI compatibility endpoints, you will receive a `501 Not Implemented` error with a message stating that token generation is disabled. The Prompt section of the web admin panel also shows a similar notice instead of accepting a prompt.
+
+<Figure 
+    alt="A notice that token generation is disabled in the Prompt section in the web admin panel"
+    src="resources/media/generating-tokens-and-embeddings/prompt-section-disabled-tokens-notice.avif"
+/>
+
+This is by design: Paddler treats agents in a cluster as single-purpose, so a cluster set to enable embeddings will not generate tokens.
+
 ## Token classification and usage
 
 As Paddler generates a response, it classifies each token it produces by kind (content, reasoning, tool call, or undeterminable) and counts the tokens per kind. See [Token classification and usage count](docs/starting-out/token-classification-and-usage-count) for the details.
