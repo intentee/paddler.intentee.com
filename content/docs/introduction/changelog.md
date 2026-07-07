@@ -12,8 +12,6 @@ parent = "docs/introduction/index"
 ## v4.0.1
 
 ### Bug fixes
-
-## Bug fixes
 - Embedding models without a chat template no longer fail to load
 - Clear errors when generation is disabled: while a cluster is set to generate embeddings, all generation endpoints reject with a clear "token generation is disabled"
 - Web admin panel: the prompt section is disabled while embeddings are enabled
