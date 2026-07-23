@@ -54,7 +54,8 @@ A few things about this configuration:
 
 - `baseURL` is the address you passed to `--compat-openai-addr`, with `/v1` at the end.
 - The model id is only a label. Paddler ignores the model name in a request and routes it to whatever model your cluster currently has loaded, so it does not need to change when you [swap models](docs/starting-out/model-swapping).
-- The `models` field is required. Paddler does not expose an endpoint that lists models, so you have to declare them here.
+
+You can find more information about adding a custom provider in [OpenCode's documentation](https://opencode.ai/docs/providers/#custom-provider).
 
 
 ## Run OpenCode
