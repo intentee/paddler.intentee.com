@@ -9,6 +9,17 @@ name = "documentation_pages"
 parent = "docs/introduction/index"
 +++
 
+## v4.1.0
+
+### Features
+
+- Add support for [OpenCode](docs/third-part-tools-support/opencode)
+- Bump internal `llama.cpp` to [b10068](https://github.com/ggml-org/llama.cpp/releases/tag/b10068)
+
+### Internals
+
+- Thread [`CancellationToken`](https://docs.rs/tokio-util/latest/tokio_util/sync/struct.CancellationToken.html) through all the Paddler APIs, so everything can be canceled cleanly in `paddler_client`
+
 ## v4.0.1
 
 ### Bug fixes
